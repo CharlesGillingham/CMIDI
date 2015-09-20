@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7706"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="CMIDITransport">
+            <connections>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="468" height="130"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+            <subviews>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="8hk-13-fzP">
+                    <rect key="frame" x="20" y="90" width="88" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="1KL-5E-WaK"/>
+                        <constraint firstAttribute="width" constant="88" id="ieq-UU-Oaa"/>
+                    </constraints>
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="play.tiff" imagePosition="only" alignment="center" alternateImage="stop.tiff" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="HpV-gx-vta">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                        <connections>
+                            <binding destination="-2" name="value" keyPath="self.clock.isRunning" id="xea-9H-Y3Q"/>
+                        </connections>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.clock.isRunning" id="uVd-m6-il5"/>
+                    </connections>
+                </button>
+                <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fjo-ri-gHt">
+                    <rect key="frame" x="18" y="42" width="432" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="16" id="OTq-S8-Xcl"/>
+                    </constraints>
+                    <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="ilZ-aL-uMZ">
+                        <connections>
+                            <binding destination="-2" name="value" keyPath="self.clock.currentTick" previousBinding="PeN-dA-eQa" id="Ak7-aX-DcN"/>
+                            <binding destination="-2" name="maxValue" keyPath="self.maxTicks" id="Zdi-ep-ucc"/>
+                            <binding destination="-2" name="minValue" keyPath="self.minTicks" previousBinding="Zdi-ep-ucc" id="PeN-dA-eQa"/>
+                        </connections>
+                    </sliderCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.clock.currentTick" id="Pab-O0-k2s"/>
+                    </connections>
+                </slider>
+                <textField horizontalHuggingPriority="1" verticalHuggingPriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="6Sk-eE-BJu">
+                    <rect key="frame" x="18" y="68" width="92" height="14"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="88" id="pa9-dK-n4g"/>
+                        <constraint firstAttribute="height" constant="14" id="zn6-Br-bZ2"/>
+                    </constraints>
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Current time" id="P84-2M-9qt">
+                        <font key="font" metaFont="smallSystemBold"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <popUpButton horizontalHuggingPriority="1" verticalHuggingPriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="sxh-Yw-JgR">
+                    <rect key="frame" x="113" y="63" width="105" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="99" id="4rz-W3-CwY"/>
+                        <constraint firstAttribute="height" constant="18" id="ThL-qg-8fe"/>
+                    </constraints>
+                    <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Zdh-St-3US" id="Zso-B9-KAg">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                        <menu key="menu" id="LCS-QC-qoN">
+                            <items>
+                                <menuItem title="Item 1" state="on" id="Zdh-St-3US"/>
+                                <menuItem title="Item 2" id="LmC-el-Igy"/>
+                                <menuItem title="Item 3" id="yYJ-cT-lXd"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                    <connections>
+                        <binding destination="-2" name="selectedIndex" keyPath="self.clock.timeStringFormat" previousBinding="1kk-z8-Hql" id="JQ2-iz-rDD"/>
+                        <binding destination="-2" name="content" keyPath="self.clock.timeStringFormatNames" id="1kk-z8-Hql"/>
+                    </connections>
+                </popUpButton>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kfT-V3-IfV">
+                    <rect key="frame" x="223" y="66" width="225" height="19"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="19" id="085-a4-Osv"/>
+                    </constraints>
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="P9B-4R-WPg">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        <connections>
+                            <binding destination="-2" name="value" keyPath="self.clock.timeString" id="t52-jF-eNm"/>
+                        </connections>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.clock.timeString" id="ZQb-pr-iaG"/>
+                    </connections>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="CTo-Sz-Q88">
+                    <rect key="frame" x="18" y="25" width="92" height="14"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="88" id="hXE-nh-ILG"/>
+                        <constraint firstAttribute="height" constant="14" id="ktN-AE-H8Q"/>
+                    </constraints>
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Current tempo" id="VWP-Tb-ImH">
+                        <font key="font" metaFont="smallSystemBold"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vdC-DQ-ZMa">
+                    <rect key="frame" x="114" y="25" width="103" height="14"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="14" id="Qor-co-9AY"/>
+                        <constraint firstAttribute="width" constant="99" id="tTm-Tc-xqV"/>
+                    </constraints>
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Beats per minute" id="u1O-5U-wZO">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="747-2h-VXK">
+                    <rect key="frame" x="223" y="90" width="225" height="19"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="19" id="7Do-LW-drt"/>
+                    </constraints>
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="VLK-PA-RhV">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        <connections>
+                            <binding destination="-2" name="value" keyPath="self.clock.timeStringHeader" id="2DK-CX-YfN"/>
+                        </connections>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.clock.timeStringHeader" id="QFj-M5-nuo"/>
+                    </connections>
+                </textField>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QhL-aO-saI">
+                    <rect key="frame" x="223" y="20" width="225" height="19"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="19" id="aKY-NP-DH2"/>
+                    </constraints>
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="b9n-1f-ofj">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        <connections>
+                            <binding destination="-2" name="value" keyPath="self.clock.beatsPerMinute" id="uBc-Ma-zGd"/>
+                        </connections>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.clock.beatsPerMinute" id="Cfv-6y-9fS"/>
+                    </connections>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="QhL-aO-saI" firstAttribute="top" secondItem="fjo-ri-gHt" secondAttribute="bottom" constant="5" id="0Tr-Io-zO7"/>
+                <constraint firstItem="QhL-aO-saI" firstAttribute="leading" secondItem="vdC-DQ-ZMa" secondAttribute="trailing" constant="8" id="0hK-Xi-GW7"/>
+                <constraint firstItem="sxh-Yw-JgR" firstAttribute="leading" secondItem="6Sk-eE-BJu" secondAttribute="trailing" constant="8" id="2ny-B3-4uE"/>
+                <constraint firstItem="8hk-13-fzP" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" id="4qF-hX-WV0"/>
+                <constraint firstItem="kfT-V3-IfV" firstAttribute="top" secondItem="747-2h-VXK" secondAttribute="bottom" constant="5" id="7uq-ou-c3f"/>
+                <constraint firstItem="vdC-DQ-ZMa" firstAttribute="top" secondItem="fjo-ri-gHt" secondAttribute="bottom" constant="5" id="ARN-K5-C3Z"/>
+                <constraint firstAttribute="trailing" secondItem="fjo-ri-gHt" secondAttribute="trailing" constant="20" id="Afj-qh-xNv"/>
+                <constraint firstItem="sxh-Yw-JgR" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="46" id="CLE-ds-It6"/>
+                <constraint firstAttribute="trailing" secondItem="kfT-V3-IfV" secondAttribute="trailing" constant="20" id="Cbu-Gi-dt2"/>
+                <constraint firstItem="vdC-DQ-ZMa" firstAttribute="leading" secondItem="CTo-Sz-Q88" secondAttribute="trailing" constant="8" id="EeQ-wq-DML"/>
+                <constraint firstAttribute="trailing" secondItem="QhL-aO-saI" secondAttribute="trailing" constant="20" id="GIq-gD-eIi"/>
+                <constraint firstItem="6Sk-eE-BJu" firstAttribute="top" secondItem="8hk-13-fzP" secondAttribute="bottom" constant="8" id="IOQ-ty-76w"/>
+                <constraint firstItem="CTo-Sz-Q88" firstAttribute="top" secondItem="fjo-ri-gHt" secondAttribute="bottom" constant="5" id="IcR-bF-pfj"/>
+                <constraint firstItem="747-2h-VXK" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="21" id="LIy-Wb-eTi"/>
+                <constraint firstItem="8hk-13-fzP" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="Mc9-jf-OVc"/>
+                <constraint firstItem="CTo-Sz-Q88" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="Ncc-MN-r1i"/>
+                <constraint firstItem="fjo-ri-gHt" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="Ux7-cF-dKU"/>
+                <constraint firstAttribute="trailing" secondItem="747-2h-VXK" secondAttribute="trailing" constant="20" id="V7c-Z2-U8K"/>
+                <constraint firstItem="747-2h-VXK" firstAttribute="leading" secondItem="8hk-13-fzP" secondAttribute="trailing" constant="115" id="brB-aG-mm8"/>
+                <constraint firstItem="kfT-V3-IfV" firstAttribute="leading" secondItem="sxh-Yw-JgR" secondAttribute="trailing" constant="8" id="c2M-hU-u35"/>
+                <constraint firstItem="fjo-ri-gHt" firstAttribute="top" secondItem="kfT-V3-IfV" secondAttribute="bottom" constant="6" id="d3L-di-wkw"/>
+                <constraint firstItem="6Sk-eE-BJu" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="ska-oD-vhH"/>
+            </constraints>
+            <point key="canvasLocation" x="414" y="-177"/>
+        </customView>
+        <userDefaultsController representsSharedInstance="YES" id="gEB-Qp-9pJ"/>
+    </objects>
+    <resources>
+        <image name="play.tiff" width="128" height="128"/>
+        <image name="stop.tiff" width="128" height="128"/>
+    </resources>
+</document>

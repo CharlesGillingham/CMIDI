@@ -10,6 +10,102 @@
 		36670FEF1BAF473E00B61D27 /* CMIDI.h in Headers */ = {isa = PBXBuildFile; fileRef = 36670FEE1BAF473E00B61D27 /* CMIDI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		36670FF51BAF473E00B61D27 /* CMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36670FE91BAF473E00B61D27 /* CMIDI.framework */; };
 		36670FFC1BAF473E00B61D27 /* CMIDITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 36670FFB1BAF473E00B61D27 /* CMIDITests.m */; };
+		3667100B1BAF475300B61D27 /* CDebugMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = 366710081BAF475300B61D27 /* CDebugMessages.m */; };
+		366710211BAF4A0400B61D27 /* CMIDI Time.h in Headers */ = {isa = PBXBuildFile; fileRef = 3667100E1BAF4A0400B61D27 /* CMIDI Time.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		366710221BAF4A0400B61D27 /* CMIDIClock.h in Headers */ = {isa = PBXBuildFile; fileRef = 3667100F1BAF4A0400B61D27 /* CMIDIClock.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		366710231BAF4A0400B61D27 /* CMIDIEndpoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 366710101BAF4A0400B61D27 /* CMIDIEndpoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		366710241BAF4A0400B61D27 /* CMIDIFile+Description.h in Headers */ = {isa = PBXBuildFile; fileRef = 366710111BAF4A0400B61D27 /* CMIDIFile+Description.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		366710251BAF4A0400B61D27 /* CMIDIFile+DescriptionWithTime.h in Headers */ = {isa = PBXBuildFile; fileRef = 366710121BAF4A0400B61D27 /* CMIDIFile+DescriptionWithTime.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		366710261BAF4A0400B61D27 /* CMIDIFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 366710131BAF4A0400B61D27 /* CMIDIFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		366710271BAF4A0400B61D27 /* CMIDIMessage+ChannelMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 366710141BAF4A0400B61D27 /* CMIDIMessage+ChannelMessage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		366710281BAF4A0400B61D27 /* CMIDIMessage+Description.h in Headers */ = {isa = PBXBuildFile; fileRef = 366710151BAF4A0400B61D27 /* CMIDIMessage+Description.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		366710291BAF4A0400B61D27 /* CMIDIMessage+DescriptionWithTime.h in Headers */ = {isa = PBXBuildFile; fileRef = 366710161BAF4A0400B61D27 /* CMIDIMessage+DescriptionWithTime.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3667102A1BAF4A0400B61D27 /* CMIDIMessage+MetaMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 366710171BAF4A0400B61D27 /* CMIDIMessage+MetaMessage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3667102B1BAF4A0400B61D27 /* CMIDIMessage+SystemMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 366710181BAF4A0400B61D27 /* CMIDIMessage+SystemMessage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3667102C1BAF4A0400B61D27 /* CMIDIMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 366710191BAF4A0400B61D27 /* CMIDIMessage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3667102D1BAF4A0400B61D27 /* CMIDIMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 3667101A1BAF4A0400B61D27 /* CMIDIMonitor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3667102E1BAF4A0400B61D27 /* CMIDIReceiver CMIDISender.h in Headers */ = {isa = PBXBuildFile; fileRef = 3667101B1BAF4A0400B61D27 /* CMIDIReceiver CMIDISender.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3667102F1BAF4A0400B61D27 /* CMIDISequence+FileIO.h in Headers */ = {isa = PBXBuildFile; fileRef = 3667101C1BAF4A0400B61D27 /* CMIDISequence+FileIO.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		366710301BAF4A0400B61D27 /* CMIDISequence.h in Headers */ = {isa = PBXBuildFile; fileRef = 3667101D1BAF4A0400B61D27 /* CMIDISequence.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		366710311BAF4A0400B61D27 /* CMIDISplitter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3667101E1BAF4A0400B61D27 /* CMIDISplitter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		366710321BAF4A0400B61D27 /* CMIDITempoMeter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3667101F1BAF4A0400B61D27 /* CMIDITempoMeter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		366710331BAF4A0400B61D27 /* CMIDITransport.h in Headers */ = {isa = PBXBuildFile; fileRef = 366710201BAF4A0400B61D27 /* CMIDITransport.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3667106F1BAF4A0E00B61D27 /* CMIDI CoreMIDI Utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 366710361BAF4A0E00B61D27 /* CMIDI CoreMIDI Utilities.h */; };
+		366710701BAF4A0E00B61D27 /* CMIDI CoreMIDI Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 366710371BAF4A0E00B61D27 /* CMIDI CoreMIDI Utilities.m */; };
+		366710711BAF4A0E00B61D27 /* CMIDI Time.m in Sources */ = {isa = PBXBuildFile; fileRef = 366710391BAF4A0E00B61D27 /* CMIDI Time.m */; };
+		366710721BAF4A0E00B61D27 /* CMIDIClock+KVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3667103B1BAF4A0E00B61D27 /* CMIDIClock+KVC.m */; };
+		366710731BAF4A0E00B61D27 /* CMIDIClock+NSCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 3667103C1BAF4A0E00B61D27 /* CMIDIClock+NSCoding.m */; };
+		366710751BAF4A0E00B61D27 /* CMIDIClock+TimeString.m in Sources */ = {isa = PBXBuildFile; fileRef = 3667103E1BAF4A0E00B61D27 /* CMIDIClock+TimeString.m */; };
+		366710761BAF4A0E00B61D27 /* CMIDIClock.m in Sources */ = {isa = PBXBuildFile; fileRef = 3667103F1BAF4A0E00B61D27 /* CMIDIClock.m */; };
+		366710771BAF4A0E00B61D27 /* CMIDIDataParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 366710411BAF4A0E00B61D27 /* CMIDIDataParser.h */; };
+		366710781BAF4A0E00B61D27 /* CMIDIDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 366710421BAF4A0E00B61D27 /* CMIDIDataParser.m */; };
+		366710791BAF4A0E00B61D27 /* CMIDIDataParser+MIDIPacketList.h in Headers */ = {isa = PBXBuildFile; fileRef = 366710441BAF4A0E00B61D27 /* CMIDIDataParser+MIDIPacketList.h */; };
+		3667107A1BAF4A0E00B61D27 /* CMIDIDataParser+MIDIPacketList.m in Sources */ = {isa = PBXBuildFile; fileRef = 366710451BAF4A0E00B61D27 /* CMIDIDataParser+MIDIPacketList.m */; };
+		3667107B1BAF4A0E00B61D27 /* CMIDIEndpoint+NSCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 366710471BAF4A0E00B61D27 /* CMIDIEndpoint+NSCoding.m */; };
+		3667107C1BAF4A0E00B61D27 /* CMIDIExternalDestination.m in Sources */ = {isa = PBXBuildFile; fileRef = 366710481BAF4A0E00B61D27 /* CMIDIExternalDestination.m */; };
+		3667107D1BAF4A0E00B61D27 /* CMIDIExternalSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 366710491BAF4A0E00B61D27 /* CMIDIExternalSource.m */; };
+		3667107E1BAF4A0E00B61D27 /* CMIDIInternalEndpoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 3667104A1BAF4A0E00B61D27 /* CMIDIInternalEndpoint.m */; };
+		3667107F1BAF4A0E00B61D27 /* CMIDIFile+Description.m in Sources */ = {isa = PBXBuildFile; fileRef = 3667104C1BAF4A0E00B61D27 /* CMIDIFile+Description.m */; };
+		366710801BAF4A0E00B61D27 /* CMIDIFile+DescriptionWithTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 3667104D1BAF4A0E00B61D27 /* CMIDIFile+DescriptionWithTime.m */; };
+		366710811BAF4A0E00B61D27 /* CMIDIFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 3667104E1BAF4A0E00B61D27 /* CMIDIFile.m */; };
+		366710821BAF4A0E00B61D27 /* CMIDIMessage+ChannelMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 366710501BAF4A0E00B61D27 /* CMIDIMessage+ChannelMessage.m */; };
+		366710831BAF4A0E00B61D27 /* CMIDIMessage+Description.m in Sources */ = {isa = PBXBuildFile; fileRef = 366710511BAF4A0E00B61D27 /* CMIDIMessage+Description.m */; };
+		366710841BAF4A0E00B61D27 /* CMIDIMessage+DescriptionWithTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 366710521BAF4A0E00B61D27 /* CMIDIMessage+DescriptionWithTime.m */; };
+		366710851BAF4A0E00B61D27 /* CMIDIMessage+MetaMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 366710531BAF4A0E00B61D27 /* CMIDIMessage+MetaMessage.m */; };
+		366710861BAF4A0E00B61D27 /* CMIDIMessage+NSCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 366710541BAF4A0E00B61D27 /* CMIDIMessage+NSCoding.m */; };
+		366710871BAF4A0E00B61D27 /* CMIDIMessage+SystemMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 366710551BAF4A0E00B61D27 /* CMIDIMessage+SystemMessage.m */; };
+		366710881BAF4A0E00B61D27 /* CMIDIMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 366710561BAF4A0E00B61D27 /* CMIDIMessage.m */; };
+		366710891BAF4A0E00B61D27 /* CMIDIMessageByteCount.h in Headers */ = {isa = PBXBuildFile; fileRef = 366710581BAF4A0E00B61D27 /* CMIDIMessageByteCount.h */; };
+		3667108A1BAF4A0E00B61D27 /* CMIDIMessageByteCount.m in Sources */ = {isa = PBXBuildFile; fileRef = 366710591BAF4A0E00B61D27 /* CMIDIMessageByteCount.m */; };
+		3667108B1BAF4A0E00B61D27 /* CMIDIMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 3667105B1BAF4A0E00B61D27 /* CMIDIMonitor.m */; };
+		3667108C1BAF4A0E00B61D27 /* CMIDIMonitor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3667105C1BAF4A0E00B61D27 /* CMIDIMonitor.xib */; };
+		3667108D1BAF4A0E00B61D27 /* CMIDISequence+FileIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 3667105E1BAF4A0E00B61D27 /* CMIDISequence+FileIO.m */; };
+		3667108E1BAF4A0E00B61D27 /* CMIDISequence.m in Sources */ = {isa = PBXBuildFile; fileRef = 3667105F1BAF4A0E00B61D27 /* CMIDISequence.m */; };
+		3667108F1BAF4A0E00B61D27 /* CMIDISplitter.m in Sources */ = {isa = PBXBuildFile; fileRef = 366710611BAF4A0E00B61D27 /* CMIDISplitter.m */; };
+		366710901BAF4A0E00B61D27 /* CMIDITempoMeter.m in Sources */ = {isa = PBXBuildFile; fileRef = 366710631BAF4A0E00B61D27 /* CMIDITempoMeter.m */; };
+		366710911BAF4A0E00B61D27 /* CMIDITimer.h in Headers */ = {isa = PBXBuildFile; fileRef = 366710651BAF4A0E00B61D27 /* CMIDITimer.h */; };
+		366710921BAF4A0E00B61D27 /* CMIDITimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 366710661BAF4A0E00B61D27 /* CMIDITimer.m */; };
+		366710931BAF4A0E00B61D27 /* CMIDITransport.m in Sources */ = {isa = PBXBuildFile; fileRef = 366710681BAF4A0E00B61D27 /* CMIDITransport.m */; };
+		366710941BAF4A0E00B61D27 /* CMIDITransport.xib in Resources */ = {isa = PBXBuildFile; fileRef = 366710691BAF4A0E00B61D27 /* CMIDITransport.xib */; };
+		366710951BAF4A0E00B61D27 /* play.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 3667106A1BAF4A0E00B61D27 /* play.tiff */; };
+		366710961BAF4A0E00B61D27 /* stop.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 3667106B1BAF4A0E00B61D27 /* stop.tiff */; };
+		366710971BAF4A0E00B61D27 /* CMIDIVSNumber.h in Headers */ = {isa = PBXBuildFile; fileRef = 3667106D1BAF4A0E00B61D27 /* CMIDIVSNumber.h */; };
+		366710981BAF4A0E00B61D27 /* CMIDIVSNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 3667106E1BAF4A0E00B61D27 /* CMIDIVSNumber.m */; };
+		366710A91BAF4A2500B61D27 /* CMNote.h in Headers */ = {isa = PBXBuildFile; fileRef = 3667109B1BAF4A2500B61D27 /* CMNote.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		366710AB1BAF4A2500B61D27 /* CTime.h in Headers */ = {isa = PBXBuildFile; fileRef = 3667109D1BAF4A2500B61D27 /* CTime.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		366710AC1BAF4A2500B61D27 /* CTimeHierarchy.h in Headers */ = {isa = PBXBuildFile; fileRef = 3667109E1BAF4A2500B61D27 /* CTimeHierarchy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		366710AD1BAF4A2500B61D27 /* CTimeMap+TimeString.h in Headers */ = {isa = PBXBuildFile; fileRef = 3667109F1BAF4A2500B61D27 /* CTimeMap+TimeString.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		366710AE1BAF4A2500B61D27 /* CTimeMap.h in Headers */ = {isa = PBXBuildFile; fileRef = 366710A01BAF4A2500B61D27 /* CTimeMap.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		366710AF1BAF4A2500B61D27 /* CMNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 366710A31BAF4A2500B61D27 /* CMNote.m */; };
+		366710B01BAF4A2500B61D27 /* CTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 366710A51BAF4A2500B61D27 /* CTime.m */; };
+		366710B11BAF4A2500B61D27 /* CTimeHierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 366710A61BAF4A2500B61D27 /* CTimeHierarchy.m */; };
+		366710B21BAF4A2500B61D27 /* CTimeMap+TimeString.m in Sources */ = {isa = PBXBuildFile; fileRef = 366710A71BAF4A2500B61D27 /* CTimeMap+TimeString.m */; };
+		366710B31BAF4A2500B61D27 /* CTimeMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 366710A81BAF4A2500B61D27 /* CTimeMap.m */; };
+		366710DE1BAF4B5B00B61D27 /* CMIDIClock+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 366710B61BAF4B5B00B61D27 /* CMIDIClock+Debug.m */; };
+		366710DF1BAF4B5B00B61D27 /* CMIDIClockTickTester.m in Sources */ = {isa = PBXBuildFile; fileRef = 366710B81BAF4B5B00B61D27 /* CMIDIClockTickTester.m */; };
+		366710E01BAF4B5B00B61D27 /* CMIDIDataParser+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 366710BB1BAF4B5B00B61D27 /* CMIDIDataParser+Debug.m */; };
+		366710E11BAF4B5B00B61D27 /* CMIDIEndpoint+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 366710BE1BAF4B5B00B61D27 /* CMIDIEndpoint+Debug.m */; };
+		366710E21BAF4B5B00B61D27 /* CMIDIFakeClock.m in Sources */ = {isa = PBXBuildFile; fileRef = 366710C11BAF4B5B00B61D27 /* CMIDIFakeClock.m */; };
+		366710E31BAF4B5B00B61D27 /* CMIDIFile+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 366710C41BAF4B5B00B61D27 /* CMIDIFile+Debug.m */; };
+		366710E41BAF4B5B00B61D27 /* CMIDIFileByApple.m in Sources */ = {isa = PBXBuildFile; fileRef = 366710C61BAF4B5B00B61D27 /* CMIDIFileByApple.m */; };
+		366710E51BAF4B5B00B61D27 /* bach_846.mid in Resources */ = {isa = PBXBuildFile; fileRef = 366710C81BAF4B5B00B61D27 /* bach_846.mid */; };
+		366710E61BAF4B5B00B61D27 /* Beatles -- Let it Be.mid in Resources */ = {isa = PBXBuildFile; fileRef = 366710C91BAF4B5B00B61D27 /* Beatles -- Let it Be.mid */; };
+		366710E71BAF4B5B00B61D27 /* Beatles -- Yesterday.mid in Resources */ = {isa = PBXBuildFile; fileRef = 366710CA1BAF4B5B00B61D27 /* Beatles -- Yesterday.mid */; };
+		366710E81BAF4B5B00B61D27 /* chp_op18.mid in Resources */ = {isa = PBXBuildFile; fileRef = 366710CB1BAF4B5B00B61D27 /* chp_op18.mid */; };
+		366710E91BAF4B5B00B61D27 /* TestMIDIFile0.mid in Resources */ = {isa = PBXBuildFile; fileRef = 366710CD1BAF4B5B00B61D27 /* TestMIDIFile0.mid */; };
+		366710EA1BAF4B5B00B61D27 /* TestMIDIFile1.mid in Resources */ = {isa = PBXBuildFile; fileRef = 366710CE1BAF4B5B00B61D27 /* TestMIDIFile1.mid */; };
+		366710EB1BAF4B5B00B61D27 /* TestMIDIFile2.mid in Resources */ = {isa = PBXBuildFile; fileRef = 366710CF1BAF4B5B00B61D27 /* TestMIDIFile2.mid */; };
+		366710EC1BAF4B5B00B61D27 /* TestMIDIFile21.mid in Resources */ = {isa = PBXBuildFile; fileRef = 366710D01BAF4B5B00B61D27 /* TestMIDIFile21.mid */; };
+		366710ED1BAF4B5B00B61D27 /* TestMIDIFile3.mid in Resources */ = {isa = PBXBuildFile; fileRef = 366710D11BAF4B5B00B61D27 /* TestMIDIFile3.mid */; };
+		366710EE1BAF4B5B00B61D27 /* CMIDIMessage+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 366710D41BAF4B5B00B61D27 /* CMIDIMessage+Debug.m */; };
+		366710EF1BAF4B5B00B61D27 /* CMIDIMessageCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 366710D71BAF4B5B00B61D27 /* CMIDIMessageCollector.m */; };
+		366710F01BAF4B5B00B61D27 /* CMIDISequence+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 366710DA1BAF4B5B00B61D27 /* CMIDISequence+Debug.m */; };
+		366710F11BAF4B5B00B61D27 /* CMIDITempoMeter+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 366710DD1BAF4B5B00B61D27 /* CMIDITempoMeter+Debug.m */; };
+		366710F81BAF4C1500B61D27 /* CMIDITimer+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 366710F41BAF4C1500B61D27 /* CMIDITimer+Debug.m */; };
+		366710F91BAF4C1500B61D27 /* CMIDIVSNumber+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 366710F71BAF4C1500B61D27 /* CMIDIVSNumber+Debug.m */; };
+		366710FB1BAF4C4A00B61D27 /* CMIDIClock+TimeString.h in Headers */ = {isa = PBXBuildFile; fileRef = 366710FA1BAF4C4A00B61D27 /* CMIDIClock+TimeString.h */; };
+		366710FD1BAF5A2E00B61D27 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366710FC1BAF5A2E00B61D27 /* AudioToolbox.framework */; };
+		366711511BAF7A6000B61D27 /* CMusic.h in Headers */ = {isa = PBXBuildFile; fileRef = 366711501BAF7A6000B61D27 /* CMusic.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +125,118 @@
 		36670FF41BAF473E00B61D27 /* CMIDITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CMIDITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		36670FFA1BAF473E00B61D27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36670FFB1BAF473E00B61D27 /* CMIDITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMIDITests.m; sourceTree = "<group>"; };
+		366710061BAF475300B61D27 /* CDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDebug.h; sourceTree = "<group>"; };
+		366710071BAF475300B61D27 /* CDebugMessages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDebugMessages.h; sourceTree = "<group>"; };
+		366710081BAF475300B61D27 /* CDebugMessages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDebugMessages.m; sourceTree = "<group>"; };
+		366710091BAF475300B61D27 /* CDebugSelfCheckingObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDebugSelfCheckingObject.h; sourceTree = "<group>"; };
+		3667100E1BAF4A0400B61D27 /* CMIDI Time.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMIDI Time.h"; sourceTree = "<group>"; };
+		3667100F1BAF4A0400B61D27 /* CMIDIClock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMIDIClock.h; sourceTree = "<group>"; };
+		366710101BAF4A0400B61D27 /* CMIDIEndpoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMIDIEndpoint.h; sourceTree = "<group>"; };
+		366710111BAF4A0400B61D27 /* CMIDIFile+Description.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMIDIFile+Description.h"; sourceTree = "<group>"; };
+		366710121BAF4A0400B61D27 /* CMIDIFile+DescriptionWithTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMIDIFile+DescriptionWithTime.h"; sourceTree = "<group>"; };
+		366710131BAF4A0400B61D27 /* CMIDIFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMIDIFile.h; sourceTree = "<group>"; };
+		366710141BAF4A0400B61D27 /* CMIDIMessage+ChannelMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMIDIMessage+ChannelMessage.h"; sourceTree = "<group>"; };
+		366710151BAF4A0400B61D27 /* CMIDIMessage+Description.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMIDIMessage+Description.h"; sourceTree = "<group>"; };
+		366710161BAF4A0400B61D27 /* CMIDIMessage+DescriptionWithTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMIDIMessage+DescriptionWithTime.h"; sourceTree = "<group>"; };
+		366710171BAF4A0400B61D27 /* CMIDIMessage+MetaMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMIDIMessage+MetaMessage.h"; sourceTree = "<group>"; };
+		366710181BAF4A0400B61D27 /* CMIDIMessage+SystemMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMIDIMessage+SystemMessage.h"; sourceTree = "<group>"; };
+		366710191BAF4A0400B61D27 /* CMIDIMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMIDIMessage.h; sourceTree = "<group>"; };
+		3667101A1BAF4A0400B61D27 /* CMIDIMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMIDIMonitor.h; sourceTree = "<group>"; };
+		3667101B1BAF4A0400B61D27 /* CMIDIReceiver CMIDISender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMIDIReceiver CMIDISender.h"; sourceTree = "<group>"; };
+		3667101C1BAF4A0400B61D27 /* CMIDISequence+FileIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMIDISequence+FileIO.h"; sourceTree = "<group>"; };
+		3667101D1BAF4A0400B61D27 /* CMIDISequence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMIDISequence.h; sourceTree = "<group>"; };
+		3667101E1BAF4A0400B61D27 /* CMIDISplitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMIDISplitter.h; sourceTree = "<group>"; };
+		3667101F1BAF4A0400B61D27 /* CMIDITempoMeter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMIDITempoMeter.h; sourceTree = "<group>"; };
+		366710201BAF4A0400B61D27 /* CMIDITransport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMIDITransport.h; sourceTree = "<group>"; };
+		366710361BAF4A0E00B61D27 /* CMIDI CoreMIDI Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMIDI CoreMIDI Utilities.h"; sourceTree = "<group>"; };
+		366710371BAF4A0E00B61D27 /* CMIDI CoreMIDI Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CMIDI CoreMIDI Utilities.m"; sourceTree = "<group>"; };
+		366710391BAF4A0E00B61D27 /* CMIDI Time.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CMIDI Time.m"; sourceTree = "<group>"; };
+		3667103B1BAF4A0E00B61D27 /* CMIDIClock+KVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CMIDIClock+KVC.m"; sourceTree = "<group>"; };
+		3667103C1BAF4A0E00B61D27 /* CMIDIClock+NSCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CMIDIClock+NSCoding.m"; sourceTree = "<group>"; };
+		3667103E1BAF4A0E00B61D27 /* CMIDIClock+TimeString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CMIDIClock+TimeString.m"; sourceTree = "<group>"; };
+		3667103F1BAF4A0E00B61D27 /* CMIDIClock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMIDIClock.m; sourceTree = "<group>"; };
+		366710411BAF4A0E00B61D27 /* CMIDIDataParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMIDIDataParser.h; sourceTree = "<group>"; };
+		366710421BAF4A0E00B61D27 /* CMIDIDataParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMIDIDataParser.m; sourceTree = "<group>"; };
+		366710441BAF4A0E00B61D27 /* CMIDIDataParser+MIDIPacketList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMIDIDataParser+MIDIPacketList.h"; sourceTree = "<group>"; };
+		366710451BAF4A0E00B61D27 /* CMIDIDataParser+MIDIPacketList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CMIDIDataParser+MIDIPacketList.m"; sourceTree = "<group>"; };
+		366710471BAF4A0E00B61D27 /* CMIDIEndpoint+NSCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CMIDIEndpoint+NSCoding.m"; sourceTree = "<group>"; };
+		366710481BAF4A0E00B61D27 /* CMIDIExternalDestination.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMIDIExternalDestination.m; sourceTree = "<group>"; };
+		366710491BAF4A0E00B61D27 /* CMIDIExternalSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMIDIExternalSource.m; sourceTree = "<group>"; };
+		3667104A1BAF4A0E00B61D27 /* CMIDIInternalEndpoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMIDIInternalEndpoint.m; sourceTree = "<group>"; };
+		3667104C1BAF4A0E00B61D27 /* CMIDIFile+Description.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CMIDIFile+Description.m"; sourceTree = "<group>"; };
+		3667104D1BAF4A0E00B61D27 /* CMIDIFile+DescriptionWithTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CMIDIFile+DescriptionWithTime.m"; sourceTree = "<group>"; };
+		3667104E1BAF4A0E00B61D27 /* CMIDIFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMIDIFile.m; sourceTree = "<group>"; };
+		366710501BAF4A0E00B61D27 /* CMIDIMessage+ChannelMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CMIDIMessage+ChannelMessage.m"; sourceTree = "<group>"; };
+		366710511BAF4A0E00B61D27 /* CMIDIMessage+Description.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CMIDIMessage+Description.m"; sourceTree = "<group>"; };
+		366710521BAF4A0E00B61D27 /* CMIDIMessage+DescriptionWithTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CMIDIMessage+DescriptionWithTime.m"; sourceTree = "<group>"; };
+		366710531BAF4A0E00B61D27 /* CMIDIMessage+MetaMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CMIDIMessage+MetaMessage.m"; sourceTree = "<group>"; };
+		366710541BAF4A0E00B61D27 /* CMIDIMessage+NSCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CMIDIMessage+NSCoding.m"; sourceTree = "<group>"; };
+		366710551BAF4A0E00B61D27 /* CMIDIMessage+SystemMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CMIDIMessage+SystemMessage.m"; sourceTree = "<group>"; };
+		366710561BAF4A0E00B61D27 /* CMIDIMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMIDIMessage.m; sourceTree = "<group>"; };
+		366710581BAF4A0E00B61D27 /* CMIDIMessageByteCount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMIDIMessageByteCount.h; sourceTree = "<group>"; };
+		366710591BAF4A0E00B61D27 /* CMIDIMessageByteCount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMIDIMessageByteCount.m; sourceTree = "<group>"; };
+		3667105B1BAF4A0E00B61D27 /* CMIDIMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMIDIMonitor.m; sourceTree = "<group>"; };
+		3667105C1BAF4A0E00B61D27 /* CMIDIMonitor.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMIDIMonitor.xib; sourceTree = "<group>"; };
+		3667105E1BAF4A0E00B61D27 /* CMIDISequence+FileIO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CMIDISequence+FileIO.m"; sourceTree = "<group>"; };
+		3667105F1BAF4A0E00B61D27 /* CMIDISequence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMIDISequence.m; sourceTree = "<group>"; };
+		366710611BAF4A0E00B61D27 /* CMIDISplitter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMIDISplitter.m; sourceTree = "<group>"; };
+		366710631BAF4A0E00B61D27 /* CMIDITempoMeter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMIDITempoMeter.m; sourceTree = "<group>"; };
+		366710651BAF4A0E00B61D27 /* CMIDITimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMIDITimer.h; sourceTree = "<group>"; };
+		366710661BAF4A0E00B61D27 /* CMIDITimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMIDITimer.m; sourceTree = "<group>"; };
+		366710681BAF4A0E00B61D27 /* CMIDITransport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMIDITransport.m; sourceTree = "<group>"; };
+		366710691BAF4A0E00B61D27 /* CMIDITransport.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMIDITransport.xib; sourceTree = "<group>"; };
+		3667106A1BAF4A0E00B61D27 /* play.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = play.tiff; sourceTree = "<group>"; };
+		3667106B1BAF4A0E00B61D27 /* stop.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = stop.tiff; sourceTree = "<group>"; };
+		3667106D1BAF4A0E00B61D27 /* CMIDIVSNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMIDIVSNumber.h; sourceTree = "<group>"; };
+		3667106E1BAF4A0E00B61D27 /* CMIDIVSNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMIDIVSNumber.m; sourceTree = "<group>"; };
+		3667109B1BAF4A2500B61D27 /* CMNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMNote.h; sourceTree = "<group>"; };
+		3667109D1BAF4A2500B61D27 /* CTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTime.h; sourceTree = "<group>"; };
+		3667109E1BAF4A2500B61D27 /* CTimeHierarchy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTimeHierarchy.h; sourceTree = "<group>"; };
+		3667109F1BAF4A2500B61D27 /* CTimeMap+TimeString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CTimeMap+TimeString.h"; sourceTree = "<group>"; };
+		366710A01BAF4A2500B61D27 /* CTimeMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTimeMap.h; sourceTree = "<group>"; };
+		366710A31BAF4A2500B61D27 /* CMNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMNote.m; sourceTree = "<group>"; };
+		366710A51BAF4A2500B61D27 /* CTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTime.m; sourceTree = "<group>"; };
+		366710A61BAF4A2500B61D27 /* CTimeHierarchy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTimeHierarchy.m; sourceTree = "<group>"; };
+		366710A71BAF4A2500B61D27 /* CTimeMap+TimeString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CTimeMap+TimeString.m"; sourceTree = "<group>"; };
+		366710A81BAF4A2500B61D27 /* CTimeMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTimeMap.m; sourceTree = "<group>"; };
+		366710B51BAF4B5B00B61D27 /* CMIDIClock+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMIDIClock+Debug.h"; sourceTree = "<group>"; };
+		366710B61BAF4B5B00B61D27 /* CMIDIClock+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CMIDIClock+Debug.m"; sourceTree = "<group>"; };
+		366710B71BAF4B5B00B61D27 /* CMIDIClockTickTester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMIDIClockTickTester.h; sourceTree = "<group>"; };
+		366710B81BAF4B5B00B61D27 /* CMIDIClockTickTester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMIDIClockTickTester.m; sourceTree = "<group>"; };
+		366710BA1BAF4B5B00B61D27 /* CMIDIDataParser+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMIDIDataParser+Debug.h"; sourceTree = "<group>"; };
+		366710BB1BAF4B5B00B61D27 /* CMIDIDataParser+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CMIDIDataParser+Debug.m"; sourceTree = "<group>"; };
+		366710BD1BAF4B5B00B61D27 /* CMIDIEndpoint+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMIDIEndpoint+Debug.h"; sourceTree = "<group>"; };
+		366710BE1BAF4B5B00B61D27 /* CMIDIEndpoint+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CMIDIEndpoint+Debug.m"; sourceTree = "<group>"; };
+		366710C01BAF4B5B00B61D27 /* CMIDIFakeClock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMIDIFakeClock.h; sourceTree = "<group>"; };
+		366710C11BAF4B5B00B61D27 /* CMIDIFakeClock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMIDIFakeClock.m; sourceTree = "<group>"; };
+		366710C31BAF4B5B00B61D27 /* CMIDIFile+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMIDIFile+Debug.h"; sourceTree = "<group>"; };
+		366710C41BAF4B5B00B61D27 /* CMIDIFile+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CMIDIFile+Debug.m"; sourceTree = "<group>"; };
+		366710C51BAF4B5B00B61D27 /* CMIDIFileByApple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMIDIFileByApple.h; sourceTree = "<group>"; };
+		366710C61BAF4B5B00B61D27 /* CMIDIFileByApple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMIDIFileByApple.m; sourceTree = "<group>"; };
+		366710C81BAF4B5B00B61D27 /* bach_846.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = bach_846.mid; sourceTree = "<group>"; };
+		366710C91BAF4B5B00B61D27 /* Beatles -- Let it Be.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = "Beatles -- Let it Be.mid"; sourceTree = "<group>"; };
+		366710CA1BAF4B5B00B61D27 /* Beatles -- Yesterday.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = "Beatles -- Yesterday.mid"; sourceTree = "<group>"; };
+		366710CB1BAF4B5B00B61D27 /* chp_op18.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = chp_op18.mid; sourceTree = "<group>"; };
+		366710CD1BAF4B5B00B61D27 /* TestMIDIFile0.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = TestMIDIFile0.mid; sourceTree = "<group>"; };
+		366710CE1BAF4B5B00B61D27 /* TestMIDIFile1.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = TestMIDIFile1.mid; sourceTree = "<group>"; };
+		366710CF1BAF4B5B00B61D27 /* TestMIDIFile2.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = TestMIDIFile2.mid; sourceTree = "<group>"; };
+		366710D01BAF4B5B00B61D27 /* TestMIDIFile21.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = TestMIDIFile21.mid; sourceTree = "<group>"; };
+		366710D11BAF4B5B00B61D27 /* TestMIDIFile3.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = TestMIDIFile3.mid; sourceTree = "<group>"; };
+		366710D31BAF4B5B00B61D27 /* CMIDIMessage+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMIDIMessage+Debug.h"; sourceTree = "<group>"; };
+		366710D41BAF4B5B00B61D27 /* CMIDIMessage+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CMIDIMessage+Debug.m"; sourceTree = "<group>"; };
+		366710D61BAF4B5B00B61D27 /* CMIDIMessageCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMIDIMessageCollector.h; sourceTree = "<group>"; };
+		366710D71BAF4B5B00B61D27 /* CMIDIMessageCollector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMIDIMessageCollector.m; sourceTree = "<group>"; };
+		366710D91BAF4B5B00B61D27 /* CMIDISequence+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMIDISequence+Debug.h"; sourceTree = "<group>"; };
+		366710DA1BAF4B5B00B61D27 /* CMIDISequence+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CMIDISequence+Debug.m"; sourceTree = "<group>"; };
+		366710DC1BAF4B5B00B61D27 /* CMIDITempoMeter+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMIDITempoMeter+Debug.h"; sourceTree = "<group>"; };
+		366710DD1BAF4B5B00B61D27 /* CMIDITempoMeter+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CMIDITempoMeter+Debug.m"; sourceTree = "<group>"; };
+		366710F31BAF4C1500B61D27 /* CMIDITimer+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMIDITimer+Debug.h"; sourceTree = "<group>"; };
+		366710F41BAF4C1500B61D27 /* CMIDITimer+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CMIDITimer+Debug.m"; sourceTree = "<group>"; };
+		366710F61BAF4C1500B61D27 /* CMIDIVSNumber+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMIDIVSNumber+Debug.h"; sourceTree = "<group>"; };
+		366710F71BAF4C1500B61D27 /* CMIDIVSNumber+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CMIDIVSNumber+Debug.m"; sourceTree = "<group>"; };
+		366710FA1BAF4C4A00B61D27 /* CMIDIClock+TimeString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMIDIClock+TimeString.h"; sourceTree = "<group>"; };
+		366710FC1BAF5A2E00B61D27 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		366711501BAF7A6000B61D27 /* CMusic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMusic.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +251,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				366710FD1BAF5A2E00B61D27 /* AudioToolbox.framework in Frameworks */,
 				36670FF51BAF473E00B61D27 /* CMIDI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -56,6 +265,7 @@
 				36670FEB1BAF473E00B61D27 /* CMIDI */,
 				36670FF81BAF473E00B61D27 /* CMIDITests */,
 				36670FEA1BAF473E00B61D27 /* Products */,
+				366710991BAF4A2500B61D27 /* CMusic */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +281,8 @@
 		36670FEB1BAF473E00B61D27 /* CMIDI */ = {
 			isa = PBXGroup;
 			children = (
+				366710341BAF4A0E00B61D27 /* Source */,
+				3667100D1BAF4A0400B61D27 /* Headers */,
 				36670FEE1BAF473E00B61D27 /* CMIDI.h */,
 				36670FEC1BAF473E00B61D27 /* Supporting Files */,
 			);
@@ -88,6 +300,19 @@
 		36670FF81BAF473E00B61D27 /* CMIDITests */ = {
 			isa = PBXGroup;
 			children = (
+				366710FC1BAF5A2E00B61D27 /* AudioToolbox.framework */,
+				366710F21BAF4C1500B61D27 /* CMIDITimer+Debug */,
+				366710F51BAF4C1500B61D27 /* CMIDIVSNumber+Debug */,
+				366710B41BAF4B5B00B61D27 /* CMIDIClock+Debug */,
+				366710B91BAF4B5B00B61D27 /* CMIDIDataParser+Debug */,
+				366710BC1BAF4B5B00B61D27 /* CMIDIEndpoint+Debug */,
+				366710BF1BAF4B5B00B61D27 /* CMIDIFakeClock */,
+				366710C21BAF4B5B00B61D27 /* CMIDIFile+Debug */,
+				366710D21BAF4B5B00B61D27 /* CMIDIMessage+Debug */,
+				366710D51BAF4B5B00B61D27 /* CMIDIMessageCollector */,
+				366710D81BAF4B5B00B61D27 /* CMIDISequence+Debug */,
+				366710DB1BAF4B5B00B61D27 /* CMIDITempoMeter+Debug */,
+				366710051BAF475300B61D27 /* CDebug */,
 				36670FFB1BAF473E00B61D27 /* CMIDITests.m */,
 				36670FF91BAF473E00B61D27 /* Supporting Files */,
 			);
@@ -102,6 +327,398 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		366710051BAF475300B61D27 /* CDebug */ = {
+			isa = PBXGroup;
+			children = (
+				366710061BAF475300B61D27 /* CDebug.h */,
+				366710071BAF475300B61D27 /* CDebugMessages.h */,
+				366710081BAF475300B61D27 /* CDebugMessages.m */,
+				366710091BAF475300B61D27 /* CDebugSelfCheckingObject.h */,
+			);
+			path = CDebug;
+			sourceTree = "<group>";
+		};
+		3667100D1BAF4A0400B61D27 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				3667100E1BAF4A0400B61D27 /* CMIDI Time.h */,
+				3667100F1BAF4A0400B61D27 /* CMIDIClock.h */,
+				366710FA1BAF4C4A00B61D27 /* CMIDIClock+TimeString.h */,
+				366710101BAF4A0400B61D27 /* CMIDIEndpoint.h */,
+				366710111BAF4A0400B61D27 /* CMIDIFile+Description.h */,
+				366710121BAF4A0400B61D27 /* CMIDIFile+DescriptionWithTime.h */,
+				366710131BAF4A0400B61D27 /* CMIDIFile.h */,
+				366710141BAF4A0400B61D27 /* CMIDIMessage+ChannelMessage.h */,
+				366710151BAF4A0400B61D27 /* CMIDIMessage+Description.h */,
+				366710161BAF4A0400B61D27 /* CMIDIMessage+DescriptionWithTime.h */,
+				366710171BAF4A0400B61D27 /* CMIDIMessage+MetaMessage.h */,
+				366710181BAF4A0400B61D27 /* CMIDIMessage+SystemMessage.h */,
+				366710191BAF4A0400B61D27 /* CMIDIMessage.h */,
+				3667101A1BAF4A0400B61D27 /* CMIDIMonitor.h */,
+				3667101B1BAF4A0400B61D27 /* CMIDIReceiver CMIDISender.h */,
+				3667101C1BAF4A0400B61D27 /* CMIDISequence+FileIO.h */,
+				3667101D1BAF4A0400B61D27 /* CMIDISequence.h */,
+				3667101E1BAF4A0400B61D27 /* CMIDISplitter.h */,
+				3667101F1BAF4A0400B61D27 /* CMIDITempoMeter.h */,
+				366710201BAF4A0400B61D27 /* CMIDITransport.h */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		366710341BAF4A0E00B61D27 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				366710351BAF4A0E00B61D27 /* CMIDI CoreMIDI Utilities */,
+				366710381BAF4A0E00B61D27 /* CMIDI Time */,
+				3667103A1BAF4A0E00B61D27 /* CMIDIClock */,
+				366710401BAF4A0E00B61D27 /* CMIDIDataParser */,
+				366710431BAF4A0E00B61D27 /* CMIDIDataParser+MIDIPacketList */,
+				366710461BAF4A0E00B61D27 /* CMIDIEndpoint */,
+				3667104B1BAF4A0E00B61D27 /* CMIDIFile */,
+				3667104F1BAF4A0E00B61D27 /* CMIDIMessage */,
+				366710571BAF4A0E00B61D27 /* CMIDIMessageByteCount */,
+				3667105A1BAF4A0E00B61D27 /* CMIDIMonitor */,
+				3667105D1BAF4A0E00B61D27 /* CMIDISequence */,
+				366710601BAF4A0E00B61D27 /* CMIDISplitters */,
+				366710621BAF4A0E00B61D27 /* CMIDITempoMeter */,
+				366710641BAF4A0E00B61D27 /* CMIDITimer */,
+				366710671BAF4A0E00B61D27 /* CMIDITransport */,
+				3667106C1BAF4A0E00B61D27 /* CMIDIVSNumber */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		366710351BAF4A0E00B61D27 /* CMIDI CoreMIDI Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				366710361BAF4A0E00B61D27 /* CMIDI CoreMIDI Utilities.h */,
+				366710371BAF4A0E00B61D27 /* CMIDI CoreMIDI Utilities.m */,
+			);
+			path = "CMIDI CoreMIDI Utilities";
+			sourceTree = "<group>";
+		};
+		366710381BAF4A0E00B61D27 /* CMIDI Time */ = {
+			isa = PBXGroup;
+			children = (
+				366710391BAF4A0E00B61D27 /* CMIDI Time.m */,
+			);
+			path = "CMIDI Time";
+			sourceTree = "<group>";
+		};
+		3667103A1BAF4A0E00B61D27 /* CMIDIClock */ = {
+			isa = PBXGroup;
+			children = (
+				3667103B1BAF4A0E00B61D27 /* CMIDIClock+KVC.m */,
+				3667103C1BAF4A0E00B61D27 /* CMIDIClock+NSCoding.m */,
+				3667103E1BAF4A0E00B61D27 /* CMIDIClock+TimeString.m */,
+				3667103F1BAF4A0E00B61D27 /* CMIDIClock.m */,
+			);
+			path = CMIDIClock;
+			sourceTree = "<group>";
+		};
+		366710401BAF4A0E00B61D27 /* CMIDIDataParser */ = {
+			isa = PBXGroup;
+			children = (
+				366710411BAF4A0E00B61D27 /* CMIDIDataParser.h */,
+				366710421BAF4A0E00B61D27 /* CMIDIDataParser.m */,
+			);
+			path = CMIDIDataParser;
+			sourceTree = "<group>";
+		};
+		366710431BAF4A0E00B61D27 /* CMIDIDataParser+MIDIPacketList */ = {
+			isa = PBXGroup;
+			children = (
+				366710441BAF4A0E00B61D27 /* CMIDIDataParser+MIDIPacketList.h */,
+				366710451BAF4A0E00B61D27 /* CMIDIDataParser+MIDIPacketList.m */,
+			);
+			path = "CMIDIDataParser+MIDIPacketList";
+			sourceTree = "<group>";
+		};
+		366710461BAF4A0E00B61D27 /* CMIDIEndpoint */ = {
+			isa = PBXGroup;
+			children = (
+				366710471BAF4A0E00B61D27 /* CMIDIEndpoint+NSCoding.m */,
+				366710481BAF4A0E00B61D27 /* CMIDIExternalDestination.m */,
+				366710491BAF4A0E00B61D27 /* CMIDIExternalSource.m */,
+				3667104A1BAF4A0E00B61D27 /* CMIDIInternalEndpoint.m */,
+			);
+			path = CMIDIEndpoint;
+			sourceTree = "<group>";
+		};
+		3667104B1BAF4A0E00B61D27 /* CMIDIFile */ = {
+			isa = PBXGroup;
+			children = (
+				3667104C1BAF4A0E00B61D27 /* CMIDIFile+Description.m */,
+				3667104D1BAF4A0E00B61D27 /* CMIDIFile+DescriptionWithTime.m */,
+				3667104E1BAF4A0E00B61D27 /* CMIDIFile.m */,
+			);
+			path = CMIDIFile;
+			sourceTree = "<group>";
+		};
+		3667104F1BAF4A0E00B61D27 /* CMIDIMessage */ = {
+			isa = PBXGroup;
+			children = (
+				366710501BAF4A0E00B61D27 /* CMIDIMessage+ChannelMessage.m */,
+				366710511BAF4A0E00B61D27 /* CMIDIMessage+Description.m */,
+				366710521BAF4A0E00B61D27 /* CMIDIMessage+DescriptionWithTime.m */,
+				366710531BAF4A0E00B61D27 /* CMIDIMessage+MetaMessage.m */,
+				366710541BAF4A0E00B61D27 /* CMIDIMessage+NSCoding.m */,
+				366710551BAF4A0E00B61D27 /* CMIDIMessage+SystemMessage.m */,
+				366710561BAF4A0E00B61D27 /* CMIDIMessage.m */,
+			);
+			path = CMIDIMessage;
+			sourceTree = "<group>";
+		};
+		366710571BAF4A0E00B61D27 /* CMIDIMessageByteCount */ = {
+			isa = PBXGroup;
+			children = (
+				366710581BAF4A0E00B61D27 /* CMIDIMessageByteCount.h */,
+				366710591BAF4A0E00B61D27 /* CMIDIMessageByteCount.m */,
+			);
+			path = CMIDIMessageByteCount;
+			sourceTree = "<group>";
+		};
+		3667105A1BAF4A0E00B61D27 /* CMIDIMonitor */ = {
+			isa = PBXGroup;
+			children = (
+				3667105B1BAF4A0E00B61D27 /* CMIDIMonitor.m */,
+				3667105C1BAF4A0E00B61D27 /* CMIDIMonitor.xib */,
+			);
+			path = CMIDIMonitor;
+			sourceTree = "<group>";
+		};
+		3667105D1BAF4A0E00B61D27 /* CMIDISequence */ = {
+			isa = PBXGroup;
+			children = (
+				3667105E1BAF4A0E00B61D27 /* CMIDISequence+FileIO.m */,
+				3667105F1BAF4A0E00B61D27 /* CMIDISequence.m */,
+			);
+			path = CMIDISequence;
+			sourceTree = "<group>";
+		};
+		366710601BAF4A0E00B61D27 /* CMIDISplitters */ = {
+			isa = PBXGroup;
+			children = (
+				366710611BAF4A0E00B61D27 /* CMIDISplitter.m */,
+			);
+			path = CMIDISplitters;
+			sourceTree = "<group>";
+		};
+		366710621BAF4A0E00B61D27 /* CMIDITempoMeter */ = {
+			isa = PBXGroup;
+			children = (
+				366710631BAF4A0E00B61D27 /* CMIDITempoMeter.m */,
+			);
+			path = CMIDITempoMeter;
+			sourceTree = "<group>";
+		};
+		366710641BAF4A0E00B61D27 /* CMIDITimer */ = {
+			isa = PBXGroup;
+			children = (
+				366710651BAF4A0E00B61D27 /* CMIDITimer.h */,
+				366710661BAF4A0E00B61D27 /* CMIDITimer.m */,
+			);
+			path = CMIDITimer;
+			sourceTree = "<group>";
+		};
+		366710671BAF4A0E00B61D27 /* CMIDITransport */ = {
+			isa = PBXGroup;
+			children = (
+				366710681BAF4A0E00B61D27 /* CMIDITransport.m */,
+				366710691BAF4A0E00B61D27 /* CMIDITransport.xib */,
+				3667106A1BAF4A0E00B61D27 /* play.tiff */,
+				3667106B1BAF4A0E00B61D27 /* stop.tiff */,
+			);
+			path = CMIDITransport;
+			sourceTree = "<group>";
+		};
+		3667106C1BAF4A0E00B61D27 /* CMIDIVSNumber */ = {
+			isa = PBXGroup;
+			children = (
+				3667106D1BAF4A0E00B61D27 /* CMIDIVSNumber.h */,
+				3667106E1BAF4A0E00B61D27 /* CMIDIVSNumber.m */,
+			);
+			path = CMIDIVSNumber;
+			sourceTree = "<group>";
+		};
+		366710991BAF4A2500B61D27 /* CMusic */ = {
+			isa = PBXGroup;
+			children = (
+				366711501BAF7A6000B61D27 /* CMusic.h */,
+				3667109A1BAF4A2500B61D27 /* Headers */,
+				366710A11BAF4A2500B61D27 /* Source */,
+			);
+			path = CMusic;
+			sourceTree = "<group>";
+		};
+		3667109A1BAF4A2500B61D27 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				3667109B1BAF4A2500B61D27 /* CMNote.h */,
+				3667109D1BAF4A2500B61D27 /* CTime.h */,
+				3667109E1BAF4A2500B61D27 /* CTimeHierarchy.h */,
+				3667109F1BAF4A2500B61D27 /* CTimeMap+TimeString.h */,
+				366710A01BAF4A2500B61D27 /* CTimeMap.h */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		366710A11BAF4A2500B61D27 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				366710A21BAF4A2500B61D27 /* CMNote */,
+				366710A41BAF4A2500B61D27 /* CTime */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		366710A21BAF4A2500B61D27 /* CMNote */ = {
+			isa = PBXGroup;
+			children = (
+				366710A31BAF4A2500B61D27 /* CMNote.m */,
+			);
+			path = CMNote;
+			sourceTree = "<group>";
+		};
+		366710A41BAF4A2500B61D27 /* CTime */ = {
+			isa = PBXGroup;
+			children = (
+				366710A51BAF4A2500B61D27 /* CTime.m */,
+				366710A61BAF4A2500B61D27 /* CTimeHierarchy.m */,
+				366710A71BAF4A2500B61D27 /* CTimeMap+TimeString.m */,
+				366710A81BAF4A2500B61D27 /* CTimeMap.m */,
+			);
+			path = CTime;
+			sourceTree = "<group>";
+		};
+		366710B41BAF4B5B00B61D27 /* CMIDIClock+Debug */ = {
+			isa = PBXGroup;
+			children = (
+				366710B51BAF4B5B00B61D27 /* CMIDIClock+Debug.h */,
+				366710B61BAF4B5B00B61D27 /* CMIDIClock+Debug.m */,
+				366710B71BAF4B5B00B61D27 /* CMIDIClockTickTester.h */,
+				366710B81BAF4B5B00B61D27 /* CMIDIClockTickTester.m */,
+			);
+			path = "CMIDIClock+Debug";
+			sourceTree = "<group>";
+		};
+		366710B91BAF4B5B00B61D27 /* CMIDIDataParser+Debug */ = {
+			isa = PBXGroup;
+			children = (
+				366710BA1BAF4B5B00B61D27 /* CMIDIDataParser+Debug.h */,
+				366710BB1BAF4B5B00B61D27 /* CMIDIDataParser+Debug.m */,
+			);
+			path = "CMIDIDataParser+Debug";
+			sourceTree = "<group>";
+		};
+		366710BC1BAF4B5B00B61D27 /* CMIDIEndpoint+Debug */ = {
+			isa = PBXGroup;
+			children = (
+				366710BD1BAF4B5B00B61D27 /* CMIDIEndpoint+Debug.h */,
+				366710BE1BAF4B5B00B61D27 /* CMIDIEndpoint+Debug.m */,
+			);
+			path = "CMIDIEndpoint+Debug";
+			sourceTree = "<group>";
+		};
+		366710BF1BAF4B5B00B61D27 /* CMIDIFakeClock */ = {
+			isa = PBXGroup;
+			children = (
+				366710C01BAF4B5B00B61D27 /* CMIDIFakeClock.h */,
+				366710C11BAF4B5B00B61D27 /* CMIDIFakeClock.m */,
+			);
+			path = CMIDIFakeClock;
+			sourceTree = "<group>";
+		};
+		366710C21BAF4B5B00B61D27 /* CMIDIFile+Debug */ = {
+			isa = PBXGroup;
+			children = (
+				366710C31BAF4B5B00B61D27 /* CMIDIFile+Debug.h */,
+				366710C41BAF4B5B00B61D27 /* CMIDIFile+Debug.m */,
+				366710C51BAF4B5B00B61D27 /* CMIDIFileByApple.h */,
+				366710C61BAF4B5B00B61D27 /* CMIDIFileByApple.m */,
+				366710C71BAF4B5B00B61D27 /* Example Files */,
+				366710CC1BAF4B5B00B61D27 /* Test Files */,
+			);
+			path = "CMIDIFile+Debug";
+			sourceTree = "<group>";
+		};
+		366710C71BAF4B5B00B61D27 /* Example Files */ = {
+			isa = PBXGroup;
+			children = (
+				366710C81BAF4B5B00B61D27 /* bach_846.mid */,
+				366710C91BAF4B5B00B61D27 /* Beatles -- Let it Be.mid */,
+				366710CA1BAF4B5B00B61D27 /* Beatles -- Yesterday.mid */,
+				366710CB1BAF4B5B00B61D27 /* chp_op18.mid */,
+			);
+			path = "Example Files";
+			sourceTree = "<group>";
+		};
+		366710CC1BAF4B5B00B61D27 /* Test Files */ = {
+			isa = PBXGroup;
+			children = (
+				366710CD1BAF4B5B00B61D27 /* TestMIDIFile0.mid */,
+				366710CE1BAF4B5B00B61D27 /* TestMIDIFile1.mid */,
+				366710CF1BAF4B5B00B61D27 /* TestMIDIFile2.mid */,
+				366710D01BAF4B5B00B61D27 /* TestMIDIFile21.mid */,
+				366710D11BAF4B5B00B61D27 /* TestMIDIFile3.mid */,
+			);
+			path = "Test Files";
+			sourceTree = "<group>";
+		};
+		366710D21BAF4B5B00B61D27 /* CMIDIMessage+Debug */ = {
+			isa = PBXGroup;
+			children = (
+				366710D31BAF4B5B00B61D27 /* CMIDIMessage+Debug.h */,
+				366710D41BAF4B5B00B61D27 /* CMIDIMessage+Debug.m */,
+			);
+			path = "CMIDIMessage+Debug";
+			sourceTree = "<group>";
+		};
+		366710D51BAF4B5B00B61D27 /* CMIDIMessageCollector */ = {
+			isa = PBXGroup;
+			children = (
+				366710D61BAF4B5B00B61D27 /* CMIDIMessageCollector.h */,
+				366710D71BAF4B5B00B61D27 /* CMIDIMessageCollector.m */,
+			);
+			path = CMIDIMessageCollector;
+			sourceTree = "<group>";
+		};
+		366710D81BAF4B5B00B61D27 /* CMIDISequence+Debug */ = {
+			isa = PBXGroup;
+			children = (
+				366710D91BAF4B5B00B61D27 /* CMIDISequence+Debug.h */,
+				366710DA1BAF4B5B00B61D27 /* CMIDISequence+Debug.m */,
+			);
+			path = "CMIDISequence+Debug";
+			sourceTree = "<group>";
+		};
+		366710DB1BAF4B5B00B61D27 /* CMIDITempoMeter+Debug */ = {
+			isa = PBXGroup;
+			children = (
+				366710DC1BAF4B5B00B61D27 /* CMIDITempoMeter+Debug.h */,
+				366710DD1BAF4B5B00B61D27 /* CMIDITempoMeter+Debug.m */,
+			);
+			path = "CMIDITempoMeter+Debug";
+			sourceTree = "<group>";
+		};
+		366710F21BAF4C1500B61D27 /* CMIDITimer+Debug */ = {
+			isa = PBXGroup;
+			children = (
+				366710F31BAF4C1500B61D27 /* CMIDITimer+Debug.h */,
+				366710F41BAF4C1500B61D27 /* CMIDITimer+Debug.m */,
+			);
+			path = "CMIDITimer+Debug";
+			sourceTree = "<group>";
+		};
+		366710F51BAF4C1500B61D27 /* CMIDIVSNumber+Debug */ = {
+			isa = PBXGroup;
+			children = (
+				366710F61BAF4C1500B61D27 /* CMIDIVSNumber+Debug.h */,
+				366710F71BAF4C1500B61D27 /* CMIDIVSNumber+Debug.m */,
+			);
+			path = "CMIDIVSNumber+Debug";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -109,7 +726,39 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				366710261BAF4A0400B61D27 /* CMIDIFile.h in Headers */,
+				366710891BAF4A0E00B61D27 /* CMIDIMessageByteCount.h in Headers */,
+				3667106F1BAF4A0E00B61D27 /* CMIDI CoreMIDI Utilities.h in Headers */,
+				366710231BAF4A0400B61D27 /* CMIDIEndpoint.h in Headers */,
+				3667102A1BAF4A0400B61D27 /* CMIDIMessage+MetaMessage.h in Headers */,
 				36670FEF1BAF473E00B61D27 /* CMIDI.h in Headers */,
+				366710241BAF4A0400B61D27 /* CMIDIFile+Description.h in Headers */,
+				366710911BAF4A0E00B61D27 /* CMIDITimer.h in Headers */,
+				366710281BAF4A0400B61D27 /* CMIDIMessage+Description.h in Headers */,
+				3667102E1BAF4A0400B61D27 /* CMIDIReceiver CMIDISender.h in Headers */,
+				366710301BAF4A0400B61D27 /* CMIDISequence.h in Headers */,
+				366710311BAF4A0400B61D27 /* CMIDISplitter.h in Headers */,
+				366710AE1BAF4A2500B61D27 /* CTimeMap.h in Headers */,
+				366710AD1BAF4A2500B61D27 /* CTimeMap+TimeString.h in Headers */,
+				366710791BAF4A0E00B61D27 /* CMIDIDataParser+MIDIPacketList.h in Headers */,
+				3667102D1BAF4A0400B61D27 /* CMIDIMonitor.h in Headers */,
+				366710FB1BAF4C4A00B61D27 /* CMIDIClock+TimeString.h in Headers */,
+				366710AC1BAF4A2500B61D27 /* CTimeHierarchy.h in Headers */,
+				366710251BAF4A0400B61D27 /* CMIDIFile+DescriptionWithTime.h in Headers */,
+				366710211BAF4A0400B61D27 /* CMIDI Time.h in Headers */,
+				3667102C1BAF4A0400B61D27 /* CMIDIMessage.h in Headers */,
+				366710331BAF4A0400B61D27 /* CMIDITransport.h in Headers */,
+				366710221BAF4A0400B61D27 /* CMIDIClock.h in Headers */,
+				366710971BAF4A0E00B61D27 /* CMIDIVSNumber.h in Headers */,
+				366710A91BAF4A2500B61D27 /* CMNote.h in Headers */,
+				366710321BAF4A0400B61D27 /* CMIDITempoMeter.h in Headers */,
+				366710271BAF4A0400B61D27 /* CMIDIMessage+ChannelMessage.h in Headers */,
+				366710771BAF4A0E00B61D27 /* CMIDIDataParser.h in Headers */,
+				366711511BAF7A6000B61D27 /* CMusic.h in Headers */,
+				3667102B1BAF4A0400B61D27 /* CMIDIMessage+SystemMessage.h in Headers */,
+				366710AB1BAF4A2500B61D27 /* CTime.h in Headers */,
+				3667102F1BAF4A0400B61D27 /* CMIDISequence+FileIO.h in Headers */,
+				366710291BAF4A0400B61D27 /* CMIDIMessage+DescriptionWithTime.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +841,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				366710941BAF4A0E00B61D27 /* CMIDITransport.xib in Resources */,
+				3667108C1BAF4A0E00B61D27 /* CMIDIMonitor.xib in Resources */,
+				366710961BAF4A0E00B61D27 /* stop.tiff in Resources */,
+				366710951BAF4A0E00B61D27 /* play.tiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +852,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				366710EC1BAF4B5B00B61D27 /* TestMIDIFile21.mid in Resources */,
+				366710E71BAF4B5B00B61D27 /* Beatles -- Yesterday.mid in Resources */,
+				366710E91BAF4B5B00B61D27 /* TestMIDIFile0.mid in Resources */,
+				366710E51BAF4B5B00B61D27 /* bach_846.mid in Resources */,
+				366710EB1BAF4B5B00B61D27 /* TestMIDIFile2.mid in Resources */,
+				366710EA1BAF4B5B00B61D27 /* TestMIDIFile1.mid in Resources */,
+				366710ED1BAF4B5B00B61D27 /* TestMIDIFile3.mid in Resources */,
+				366710E81BAF4B5B00B61D27 /* chp_op18.mid in Resources */,
+				366710E61BAF4B5B00B61D27 /* Beatles -- Let it Be.mid in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +871,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				366710901BAF4A0E00B61D27 /* CMIDITempoMeter.m in Sources */,
+				366710881BAF4A0E00B61D27 /* CMIDIMessage.m in Sources */,
+				366710711BAF4A0E00B61D27 /* CMIDI Time.m in Sources */,
+				366710831BAF4A0E00B61D27 /* CMIDIMessage+Description.m in Sources */,
+				366710871BAF4A0E00B61D27 /* CMIDIMessage+SystemMessage.m in Sources */,
+				3667107D1BAF4A0E00B61D27 /* CMIDIExternalSource.m in Sources */,
+				366710701BAF4A0E00B61D27 /* CMIDI CoreMIDI Utilities.m in Sources */,
+				366710751BAF4A0E00B61D27 /* CMIDIClock+TimeString.m in Sources */,
+				3667108E1BAF4A0E00B61D27 /* CMIDISequence.m in Sources */,
+				366710AF1BAF4A2500B61D27 /* CMNote.m in Sources */,
+				366710B11BAF4A2500B61D27 /* CTimeHierarchy.m in Sources */,
+				3667108F1BAF4A0E00B61D27 /* CMIDISplitter.m in Sources */,
+				3667108B1BAF4A0E00B61D27 /* CMIDIMonitor.m in Sources */,
+				366710B31BAF4A2500B61D27 /* CTimeMap.m in Sources */,
+				366710B01BAF4A2500B61D27 /* CTime.m in Sources */,
+				366710861BAF4A0E00B61D27 /* CMIDIMessage+NSCoding.m in Sources */,
+				366710761BAF4A0E00B61D27 /* CMIDIClock.m in Sources */,
+				3667107B1BAF4A0E00B61D27 /* CMIDIEndpoint+NSCoding.m in Sources */,
+				3667107E1BAF4A0E00B61D27 /* CMIDIInternalEndpoint.m in Sources */,
+				366710B21BAF4A2500B61D27 /* CTimeMap+TimeString.m in Sources */,
+				3667107A1BAF4A0E00B61D27 /* CMIDIDataParser+MIDIPacketList.m in Sources */,
+				366710851BAF4A0E00B61D27 /* CMIDIMessage+MetaMessage.m in Sources */,
+				366710811BAF4A0E00B61D27 /* CMIDIFile.m in Sources */,
+				3667108A1BAF4A0E00B61D27 /* CMIDIMessageByteCount.m in Sources */,
+				366710801BAF4A0E00B61D27 /* CMIDIFile+DescriptionWithTime.m in Sources */,
+				3667107C1BAF4A0E00B61D27 /* CMIDIExternalDestination.m in Sources */,
+				366710921BAF4A0E00B61D27 /* CMIDITimer.m in Sources */,
+				3667108D1BAF4A0E00B61D27 /* CMIDISequence+FileIO.m in Sources */,
+				366710841BAF4A0E00B61D27 /* CMIDIMessage+DescriptionWithTime.m in Sources */,
+				366710781BAF4A0E00B61D27 /* CMIDIDataParser.m in Sources */,
+				366710821BAF4A0E00B61D27 /* CMIDIMessage+ChannelMessage.m in Sources */,
+				3667107F1BAF4A0E00B61D27 /* CMIDIFile+Description.m in Sources */,
+				366710731BAF4A0E00B61D27 /* CMIDIClock+NSCoding.m in Sources */,
+				366710931BAF4A0E00B61D27 /* CMIDITransport.m in Sources */,
+				366710721BAF4A0E00B61D27 /* CMIDIClock+KVC.m in Sources */,
+				366710981BAF4A0E00B61D27 /* CMIDIVSNumber.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +914,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				366710F11BAF4B5B00B61D27 /* CMIDITempoMeter+Debug.m in Sources */,
 				36670FFC1BAF473E00B61D27 /* CMIDITests.m in Sources */,
+				366710DF1BAF4B5B00B61D27 /* CMIDIClockTickTester.m in Sources */,
+				3667100B1BAF475300B61D27 /* CDebugMessages.m in Sources */,
+				366710E11BAF4B5B00B61D27 /* CMIDIEndpoint+Debug.m in Sources */,
+				366710E31BAF4B5B00B61D27 /* CMIDIFile+Debug.m in Sources */,
+				366710F01BAF4B5B00B61D27 /* CMIDISequence+Debug.m in Sources */,
+				366710E41BAF4B5B00B61D27 /* CMIDIFileByApple.m in Sources */,
+				366710F91BAF4C1500B61D27 /* CMIDIVSNumber+Debug.m in Sources */,
+				366710E21BAF4B5B00B61D27 /* CMIDIFakeClock.m in Sources */,
+				366710EF1BAF4B5B00B61D27 /* CMIDIMessageCollector.m in Sources */,
+				366710E01BAF4B5B00B61D27 /* CMIDIDataParser+Debug.m in Sources */,
+				366710EE1BAF4B5B00B61D27 /* CMIDIMessage+Debug.m in Sources */,
+				366710F81BAF4C1500B61D27 /* CMIDITimer+Debug.m in Sources */,
+				366710DE1BAF4B5B00B61D27 /* CMIDIClock+Debug.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +1111,7 @@
 				366710011BAF473E00B61D27 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		366710021BAF473E00B61D27 /* Build configuration list for PBXNativeTarget "CMIDITests" */ = {
 			isa = XCConfigurationList;
@@ -407,6 +1120,7 @@
 				366710041BAF473E00B61D27 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
