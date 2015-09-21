@@ -15,46 +15,50 @@ FOUNDATION_EXPORT double CMIDIVersionNumber;
 FOUNDATION_EXPORT const unsigned char CMIDIVersionString[];
 
 // Representing time
-#import "CMIDI Time.h"
+#import <CMIDI/CMIDI Time.h>
 
 // MIDI messages
-#import "CMIDIMessage.h"
+#import <CMIDI/CMIDIMessage.h>
 
 // Convenience methods for accessing and constructing messages
-#import "CMIDIMessage+ChannelMessage.h"
-#import "CMIDIMessage+SystemMessage.h"
-#import "CMIDIMessage+MetaMessage.h"
-#import "CMIDIMessage+Description.h"
+#import <CMIDI/CMIDIMessage+ChannelMessage.h>
+#import <CMIDI/CMIDIMessage+SystemMessage.h>
+#import <CMIDI/CMIDIMessage+MetaMessage.h>
+#import <CMIDI/CMIDIMessage+Description.h>
 
 // MIDI Files
-#import "CMIDIFile.h"
-#import "CMIDIFile+Description.h"
+#import <CMIDI/CMIDIFile.h>
+#import <CMIDI/CMIDIFile+Description.h>
 
 // Precision timing tools
-#import "CMIDIClock.h"
-#import "CMIDIClock+TimeString.h"
+#import <CMIDI/CMIDIClock.h>
+#import <CMIDI/CMIDIClock+TimeString.h>
 
 // A protocol for building MIDI signal chains
-#import "CMIDIReceiver CMIDISender.h"
+#import <CMIDI/CMIDIReceiver CMIDISender.h>
 
 // MIDI sequencer
-#import "CMIDISequence.h"
-#import "CMIDISequence+FileIO.h"
+#import <CMIDI/CMIDISequence.h>
+#import <CMIDI/CMIDISequence+FileIO.h>
 
 // Communicating with external devices and applications
-#import "CMIDIEndpoint.h"
+#import <CMIDI/CMIDIEndpoint.h>
 
-// MIDI Software Instrument
+// From CMusic
+#import <CMIDI/CMNote.h>
+#import <CMIDI/CTime.h>
+#import <CMIDI/CTimeHierarchy.h>
+#import <CMIDI/CTimeMap.h>
+#import <CMIDI/CTimeMap+TimeString.h>
 
 // Use CMusic to help format time strings
-#import "CMusic.h"
-#import "CMIDITempoMeter.h"
-#import "CMIDIMessage+DescriptionWithTime.h"
-#import "CMIDIFile+DescriptionWithTime.h"
+#import <CMIDI/CMIDITempoMeter.h>
+#import <CMIDI/CMIDIMessage+DescriptionWithTime.h>
+#import <CMIDI/CMIDIFile+DescriptionWithTime.h>
 
 // Tools for building and debugging demo applications
-#import "CMIDIMonitor.h"
-#import "CMIDITransport.h"
+#import <CMIDI/CMIDIMonitor.h>
+#import <CMIDI/CMIDITransport.h>
 
 
 

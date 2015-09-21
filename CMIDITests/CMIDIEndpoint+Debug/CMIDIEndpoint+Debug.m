@@ -49,7 +49,7 @@
     // Send them all at exactly the same time. Try to see if there are multiple messages in one packet.
     CMIDINanoseconds t = CMIDINow() + 100000;
     for (CMIDIMessage * msg in messages) {
-        msg.time = t;
+//        msg.time = t;
         [endp respondToMIDI:msg atTime: t];
     }
     

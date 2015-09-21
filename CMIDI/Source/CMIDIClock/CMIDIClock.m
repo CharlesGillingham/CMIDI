@@ -437,7 +437,15 @@
     self.currentTick = (nanosecondsPerSecond * timeInSecondsOfCurrentTick) / _nanosecondsPerTick;
 }
 
-
+//-----------------------------------------------------------------------------
+#pragma mark                   Private access for testing only.
+// -----------------------------------------------------------------------------
+#ifdef DEBUG
+- (void) disableTimer
+{
+    _timer = nil;
+}
+#endif
 
 @end
 

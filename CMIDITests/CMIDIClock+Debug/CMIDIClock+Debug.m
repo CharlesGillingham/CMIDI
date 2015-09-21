@@ -11,24 +11,41 @@
 #import <AppKit/AppKit.h>
 #import "CDebugMessages.h"
 #import "CMIDIMessageCollector.h"
+#import "CMIDITimer.h"
 
 #ifdef DEBUG
-
 @interface CMIDIBeepOnClockTick : NSObject <CMIDITimeReceiver>
 @end
 
-@implementation CMIDIBeepOnClockTick
 
-- (void) clockTicked:(CMIDIClock *)c
-{
-    NSBeep();
-    printf("BEEP %lld\n", c.currentTick);
-}
-
+@interface CMIDIClock ()
+- (void) timerDone: (CMIDINanoseconds) ht;
+- (void) disableTimer;
 @end
 
 
 @implementation CMIDIClock (Debug)
+
+
+// Run the clock without delays, on the main thread.
+- (void) runForTesting: (CMIDIClockTicks) start : (CMIDIClockTicks) stop
+{
+    [self disableTimer ];
+    self.currentTick = start;
+    
+    [self start];
+    [self timerDone:0];
+    
+    for (CMIDIClockTicks i = start; i <= stop; i++) {
+        if (!self.isRunning) {
+            return;
+        }
+        [self timerDone:self.timeOfCurrentTick + self.nanosecondsPerTick];
+    }
+    
+}
+
+
 
 - (BOOL) check { return YES; }
 
@@ -150,6 +167,8 @@
             printf("%lld %lld\n", tick, prevTick+1);
             prevTick++;
         }
+    } else {
+        printf("\n");
     }
     
     return fOK;
@@ -209,9 +228,7 @@
 
 + (BOOL) testTickOrderStartStop
 {
-    CDebugInspectionTestHeader("Test tick order", "Time set while running, you should see: \"ztimeset;.\".");
-    printf("\nTempo set while running, set back required: you should see \"y.temposet\", but it's also okay if you see \"y.9.temposet\".\n\n");
-    printf("If you see \"z0.timeset\", then the tick was incremented, clockTicked for the new tick, and THEN we got timeset followed by clockTicked\n");
+    CDebugInspectionTestHeader("Test tick order", " Legend:\n . clock ticked\n : first tick after start\n ; first tick after reset.");
  
     CMIDIClockTickTester * tstr = [CMIDIClockTickTester new];
     
@@ -250,11 +267,14 @@
     sleep(1);
     [testClock stop];
     sleep(0.5);
-    
+ 
+    printf("\n");
+   
     // Make double sure it deallocates.
     [testClock.receivers removeObject:tstr];
     testClock = nil;
     tstr.testClock = nil;
+    
    
     return tstr.testPassed;
 }
@@ -312,6 +332,18 @@
     CASSERT_RET(cl.beatsPerMinute == 250);
     
     return YES;
+}
+
+@end
+
+
+
+@implementation CMIDIBeepOnClockTick
+
+- (void) clockTicked:(CMIDIClock *)c
+{
+    NSBeep();
+    printf("BEEP %lld\n", c.currentTick);
 }
 
 @end

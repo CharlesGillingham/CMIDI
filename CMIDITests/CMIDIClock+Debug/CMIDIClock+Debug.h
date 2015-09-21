@@ -22,6 +22,11 @@
 
 
 @interface CMIDIClock (Debug) <CDebugSelfCheckingObject>
+// Run the clock without delays, on the main thread.
+- (void) runForTesting: (CMIDIClockTicks) start : (CMIDIClockTicks) stop;
+
+
+// Tests
 + (BOOL) basicTest: (CMIDINanoseconds) tempo; // Tests timing and tick order.
 + (BOOL) testBPM;
 + (BOOL) testTickOrderTempoChange;

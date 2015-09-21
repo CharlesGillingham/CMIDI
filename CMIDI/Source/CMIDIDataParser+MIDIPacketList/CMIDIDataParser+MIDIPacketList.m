@@ -23,9 +23,6 @@
         {
             NSArray * newMessages = [self parseMessageData:packet->data length:packet->length];
             if (newMessages) {
-                for (CMIDIMessage * msg in newMessages) {
-                   msg.time = packet->timeStamp;
-                }
                 [messages addObjectsFromArray:newMessages];
             }
         }

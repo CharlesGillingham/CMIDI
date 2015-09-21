@@ -12,7 +12,7 @@
 #import "CMIDIMessage+Debug.h"
 #import "CMIDIFile+Debug.h"
 #import "CDebugMessages.h"
-#import "CMIDIFakeClock.h"
+#import "CMIDIClock+Debug.h"
 #import "CMIDIMessage+MetaMessage.h"
 
 
@@ -67,13 +67,15 @@
     if (![self check]) return NO;
     
     CMIDIMessageCollector * mc = [CMIDIMessageCollector new];
-    CMIDIClock * cl = [CMIDIFakeClock fakeClock];
+    CMIDIClock * cl = [CMIDIClock new];
   
     [cl.receivers addObject:self];
     self.outputUnit = mc;
     mc.clock = cl;  // Give the message collector the clock, so it can track the time the messages arrive.
     
-    [cl start];
+    [cl runForTesting:0 :self.maxLength-1];
+    
+    if (!CASSERTEQUAL(msgList, mc.msgsReceived)) return NO;
     
     if (!CASSERTEQUAL(msgList.count, self.events.count)) return NO;
     if (!CASSERTEQUAL(msgList.count, mc.msgsReceived.count)) return NO;
@@ -168,15 +170,6 @@
     NSError * error;
     if (![ms readFile:fileName error:&error]) return NO;
     return [ms checkSend: ms.events];
-}
-
-
-
-+ (BOOL) test
-{
-    if (![self testWithMessageList:[CMIDIMessage oneOfEachMessage]]) return NO;
-    if (![self testWithMIDIFile:[CMIDIFile exampleMIDIFiles][0]]) return NO;
-    return YES;
 }
 
 @end

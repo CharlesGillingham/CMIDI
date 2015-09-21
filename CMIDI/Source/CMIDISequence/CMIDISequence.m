@@ -143,10 +143,11 @@ CMIDIClockTicks CMIDISequencePostRoll = 24;
 
 - (void) clockTicked:(CMIDIClock *)c
 {
+    // Note that this will call back through to the "stop" routine below.
     if (c.currentTick > maxLength) {
         [c stop];
     }
-    
+
     // Retain a pointer to outputUnit, just in case it changes and is deallocated while we're sending it messages.
     NSObject <CMIDIReceiver> * receiver;
     @synchronized(self) {
