@@ -107,6 +107,8 @@
 		366713D41BAFDB3500B61D27 /* CTimeHierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 366713C81BAFDB3500B61D27 /* CTimeHierarchy.m */; };
 		366713D51BAFDB3500B61D27 /* CTimeMap+TimeString.m in Sources */ = {isa = PBXBuildFile; fileRef = 366713C91BAFDB3500B61D27 /* CTimeMap+TimeString.m */; };
 		366713D61BAFDB3500B61D27 /* CTimeMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 366713CA1BAFDB3500B61D27 /* CTimeMap.m */; };
+		3667167F1BB06E0800B61D27 /* CMIDIFileParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 3667167D1BB06E0800B61D27 /* CMIDIFileParser.h */; };
+		366716801BB06E0800B61D27 /* CMIDIFileParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3667167E1BB06E0800B61D27 /* CMIDIFileParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -238,6 +240,8 @@
 		366713C81BAFDB3500B61D27 /* CTimeHierarchy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTimeHierarchy.m; sourceTree = "<group>"; };
 		366713C91BAFDB3500B61D27 /* CTimeMap+TimeString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CTimeMap+TimeString.m"; sourceTree = "<group>"; };
 		366713CA1BAFDB3500B61D27 /* CTimeMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTimeMap.m; sourceTree = "<group>"; };
+		3667167D1BB06E0800B61D27 /* CMIDIFileParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMIDIFileParser.h; sourceTree = "<group>"; };
+		3667167E1BB06E0800B61D27 /* CMIDIFileParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMIDIFileParser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -453,6 +457,8 @@
 				3667104C1BAF4A0E00B61D27 /* CMIDIFile+Description.m */,
 				3667104D1BAF4A0E00B61D27 /* CMIDIFile+DescriptionWithTime.m */,
 				3667104E1BAF4A0E00B61D27 /* CMIDIFile.m */,
+				3667167D1BB06E0800B61D27 /* CMIDIFileParser.h */,
+				3667167E1BB06E0800B61D27 /* CMIDIFileParser.m */,
 			);
 			path = CMIDIFile;
 			sourceTree = "<group>";
@@ -704,6 +710,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3667167F1BB06E0800B61D27 /* CMIDIFileParser.h in Headers */,
 				366710261BAF4A0400B61D27 /* CMIDIFile.h in Headers */,
 				366710891BAF4A0E00B61D27 /* CMIDIMessageByteCount.h in Headers */,
 				3667106F1BAF4A0E00B61D27 /* CMIDI CoreMIDI Utilities.h in Headers */,
@@ -859,6 +866,7 @@
 				3667107D1BAF4A0E00B61D27 /* CMIDIExternalSource.m in Sources */,
 				366710701BAF4A0E00B61D27 /* CMIDI CoreMIDI Utilities.m in Sources */,
 				366710751BAF4A0E00B61D27 /* CMIDIClock+TimeString.m in Sources */,
+				366716801BB06E0800B61D27 /* CMIDIFileParser.m in Sources */,
 				3667108E1BAF4A0E00B61D27 /* CMIDISequence.m in Sources */,
 				366713D21BAFDB3500B61D27 /* CMNote.m in Sources */,
 				366713D41BAFDB3500B61D27 /* CTimeHierarchy.m in Sources */,

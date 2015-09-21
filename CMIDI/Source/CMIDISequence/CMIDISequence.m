@@ -209,7 +209,7 @@ CMIDIClockTicks CMIDISequencePostRoll = 24;
     }
     
     if (receiver) {
-        CMIDIMessage *mm1, *mm2, *mm3;
+        CMIDIMessage *mm1, *mm2;
         for (NSUInteger track = 0; track < trackCount; track++) {
             for (NSUInteger channel = MIDIChannel_Min; channel <= MIDIChannel_Max; channel++) {
                 mm1 = [CMIDIMessage messageAllNotesOff:channel];
