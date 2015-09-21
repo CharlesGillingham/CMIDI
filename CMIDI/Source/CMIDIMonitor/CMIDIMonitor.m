@@ -77,7 +77,7 @@ NSString *const CMIDIMonitorNibFileName = @"CMIDIMonitor.nib";
 
 + (NSSet *) keyPathsForValuesAffectingHeader
 {
-    return [NSSet setWithObjects:@"timeMap,timeStringFormat", @"timeMap.descriptionTimeLine", nil];
+    return [NSSet setWithObjects:@"timeMap.timeStringFormat", nil];
 }
 
 

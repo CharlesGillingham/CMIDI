@@ -8,6 +8,7 @@
 //  Basic definitions, and convenience properties for CTime objects used with music and MIDI.
 
 #import <Foundation/Foundation.h>
+
 // -----------------------------------------------------------------------------
 #pragma mark                    Time Units
 // -----------------------------------------------------------------------------
