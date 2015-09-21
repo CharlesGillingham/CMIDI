@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CMIDITests/CMIDITests.m"
+            timestampString = "464478261.561384"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "-testCMIDISequenceFiles"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[CMIDITests testCMIDISequenceFiles]"
+                  moduleName = "CMIDITests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/charlesgillingham/Desktop/FRAMEWORKS/CMIDI/CMIDITests/CMIDITests.m"
+                  timestampString = "464496041.605127"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[CMIDITests testCMIDISequenceFiles]"
+                  moduleName = "CMIDITests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/charlesgillingham/Desktop/FRAMEWORKS/CMIDI/CMIDITests/CMIDITests.m"
+                  timestampString = "464496041.605326"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "606">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[CMIDITests testCMIDISequenceFiles]"
+                  moduleName = "CMIDITests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/charlesgillingham/Desktop/FRAMEWORKS/CMIDI/CMIDITests/CMIDITests.m"
+                  timestampString = "464496041.605538"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "630">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[CMIDITests testCMIDISequenceFiles]"
+                  moduleName = "CMIDITests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/charlesgillingham/Desktop/FRAMEWORKS/CMIDI/CMIDITests/CMIDITests.m"
+                  timestampString = "464496041.605778"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "752">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
