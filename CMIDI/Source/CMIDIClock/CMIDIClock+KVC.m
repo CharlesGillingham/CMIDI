@@ -31,7 +31,6 @@
     return [NSSet setWithObject:@"nanosecondsPerTick"];
 }
 
-
 // Time in seconds is derived from current tick and nanoseconds per tick.
 + (BOOL) automaticallyNotifiesObserversOfTimeInSecondsOfCurrentTick { return NO; }
 + (NSSet *) keyPathsForValuesAffectingTimeInSecondsOfCurrentTick

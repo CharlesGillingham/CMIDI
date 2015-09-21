@@ -67,6 +67,9 @@
                             <binding destination="-2" name="value" keyPath="self.header" id="GGD-GQ-f0A"/>
                         </connections>
                     </textFieldCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.header" id="Tpq-D8-kX3"/>
+                    </connections>
                 </textField>
                 <button translatesAutoresizingMaskIntoConstraints="NO" id="g0v-kO-yik">
                     <rect key="frame" x="583" y="483" width="82" height="22"/>
@@ -96,8 +99,8 @@
                         </menu>
                     </popUpButtonCell>
                     <connections>
-                        <binding destination="-2" name="content" keyPath="self.timeMap." id="Zfl-PW-6IY"/>
-                        <binding destination="-2" name="selectedIndex" keyPath="self.timeMap.descriptionFormat" previousBinding="Zfl-PW-6IY" id="QV6-oT-9Im"/>
+                        <binding destination="-2" name="content" keyPath="self.timeMap.timeStringFormatNames" id="MJm-dW-qwt"/>
+                        <binding destination="-2" name="selectedIndex" keyPath="self.timeMap.timeStringFormat" previousBinding="MJm-dW-qwt" id="wNV-BN-3lM"/>
                     </connections>
                 </popUpButton>
             </subviews>

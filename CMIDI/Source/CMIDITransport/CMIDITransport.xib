@@ -149,12 +149,9 @@
                         <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        <connections>
-                            <binding destination="-2" name="value" keyPath="self.clock.beatsPerMinute" id="uBc-Ma-zGd"/>
-                        </connections>
                     </textFieldCell>
                     <connections>
-                        <binding destination="-2" name="value" keyPath="self.clock.beatsPerMinute" id="Cfv-6y-9fS"/>
+                        <binding destination="-2" name="value" keyPath="self.clock.beatsPerMinute" id="BqK-7q-0B7"/>
                     </connections>
                 </textField>
             </subviews>

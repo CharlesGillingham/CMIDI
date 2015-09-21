@@ -212,16 +212,12 @@ CMIDIClockTicks CMIDISequencePostRoll = 24;
         CMIDIMessage *mm1, *mm2, *mm3;
         for (NSUInteger track = 0; track < trackCount; track++) {
             for (NSUInteger channel = MIDIChannel_Min; channel <= MIDIChannel_Max; channel++) {
-                mm1 = [CMIDIMessage messageWithController:MIDIController_Sustain
-                                                boolValue:NO
-                                                  channel:channel];
-                mm2 = [CMIDIMessage messageAllNotesOff:channel];
-                mm3 = [CMIDIMessage messageAllSoundOff:channel];
-                mm1.track = mm2.track = mm3.track = track;
-                mm1.time = mm2.time = mm3.time = c.currentTick;
+                mm1 = [CMIDIMessage messageAllNotesOff:channel];
+                mm2 = [CMIDIMessage messageAllSoundOff:channel];
+                mm1.track = mm2.track= track;
+                mm1.time = mm2.time = c.currentTick;
                 [receiver respondToMIDI: mm1];
                 [receiver respondToMIDI: mm2];
-                [receiver respondToMIDI: mm3];
             }
         }
     }
