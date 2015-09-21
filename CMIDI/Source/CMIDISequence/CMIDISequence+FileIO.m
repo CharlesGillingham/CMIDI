@@ -20,10 +20,6 @@
     if (!self.displayName) {
         self.displayName = fileURL.lastPathComponent;
     }
-    
-    // re-init with MIDIFile.
-    self.maxLength  = mf.songLength;
-    self.trackCount = mf.trackCount;
     self.events     = mf.messages;
     return YES;
 }

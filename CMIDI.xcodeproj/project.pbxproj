@@ -97,11 +97,11 @@
 		366711781BAFAA7200B61D27 /*  CMIDI README.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 366711771BAFAA7200B61D27 /*  CMIDI README.rtf */; };
 		3667117A1BAFAA7A00B61D27 /* License.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 366711791BAFAA7A00B61D27 /* License.rtf */; };
 		366713CB1BAFDB3500B61D27 /* CMusic.h in Headers */ = {isa = PBXBuildFile; fileRef = 366713BD1BAFDB3400B61D27 /* CMusic.h */; };
-		366713CC1BAFDB3500B61D27 /* CMNote.h in Headers */ = {isa = PBXBuildFile; fileRef = 366713BF1BAFDB3400B61D27 /* CMNote.h */; };
-		366713CD1BAFDB3500B61D27 /* CTime.h in Headers */ = {isa = PBXBuildFile; fileRef = 366713C01BAFDB3400B61D27 /* CTime.h */; };
-		366713CE1BAFDB3500B61D27 /* CTimeHierarchy.h in Headers */ = {isa = PBXBuildFile; fileRef = 366713C11BAFDB3500B61D27 /* CTimeHierarchy.h */; };
-		366713CF1BAFDB3500B61D27 /* CTimeMap+TimeString.h in Headers */ = {isa = PBXBuildFile; fileRef = 366713C21BAFDB3500B61D27 /* CTimeMap+TimeString.h */; };
-		366713D01BAFDB3500B61D27 /* CTimeMap.h in Headers */ = {isa = PBXBuildFile; fileRef = 366713C31BAFDB3500B61D27 /* CTimeMap.h */; };
+		366713CC1BAFDB3500B61D27 /* CMNote.h in Headers */ = {isa = PBXBuildFile; fileRef = 366713BF1BAFDB3400B61D27 /* CMNote.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		366713CD1BAFDB3500B61D27 /* CTime.h in Headers */ = {isa = PBXBuildFile; fileRef = 366713C01BAFDB3400B61D27 /* CTime.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		366713CE1BAFDB3500B61D27 /* CTimeHierarchy.h in Headers */ = {isa = PBXBuildFile; fileRef = 366713C11BAFDB3500B61D27 /* CTimeHierarchy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		366713CF1BAFDB3500B61D27 /* CTimeMap+TimeString.h in Headers */ = {isa = PBXBuildFile; fileRef = 366713C21BAFDB3500B61D27 /* CTimeMap+TimeString.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		366713D01BAFDB3500B61D27 /* CTimeMap.h in Headers */ = {isa = PBXBuildFile; fileRef = 366713C31BAFDB3500B61D27 /* CTimeMap.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		366713D21BAFDB3500B61D27 /* CMNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 366713C61BAFDB3500B61D27 /* CMNote.m */; };
 		366713D31BAFDB3500B61D27 /* CTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 366713C71BAFDB3500B61D27 /* CTime.m */; };
 		366713D41BAFDB3500B61D27 /* CTimeHierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 366713C81BAFDB3500B61D27 /* CTimeHierarchy.m */; };
@@ -284,9 +284,9 @@
 		36670FEB1BAF473E00B61D27 /* CMIDI */ = {
 			isa = PBXGroup;
 			children = (
-				366710341BAF4A0E00B61D27 /* Source */,
-				3667100D1BAF4A0400B61D27 /* Headers */,
 				36670FEE1BAF473E00B61D27 /* CMIDI.h */,
+				3667100D1BAF4A0400B61D27 /* Headers */,
+				366710341BAF4A0E00B61D27 /* Source */,
 				36670FEC1BAF473E00B61D27 /* Supporting Files */,
 			);
 			path = CMIDI;

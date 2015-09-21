@@ -70,7 +70,8 @@ CMIDIClockTicks CMIDISequencePostRoll = 24;
         
         if (index < nextIndex) nextIndex++;
         
-        if (msg.time > maxLength) maxLength = msg.time + CMIDISequencePostRoll;
+        if (msg.time + CMIDISequencePostRoll > maxLength) maxLength = msg.time + CMIDISequencePostRoll;
+        if (msg.track > trackCount) trackCount = msg.track;
     }
 }
 
@@ -98,6 +99,12 @@ CMIDIClockTicks CMIDISequencePostRoll = 24;
         _events = [NSMutableArray arrayWithArray:events];
         nextIndex = 0;
         maxLength = [[_events lastObject] time] + CMIDISequencePostRoll;
+        trackCount = 0;
+        for (CMIDIMessage * msg in events) {
+            if (msg.track > trackCount) {
+                trackCount = msg.track;
+            }
+        }
     }
 }
 
