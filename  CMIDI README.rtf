@@ -12,6 +12,51 @@ See examples and header files. \
 \pard\tx529\pardeftab529\pardirnatural
 \cf0 \CocoaLigature0 \
 #TODO\
+\
+##TODO\
+Nothing more todo at the moment.\
+\
+##BUGS\
+-	BPM is not bound properly; it\'92s not receiving updates from the clock. KVC looks right. I\'92m sure this is a trivial problem. \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural
+\cf0 \CocoaLigature1 ##LOW PRIORITY TODO\
+These are nits or missing features that would effect the current project. Don\'92t need to do these at all. \
+--`	
+\b CMIDITransport
+\b0 : 
+\b MouseDown. 
+\b0 Should allow the caller to drag the current time. Need to capture MouseDown/MouseUp. Code to do this is in one of the back up versions of SqueezeBox\
+-	
+\b CMIDITransport: Set the current time
+\b0  in various formats. Complicated, because we\'92re not bound to anything; we have to get the string and parse it. \
+-	
+\b CMIDIMessage+Description:Files for strings. 
+\b0 Should we just save the arrays? See what this looks like, see if it\'92s editable.\
+- 	
+\b CMIDIMessage NSCopying \
+
+\b0 -	
+\b CMIDIMessage+Description:
+\b0  
+\b Indent strings. 
+\b0 We need to divide and indent long strings, perhaps with \\. We need to respect the \'93indent\'94 parameter in that CMIDIIndent routine. \
+-	
+\b CMIDITempoMeter / CMIDIMessage+MetaMessage@tempoMessage. Thirty-seconds per eights 
+\b0 .... this is in the tempo message, but I doubt that it's correct in every case ... using this may cause more problems than it solves.\
+-	
+\b CMIDISequence.outputUnit 
+\b0 Check thread safety. \
+-	
+\b CMIDIFile: split \'93standardize\'94 code 
+\b0 into a separate.\
+- 	check that all #pragma marks are all 80 characters wide\
+-	check that headers all read the same.\
+-	check that NS_DESIGNATED_INITIALIZER is used correctly everywhere.\
+- 	check inspection tests have the same header format.\
+\
+\pard\tx529\pardeftab529\pardirnatural
+\cf0 \CocoaLigature0 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural
 \cf0 \CocoaLigature1 ##UNSUPPORTED FEATURES. \
 These are all well outside the scope of my current project. To be fixed with someone else's help.\
@@ -52,9 +97,13 @@ CMIDIClock\
 -	    Unlike CAClock, this clock currently has no 
 \b synchronization features
 \b0 . It should be able to sync to (1) an AudioUint (2) system MIDI messages such as start, stop, songPosition (3) MTC messages (4) SMPTE?? (how do you do this?) (5) what else?\
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural
+-	   
+\b SMPTE
+\b0 . We can\'92t format the time as SMPTE or set the SMPTE offset. The right way to do this would be to have two time maps, or at least a second hierarchy that has the smite time. The nanoseconds and ticks would be shared (i.e. \'93ticks\'94 = \'93subframes\'94 but the higher levels would be different.) The branch counts in the SMPTE time hierarchy would not change for the life time of the application; the hierarchy may be able to work by staying in sync with \'93timeOfTheCurrentTick\'94.\
+\pard\tx529\pardeftab529\pardirnatural
 \cf0 \CocoaLigature1 \
-CMIDIEndpoint\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural
+\cf0 CMIDIEndpoint\
 \
 - 	
 \b Updating missing endpoints. 
@@ -63,32 +112,6 @@ CMIDIEndpoint\
 	When the endpoint reappears, I should rescan by NAME and reconnect the object. (1) keep a MIDINotifyProc in MIDIUnit (Resources) and track when endpoints appear and disappear. (2) Whenever an endpoint is added, check the list of instantiated sources to see if the endpoint matches a name. If it does, then reconnect the source endpoint to my input port.\
 	Add a flag fOffline, and handle it appropriately in the MIDI data flow. When decoding and the object is not found, set the offline flag and set the name; assume the object is offline Keep a MIDINotifyProc  and track when endpoints appear and disappear. NOT DOING THIS NOW, because this is outside the scope of my application.\
 \
-##LOW PRIORITY TODO\
---`	
-\b CMIDITransport
-\b0 : 
-\b MouseDown. 
-\b0 Should allow the caller to drag the current time. Need to capture MouseDown/MouseUp. Code to do this is in one of the back up versions of SqueezeBox\
--	
-\b CMIDITransport: Set the current time
-\b0  in various formats. Complicated, because we\'92re not bound to anything. \
--	
-\b CMIDIMessage+Description:Files for strings. 
-\b0 Should we just save the arrays? See what this looks like, see if it\'92s editable.\
-- 	
-\b CMIDIMessage NSCopying \
-
-\b0 -	
-\b CMIDIMessage+Description:
-\b0  
-\b Indent strings. 
-\b0 We need to divide and indent long strings, perhaps with \\. We need to respect the \'93indent\'94 parameter in that CMIDIIndent routine. \
--	
-\b CMIDITempoMeter / CMIDIMessage+MetaMessage@tempoMessage. Thirty-seconds per eights 
-\b0 .... this is in the tempo message, but I doubt that it's correct in every case ... using this may cause more problems than it solves.\
--	
-\b CMIDISequence.outputUnit 
-\b0 Check thread safety. \
 \
 ##POSSIBLE NEW FEATURES / IDEAS\
 	These are not needed for the current project. I would need a strong motivation to implement these. \
@@ -96,7 +119,7 @@ CMIDIEndpoint\
 \b CMIDIMonitor
 \b0 : should use some kind of 
 \b matrix
-\b0  ... isn't there a matrix which goes property by property, lets you resize the rows, etc.?\
+\b0  ... isn't there a matrix which goes property by property, lets you resize the rows, etc.? I.e, an NSArrayController, etc. Is this easier than it looks?? \
 -	
 \b CMIDISequencer
 \b0 : At 480 ticks per beat, it seems like this is doing a lot of 
@@ -118,16 +141,9 @@ CMIDIEndpoint\
 \b CMIDIMessage+Verify. 
 \b0 [CMIDIMessage check] would be useful as a last step in parsing, just to be sure messages are valid in files and streams. (Don't think it would be useful for real-time message streams because there's nowhere to put the NSError -- on the endpoint?   It would need to be rewritten without CDebugMessage and return error objects.)\
 \
-##CLEAN UP:\
-- 	check that all #pragma marks are all 80 characters wide\
--	check that headers all read the same.\
--	check that NS_DESIGNATED_INITIALIZER is used correctly everywhere.\
-- 	check inspection tests have the same header format.\
-\
 \
 ##TEST BUGS\
 	These are not bugs in CMIDI, but they are bugs in the tests.\
-\
 - 	CMIDITimer tests, fails -- as if CoreMIDI was doing nothing.  Timer works in the clock.\
 \
 ##UNTESTED, WITH CODE IN PLACE\
@@ -240,10 +256,9 @@ There are several basic ways to construct: \
 ##CMIDIEndpoint\
 \
 \pard\tx529\pardeftab529\pardirnatural
-\cf0 \CocoaLigature0 	MIDIEndpoints: The goal of this design is to allow clients to use MIDI endpoints simply, without needing to study the complexity of CoreMIDI and all of its objects and constructors. Thus, this interface hides all details except the most essential and implements only the simplest cases. If a client needs all the details of CoreMIDI, they should use CoreMIDI.\
+\cf0 \CocoaLigature0 	MIDIEndpoints: The goal of this design is to allow clients to use MIDI endpoints simply, without needing to study the complexity of CoreMIDI and all of its objects and constructors. Thus, this interface hides all details except the most essential and implements only the simplest cases. If a client needs all the details of CoreMIDI, they should use CoreMIDI.\CocoaLigature1 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
-\cf0 \CocoaLigature1 \
-\
+\cf0 \
 \pard\tx529\pardeftab529\pardirnatural
 \cf0 \CocoaLigature0 	I divided the endpoints into three classes for clarity (see explanation in the header file). There is shared code, but none of the code is shared between all three types of end points. Two types might have some very similar code -- the <MIDISender>s share some code,  <MIDIReceiver>s share some code, external endpoints have similar "search" routines, all of them have some kind of port. This code is subtly different for each type of endpoint. I could have combined the shared code into the superclass, of course, but that would have these pluses and minuses:\
 	- Combining the shared code would requires a really complicated system of inheritance that would have the thread jumping all around the hierarchy. I think the code for each endpoint is easier to understand if there is no inheritance at all and you can find all the code for each type of object inside that object. I think that future developers will start by analyzing one endpoint and trying to see how it works -- this will be easier for future developers to get an initial understanding of what's happening.\
@@ -257,9 +272,9 @@ There are several basic ways to construct: \
 	A method that uses "outputUnit" is NOT thread safe, because the output unit may be changed while the routine is in progress. Always grab a synchronized pointer to the outputUnit in these routines and synchronize as well when a caller changes the output unit.\
 	When CoreMIDI calls a MIDIReadProc, we need a pointer to "self". I can't place the pointer in the refcon, because ARC won't guarantee that this object is still valid. Thus I place an index into the lists held by CMIDIManager. This index is always valid and correct (because we only add to these lists and never remove from them).\
 \
-###CMIDIClock\
+##CMIDIClock\
 \
-REQUIREMENTS:\
+####REQUIREMENTS:\
 \
 - Invariant: "clockTicked" always sends every tick, in order, regardless of tempo changes or if the clock is started or stopped. Only setting the currentTick can break this principle.\
 \
@@ -269,13 +284,13 @@ REQUIREMENTS:\
 \
 - Feature: after you stop, if you don't reset the "currentTick" it starts on (precisely) the next tick. \
 \
-DESIGN NOTES\
+####DESIGN NOTES\
 \
-- Separated the functionality into two objects: CMIDITimer handles all the CoreMIDI calls. CClock handles all the conversions, client calls, and other details for complete functionality. This could be rebuilt with some other form of timer, if we can find one with an accuracy of about 1 millisecond. NSTimer is off by 50 to 100 milliseconds, and more is always possible.\
+- Separated the functionality into two objects: CMIDITimer handles all the CoreMIDI calls. CClock handles all the conversions, client calls, and other details for complete functionality. This could be rebuilt with some other form of timer, if we can find one with an accuracy of about 1 millisecond. NSTimer is off by 200 microseconds.\
 \
-- Store the tempo as an integer because this prevents floating point errors. MIDITimeStamp and MIDIClockTick are integers, and thus are not subject to floating-point errors. Ticks are also signed, which prevents another set of potential problems.\
+- Store tempo as an integer because this prevents floating point errors. CMIDINanoseconds and CMIDIClockTicks are integers, and thus are not subject to floating-point errors. Ticks are also signed, which prevents another set of potential problems.\
 \
-THREAD SAFETY NOTES\
+###THREAD SAFETY NOTES\
 \
 TODO: Consider "dealloc" as a sixth entry point, and think this through in that case ... \
 \
@@ -319,7 +334,7 @@ Again, this is extremely unlikely, because the timer has to go off PRECISELY BET
 	CoreMIDI continues into the sync lock, but now it is looking at bad information. \
 \
 \
-NOTES ON CACLOCK\
+####NOTES ON CACLOCK\
 \
 This has been written to replace CAClock.  These are the problems I have with CAClock:\
 \
@@ -331,11 +346,16 @@ This has been written to replace CAClock.  These are the problems I have with CA
  7) When the clock is initialized, but not yet started, CATranslateTime returns the same real-time for all media times. This is odd, and I suppose the behavior under these circumstances is "undefined". However, I would like to be make calculations about media time values without necessarily starting the clock (such as tempo calculations), so I would prefer that this behaved in the same way it does when it is stopped: by assuming some fixed starting point and calculating the real values from that.\
  8) Can't set the time while the clock is running; returns an error.\
  9) Conversion routines don't make a clear enough distinction between media time and host time -- approach to these conversions is inconsistent in any case. (see (2) above). \
- 10) Seems to do nothing. What is the tempo map used for? Am I still setting it wrong?\
+ 10) Tempo map seems to do nothing. What is the tempo map used for? Am I still setting it wrong?\
  10.1) The MIDI clock ticks do not change tempo with tempo map.\
  10.2) "CATranslateTime" does seem to take into account the tempo map.\
  11) Can't seem to use an object with SMPTE time; can't get SMPTE from beats, can't get beats from SMPTE. SMPTE not currently supported; I'm sure there's something I don't know. (This is not fixed in CMIDIClock.) \
 \
+As far as I can see, the only features of CAClock that I 
+\b don\'92t 
+\b0 support are \
+1) Synchronization\
+2) SMPTE (offset, etc.)\
 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
 \cf0 \CocoaLigature1 \

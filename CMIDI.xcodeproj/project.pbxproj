@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3651C9971BB3389500FD08F1 /* CMusic.h in Headers */ = {isa = PBXBuildFile; fileRef = 3651C9781BB3389500FD08F1 /* CMusic.h */; };
+		3651C9981BB3389500FD08F1 /* CMusicNote.h in Headers */ = {isa = PBXBuildFile; fileRef = 3651C97A1BB3389500FD08F1 /* CMusicNote.h */; };
+		3651C9991BB3389500FD08F1 /* CMusicWesternHarmony+Description.h in Headers */ = {isa = PBXBuildFile; fileRef = 3651C97B1BB3389500FD08F1 /* CMusicWesternHarmony+Description.h */; };
+		3651C99A1BB3389500FD08F1 /* CMusicWesternHarmony+UI.h in Headers */ = {isa = PBXBuildFile; fileRef = 3651C97C1BB3389500FD08F1 /* CMusicWesternHarmony+UI.h */; };
+		3651C99B1BB3389500FD08F1 /* CMusicWesternHarmony.h in Headers */ = {isa = PBXBuildFile; fileRef = 3651C97D1BB3389500FD08F1 /* CMusicWesternHarmony.h */; };
+		3651C99C1BB3389500FD08F1 /* CTime.h in Headers */ = {isa = PBXBuildFile; fileRef = 3651C97E1BB3389500FD08F1 /* CTime.h */; };
+		3651C99D1BB3389500FD08F1 /* CTimeHierarchy.h in Headers */ = {isa = PBXBuildFile; fileRef = 3651C97F1BB3389500FD08F1 /* CTimeHierarchy.h */; };
+		3651C99E1BB3389500FD08F1 /* CTimeMap+TimeString.h in Headers */ = {isa = PBXBuildFile; fileRef = 3651C9801BB3389500FD08F1 /* CTimeMap+TimeString.h */; };
+		3651C99F1BB3389500FD08F1 /* CTimeMap.h in Headers */ = {isa = PBXBuildFile; fileRef = 3651C9811BB3389500FD08F1 /* CTimeMap.h */; };
+		3651C9AC1BB3389500FD08F1 /* CMusicNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 3651C9911BB3389500FD08F1 /* CMusicNote.m */; };
+		3651C9AD1BB3389500FD08F1 /* CTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 3651C9931BB3389500FD08F1 /* CTime.m */; };
+		3651C9AE1BB3389500FD08F1 /* CTimeHierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3651C9941BB3389500FD08F1 /* CTimeHierarchy.m */; };
+		3651C9AF1BB3389500FD08F1 /* CTimeMap+TimeString.m in Sources */ = {isa = PBXBuildFile; fileRef = 3651C9951BB3389500FD08F1 /* CTimeMap+TimeString.m */; };
+		3651C9B01BB3389500FD08F1 /* CTimeMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 3651C9961BB3389500FD08F1 /* CTimeMap.m */; };
 		36670FEF1BAF473E00B61D27 /* CMIDI.h in Headers */ = {isa = PBXBuildFile; fileRef = 36670FEE1BAF473E00B61D27 /* CMIDI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		36670FF51BAF473E00B61D27 /* CMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36670FE91BAF473E00B61D27 /* CMIDI.framework */; };
 		36670FFC1BAF473E00B61D27 /* CMIDITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 36670FFB1BAF473E00B61D27 /* CMIDITests.m */; };
@@ -96,17 +110,6 @@
 		366710FD1BAF5A2E00B61D27 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366710FC1BAF5A2E00B61D27 /* AudioToolbox.framework */; };
 		366711781BAFAA7200B61D27 /*  CMIDI README.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 366711771BAFAA7200B61D27 /*  CMIDI README.rtf */; };
 		3667117A1BAFAA7A00B61D27 /* License.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 366711791BAFAA7A00B61D27 /* License.rtf */; };
-		366713CB1BAFDB3500B61D27 /* CMusic.h in Headers */ = {isa = PBXBuildFile; fileRef = 366713BD1BAFDB3400B61D27 /* CMusic.h */; };
-		366713CC1BAFDB3500B61D27 /* CMNote.h in Headers */ = {isa = PBXBuildFile; fileRef = 366713BF1BAFDB3400B61D27 /* CMNote.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		366713CD1BAFDB3500B61D27 /* CTime.h in Headers */ = {isa = PBXBuildFile; fileRef = 366713C01BAFDB3400B61D27 /* CTime.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		366713CE1BAFDB3500B61D27 /* CTimeHierarchy.h in Headers */ = {isa = PBXBuildFile; fileRef = 366713C11BAFDB3500B61D27 /* CTimeHierarchy.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		366713CF1BAFDB3500B61D27 /* CTimeMap+TimeString.h in Headers */ = {isa = PBXBuildFile; fileRef = 366713C21BAFDB3500B61D27 /* CTimeMap+TimeString.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		366713D01BAFDB3500B61D27 /* CTimeMap.h in Headers */ = {isa = PBXBuildFile; fileRef = 366713C31BAFDB3500B61D27 /* CTimeMap.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		366713D21BAFDB3500B61D27 /* CMNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 366713C61BAFDB3500B61D27 /* CMNote.m */; };
-		366713D31BAFDB3500B61D27 /* CTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 366713C71BAFDB3500B61D27 /* CTime.m */; };
-		366713D41BAFDB3500B61D27 /* CTimeHierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 366713C81BAFDB3500B61D27 /* CTimeHierarchy.m */; };
-		366713D51BAFDB3500B61D27 /* CTimeMap+TimeString.m in Sources */ = {isa = PBXBuildFile; fileRef = 366713C91BAFDB3500B61D27 /* CTimeMap+TimeString.m */; };
-		366713D61BAFDB3500B61D27 /* CTimeMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 366713CA1BAFDB3500B61D27 /* CTimeMap.m */; };
 		3667167F1BB06E0800B61D27 /* CMIDIFileParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 3667167D1BB06E0800B61D27 /* CMIDIFileParser.h */; };
 		366716801BB06E0800B61D27 /* CMIDIFileParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3667167E1BB06E0800B61D27 /* CMIDIFileParser.m */; };
 /* End PBXBuildFile section */
@@ -122,6 +125,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3651C9781BB3389500FD08F1 /* CMusic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMusic.h; sourceTree = "<group>"; };
+		3651C97A1BB3389500FD08F1 /* CMusicNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMusicNote.h; sourceTree = "<group>"; };
+		3651C97B1BB3389500FD08F1 /* CMusicWesternHarmony+Description.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMusicWesternHarmony+Description.h"; sourceTree = "<group>"; };
+		3651C97C1BB3389500FD08F1 /* CMusicWesternHarmony+UI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMusicWesternHarmony+UI.h"; sourceTree = "<group>"; };
+		3651C97D1BB3389500FD08F1 /* CMusicWesternHarmony.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMusicWesternHarmony.h; sourceTree = "<group>"; };
+		3651C97E1BB3389500FD08F1 /* CTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTime.h; sourceTree = "<group>"; };
+		3651C97F1BB3389500FD08F1 /* CTimeHierarchy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTimeHierarchy.h; sourceTree = "<group>"; };
+		3651C9801BB3389500FD08F1 /* CTimeMap+TimeString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CTimeMap+TimeString.h"; sourceTree = "<group>"; };
+		3651C9811BB3389500FD08F1 /* CTimeMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTimeMap.h; sourceTree = "<group>"; };
+		3651C9911BB3389500FD08F1 /* CMusicNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMusicNote.m; sourceTree = "<group>"; };
+		3651C9931BB3389500FD08F1 /* CTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTime.m; sourceTree = "<group>"; };
+		3651C9941BB3389500FD08F1 /* CTimeHierarchy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTimeHierarchy.m; sourceTree = "<group>"; };
+		3651C9951BB3389500FD08F1 /* CTimeMap+TimeString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CTimeMap+TimeString.m"; sourceTree = "<group>"; };
+		3651C9961BB3389500FD08F1 /* CTimeMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTimeMap.m; sourceTree = "<group>"; };
 		36670FE91BAF473E00B61D27 /* CMIDI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CMIDI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36670FED1BAF473E00B61D27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36670FEE1BAF473E00B61D27 /* CMIDI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMIDI.h; sourceTree = "<group>"; };
@@ -229,17 +246,6 @@
 		366711731BAF8B8300B61D27 /* CMIDISequence+Debug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CMIDISequence+Debug.h"; sourceTree = "<group>"; };
 		366711771BAFAA7200B61D27 /*  CMIDI README.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = " CMIDI README.rtf"; sourceTree = "<group>"; };
 		366711791BAFAA7A00B61D27 /* License.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = License.rtf; sourceTree = SOURCE_ROOT; };
-		366713BD1BAFDB3400B61D27 /* CMusic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMusic.h; sourceTree = "<group>"; };
-		366713BF1BAFDB3400B61D27 /* CMNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMNote.h; sourceTree = "<group>"; };
-		366713C01BAFDB3400B61D27 /* CTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTime.h; sourceTree = "<group>"; };
-		366713C11BAFDB3500B61D27 /* CTimeHierarchy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTimeHierarchy.h; sourceTree = "<group>"; };
-		366713C21BAFDB3500B61D27 /* CTimeMap+TimeString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CTimeMap+TimeString.h"; sourceTree = "<group>"; };
-		366713C31BAFDB3500B61D27 /* CTimeMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTimeMap.h; sourceTree = "<group>"; };
-		366713C61BAFDB3500B61D27 /* CMNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMNote.m; sourceTree = "<group>"; };
-		366713C71BAFDB3500B61D27 /* CTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTime.m; sourceTree = "<group>"; };
-		366713C81BAFDB3500B61D27 /* CTimeHierarchy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTimeHierarchy.m; sourceTree = "<group>"; };
-		366713C91BAFDB3500B61D27 /* CTimeMap+TimeString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CTimeMap+TimeString.m"; sourceTree = "<group>"; };
-		366713CA1BAFDB3500B61D27 /* CTimeMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTimeMap.m; sourceTree = "<group>"; };
 		3667167D1BB06E0800B61D27 /* CMIDIFileParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMIDIFileParser.h; sourceTree = "<group>"; };
 		3667167E1BB06E0800B61D27 /* CMIDIFileParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMIDIFileParser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -264,14 +270,68 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3651C9771BB3389500FD08F1 /* CMusic */ = {
+			isa = PBXGroup;
+			children = (
+				3651C9781BB3389500FD08F1 /* CMusic.h */,
+				3651C9791BB3389500FD08F1 /* Headers */,
+				3651C9831BB3389500FD08F1 /* Source */,
+			);
+			name = CMusic;
+			path = ../CMusic/CMusic;
+			sourceTree = "<group>";
+		};
+		3651C9791BB3389500FD08F1 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				3651C97A1BB3389500FD08F1 /* CMusicNote.h */,
+				3651C97B1BB3389500FD08F1 /* CMusicWesternHarmony+Description.h */,
+				3651C97C1BB3389500FD08F1 /* CMusicWesternHarmony+UI.h */,
+				3651C97D1BB3389500FD08F1 /* CMusicWesternHarmony.h */,
+				3651C97E1BB3389500FD08F1 /* CTime.h */,
+				3651C97F1BB3389500FD08F1 /* CTimeHierarchy.h */,
+				3651C9801BB3389500FD08F1 /* CTimeMap+TimeString.h */,
+				3651C9811BB3389500FD08F1 /* CTimeMap.h */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		3651C9831BB3389500FD08F1 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				3651C9901BB3389500FD08F1 /* CMusicNote */,
+				3651C9921BB3389500FD08F1 /* CTime */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		3651C9901BB3389500FD08F1 /* CMusicNote */ = {
+			isa = PBXGroup;
+			children = (
+				3651C9911BB3389500FD08F1 /* CMusicNote.m */,
+			);
+			path = CMusicNote;
+			sourceTree = "<group>";
+		};
+		3651C9921BB3389500FD08F1 /* CTime */ = {
+			isa = PBXGroup;
+			children = (
+				3651C9931BB3389500FD08F1 /* CTime.m */,
+				3651C9941BB3389500FD08F1 /* CTimeHierarchy.m */,
+				3651C9951BB3389500FD08F1 /* CTimeMap+TimeString.m */,
+				3651C9961BB3389500FD08F1 /* CTimeMap.m */,
+			);
+			path = CTime;
+			sourceTree = "<group>";
+		};
 		36670FDF1BAF473E00B61D27 = {
 			isa = PBXGroup;
 			children = (
 				366711771BAFAA7200B61D27 /*  CMIDI README.rtf */,
 				36670FEB1BAF473E00B61D27 /* CMIDI */,
+				3651C9771BB3389500FD08F1 /* CMusic */,
 				36670FF81BAF473E00B61D27 /* CMIDITests */,
 				36670FEA1BAF473E00B61D27 /* Products */,
-				366713BC1BAFDB3400B61D27 /* CMusic (ALIAS) */,
 				366711791BAFAA7A00B61D27 /* License.rtf */,
 			);
 			sourceTree = "<group>";
@@ -668,41 +728,6 @@
 			path = "CMIDIVSNumber+Debug";
 			sourceTree = "<group>";
 		};
-		366713BC1BAFDB3400B61D27 /* CMusic (ALIAS) */ = {
-			isa = PBXGroup;
-			children = (
-				366713BD1BAFDB3400B61D27 /* CMusic.h */,
-				366713BE1BAFDB3400B61D27 /* Headers */,
-				366713C51BAFDB3500B61D27 /* Source */,
-			);
-			name = "CMusic (ALIAS)";
-			path = ../CMusic/CMusic;
-			sourceTree = "<group>";
-		};
-		366713BE1BAFDB3400B61D27 /* Headers */ = {
-			isa = PBXGroup;
-			children = (
-				366713BF1BAFDB3400B61D27 /* CMNote.h */,
-				366713C01BAFDB3400B61D27 /* CTime.h */,
-				366713C11BAFDB3500B61D27 /* CTimeHierarchy.h */,
-				366713C21BAFDB3500B61D27 /* CTimeMap+TimeString.h */,
-				366713C31BAFDB3500B61D27 /* CTimeMap.h */,
-			);
-			path = Headers;
-			sourceTree = "<group>";
-		};
-		366713C51BAFDB3500B61D27 /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				366713C61BAFDB3500B61D27 /* CMNote.m */,
-				366713C71BAFDB3500B61D27 /* CTime.m */,
-				366713C81BAFDB3500B61D27 /* CTimeHierarchy.m */,
-				366713C91BAFDB3500B61D27 /* CTimeMap+TimeString.m */,
-				366713CA1BAFDB3500B61D27 /* CTimeMap.m */,
-			);
-			path = Source;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -712,6 +737,7 @@
 			files = (
 				3667167F1BB06E0800B61D27 /* CMIDIFileParser.h in Headers */,
 				366710261BAF4A0400B61D27 /* CMIDIFile.h in Headers */,
+				3651C99A1BB3389500FD08F1 /* CMusicWesternHarmony+UI.h in Headers */,
 				366710891BAF4A0E00B61D27 /* CMIDIMessageByteCount.h in Headers */,
 				3667106F1BAF4A0E00B61D27 /* CMIDI CoreMIDI Utilities.h in Headers */,
 				366710231BAF4A0400B61D27 /* CMIDIEndpoint.h in Headers */,
@@ -722,17 +748,21 @@
 				366710281BAF4A0400B61D27 /* CMIDIMessage+Description.h in Headers */,
 				3667102E1BAF4A0400B61D27 /* CMIDIReceiver CMIDISender.h in Headers */,
 				366710301BAF4A0400B61D27 /* CMIDISequence.h in Headers */,
+				3651C99C1BB3389500FD08F1 /* CTime.h in Headers */,
 				366710311BAF4A0400B61D27 /* CMIDISplitter.h in Headers */,
-				366713D01BAFDB3500B61D27 /* CTimeMap.h in Headers */,
-				366713CF1BAFDB3500B61D27 /* CTimeMap+TimeString.h in Headers */,
 				366710791BAF4A0E00B61D27 /* CMIDIDataParser+MIDIPacketList.h in Headers */,
+				3651C99E1BB3389500FD08F1 /* CTimeMap+TimeString.h in Headers */,
 				3667102D1BAF4A0400B61D27 /* CMIDIMonitor.h in Headers */,
-				366713CE1BAFDB3500B61D27 /* CTimeHierarchy.h in Headers */,
+				3651C99F1BB3389500FD08F1 /* CTimeMap.h in Headers */,
 				366710FB1BAF4C4A00B61D27 /* CMIDIClock+TimeString.h in Headers */,
 				366710251BAF4A0400B61D27 /* CMIDIFile+DescriptionWithTime.h in Headers */,
+				3651C99D1BB3389500FD08F1 /* CTimeHierarchy.h in Headers */,
 				366710211BAF4A0400B61D27 /* CMIDI Time.h in Headers */,
+				3651C9981BB3389500FD08F1 /* CMusicNote.h in Headers */,
 				3667102C1BAF4A0400B61D27 /* CMIDIMessage.h in Headers */,
-				366713CC1BAFDB3500B61D27 /* CMNote.h in Headers */,
+				3651C99B1BB3389500FD08F1 /* CMusicWesternHarmony.h in Headers */,
+				3651C9971BB3389500FD08F1 /* CMusic.h in Headers */,
+				3651C9991BB3389500FD08F1 /* CMusicWesternHarmony+Description.h in Headers */,
 				366710331BAF4A0400B61D27 /* CMIDITransport.h in Headers */,
 				366710221BAF4A0400B61D27 /* CMIDIClock.h in Headers */,
 				366710971BAF4A0E00B61D27 /* CMIDIVSNumber.h in Headers */,
@@ -741,8 +771,6 @@
 				366710771BAF4A0E00B61D27 /* CMIDIDataParser.h in Headers */,
 				3667102B1BAF4A0400B61D27 /* CMIDIMessage+SystemMessage.h in Headers */,
 				3667102F1BAF4A0400B61D27 /* CMIDISequence+FileIO.h in Headers */,
-				366713CD1BAFDB3500B61D27 /* CTime.h in Headers */,
-				366713CB1BAFDB3500B61D27 /* CMusic.h in Headers */,
 				366710291BAF4A0400B61D27 /* CMIDIMessage+DescriptionWithTime.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -868,18 +896,18 @@
 				366710751BAF4A0E00B61D27 /* CMIDIClock+TimeString.m in Sources */,
 				366716801BB06E0800B61D27 /* CMIDIFileParser.m in Sources */,
 				3667108E1BAF4A0E00B61D27 /* CMIDISequence.m in Sources */,
-				366713D21BAFDB3500B61D27 /* CMNote.m in Sources */,
-				366713D41BAFDB3500B61D27 /* CTimeHierarchy.m in Sources */,
+				3651C9AD1BB3389500FD08F1 /* CTime.m in Sources */,
 				3667108F1BAF4A0E00B61D27 /* CMIDISplitter.m in Sources */,
 				3667108B1BAF4A0E00B61D27 /* CMIDIMonitor.m in Sources */,
-				366713D61BAFDB3500B61D27 /* CTimeMap.m in Sources */,
-				366713D31BAFDB3500B61D27 /* CTime.m in Sources */,
 				366710861BAF4A0E00B61D27 /* CMIDIMessage+NSCoding.m in Sources */,
 				366710761BAF4A0E00B61D27 /* CMIDIClock.m in Sources */,
+				3651C9B01BB3389500FD08F1 /* CTimeMap.m in Sources */,
 				3667107B1BAF4A0E00B61D27 /* CMIDIEndpoint+NSCoding.m in Sources */,
 				3667107E1BAF4A0E00B61D27 /* CMIDIInternalEndpoint.m in Sources */,
-				366713D51BAFDB3500B61D27 /* CTimeMap+TimeString.m in Sources */,
+				3651C9AE1BB3389500FD08F1 /* CTimeHierarchy.m in Sources */,
 				3667107A1BAF4A0E00B61D27 /* CMIDIDataParser+MIDIPacketList.m in Sources */,
+				3651C9AC1BB3389500FD08F1 /* CMusicNote.m in Sources */,
+				3651C9AF1BB3389500FD08F1 /* CTimeMap+TimeString.m in Sources */,
 				366710851BAF4A0E00B61D27 /* CMIDIMessage+MetaMessage.m in Sources */,
 				366710811BAF4A0E00B61D27 /* CMIDIFile.m in Sources */,
 				3667108A1BAF4A0E00B61D27 /* CMIDIMessageByteCount.m in Sources */,
