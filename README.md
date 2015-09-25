@@ -106,48 +106,48 @@ CMIDIClock
 
 	Criteria:
 
-	This was designed to make it possible to 
-	(1) clients create MIDI messages with as little hassle as possible. 
-	(2) to identify and handle an arbitrary MIDI message with as little hassle as possible. 
-	(3) be able to efficiently read from a packetlist or file.
-	(4) be able to efficiently write out to a packetllst of file. 
-	(5) handle thread safety and memory management without too much hassle.
+This was designed to make it possible to 
+(1) clients create MIDI messages with as little hassle as possible. 
+(2) to identify and handle an arbitrary MIDI message with as little hassle as possible. 
+(3) be able to efficiently read from a packetlist or file.
+(4) be able to efficiently write out to a packetllst of file. 
+(5) handle thread safety and memory management without too much hassle.
 
-	Conclusions:
+Conclusions:
 
-	Use CMIDIMessage object, rather than C struct or anything else
+Use CMIDIMessage object, rather than C struct or anything else
 	+ We get so much for free: ARC, thread safety (with help from ARC), NSCoding, KVO. Thread safety is the real deal breaker. With an object under ARC, if I have a pointer, then he object still exists, and I can use it regardless of what other threads are doing with the messages. 
 	- This does add some memory overhead, but this is not really a problem, because MIDI messages are tiny to start with and we can always compress a set of them into a MIDIPacket or NSData packet object, etc.
 
-	On storage: Store NSData with a valid message; parse the data to get client-friendly properties. This optimizes the message for reading and writing, but still provides client friendly construction, modification and access. I think reading/writing should be as fast as possible, because MIDI processors need to be able to pass data through, looking for the messages they are interested in. We need to get messages in and out of Objective-C as efficiently as possible. 
+On storage: Store NSData with a valid message; parse the data to get client-friendly properties. This optimizes the message for reading and writing, but still provides client friendly construction, modification and access. I think reading/writing should be as fast as possible, because MIDI processors need to be able to pass data through, looking for the messages they are interested in. We need to get messages in and out of Objective-C as efficiently as possible. 
 
-	Use only one class with categories rather than several classes in a hierarchy.  For these reasons:
+Use only one class with categories rather than several classes in a hierarchy.  For these reasons:
 	+ It helps with (2) because no cast is necessary to access the data in an arbitrary message. 
 	+ It helps with (3)  because we don't have to figure out which class to allocate when we are reading data.
 	+ It helps with both (1) and (2) because the user doesn't have to study my class hierarchy to get anything done. He just needs understand the way the various constants work, and switch on those. 
 	? We lose the ability to do things like [CMIDIMetaTextMessage new], but this is a bad idea in any case, because this will be only a partial constructor. It may set the type fields, but there will still be properties that need to be set -- we're setting some in [init] but not all.  It's better to have a complete constructor for each message (or to let the user set all properties, including the type). Otherwise they have to study  my class hierarchy and try to figure out which properties are encoded as "classes" and which properties are not. 
 	? We lose the ability to hide some properties all together -- such as message type. But this is not really a good thing, because message type is a very famous property and people need it to for (3), because you can't switch on the class. 
 
-	CMIDIMessage is should be immutable with client-friendly specialized constructors.  
-	We construct under three circumstances:
+CMIDIMessage is should be immutable with client-friendly specialized constructors.  
+We construct under three circumstances:
 	(A) Reading from file or packetlist (where data may be invalid).
 	(B) Client creates a message to send somewhere (set with user-friendly property values).
 	(C) Internal constructor calls with valid data (i.e., internal convenience functions implemented for parsimony).
 There are several basic ways to construct: 
-	(1)  constructor creates a valid message, message is immutable
-		+ valid property access does not have to allocate data (except variable sized messages, of course)
-		- can't change properties. It's unclear if there is an application where you really need to set the properties -- typically we just want to create a valid message and send it somewhere, or study a valid message you have received. If there is such an application (such a "transposer"), it's not hard to create a new message for these special applications.
-	(2) set data, set data with bytes, validate if data is external.
-		+ we need this to read from files and packetlists. (Here we need to validate).		+ this creates a simple interface for internal constructors. buf[3] = {v,v,v}; [messageWithBytes:buf length:3]; 
-	(3) "new" and set all properties, setters are available
-		- the message is invalid before we begin setting the properties -- this creates a "modal" situation. We can't validate the "set" operations unless we know the type of the message, so the properties would have to be set in order -- so we have multiple "invalid modes" as we're trying to set them. It's not clear when we will have a chance to validate, unless this is separate state		- we can't allocate the memory yet because we don't know if this is a variable-length message, so we're in a situation where we don't know how much memory to allocate.
-		- there are some message (such as timeSignature) which really need a constructor -- the native MIDI is just too ugly. Thus, if we allow "new" and set all properties for some messages, we are inconsistent. It's not obvious to clients. If we implement setters and constructors for all messages requires twice as much testing. 
- 		- properties must be set in order if we are going to check validity -- type must be set first, controller type must be set before value, etc. We need to verify that this is being done, which requires default values.
-		- requires a lot of typing and reveals ugly constants. Much more natural to build with static buffers as data.
-		- having setters AND constructors requires twice as much testing, untless y
-	(4) constructor creates a partial message, user sets properties for the rest. For example, the constructors takes the type, channel and the length of the variable data, to hide the status byte and allocate memory.
-		- has all the same problems as (3) above
-		- clients can't tell at glance which properties are set by the partial constructor and which properties they need to set. It's inconsistent. A specialized constructor asks for all the valid properties, but someone with some MIDI knowledge will be wondering exactly where they set each property. 
+(1)  constructor creates a valid message, message is immutable
+	+ valid property access does not have to allocate data (except variable sized messages, of course)
+	- can't change properties. It's unclear if there is an application where you really need to set the properties -- typically we just want to create a valid message and send it somewhere, or study a valid message you have received. If there is such an application (such a "transposer"), it's not hard to create a new message for these special applications.
+(2) set data, set data with bytes, validate if data is external.
+	+ we need this to read from files and packetlists. (Here we need to validate).		+ this creates a simple interface for internal constructors. buf[3] = {v,v,v}; [messageWithBytes:buf length:3]; 
+(3) "new" and set all properties, setters are available
+	- the message is invalid before we begin setting the properties -- this creates a "modal" situation. We can't validate the "set" operations unless we know the type of the message, so the properties would have to be set in order -- so we have multiple "invalid modes" as we're trying to set them. It's not clear when we will have a chance to validate, unless this is separate state		- we can't allocate the memory yet because we don't know if this is a variable-length message, so we're in a situation where we don't know how much memory to allocate.
+	- there are some message (such as timeSignature) which really need a constructor -- the native MIDI is just too ugly. Thus, if we allow "new" and set all properties for some messages, we are inconsistent. It's not obvious to clients. If we implement setters and constructors for all messages requires twice as much testing. 
+ 	- properties must be set in order if we are going to check validity -- type must be set first, controller type must be set before value, etc. We need to verify that this is being done, which requires default values.
+	- requires a lot of typing and reveals ugly constants. Much more natural to build with static buffers as data.
+	- having setters AND constructors requires twice as much testing, untless y
+(4) constructor creates a partial message, user sets properties for the rest. For example, the constructors takes the type, channel and the length of the variable data, to hide the status byte and allocate memory.
+	- has all the same problems as (3) above
+	- clients can't tell at glance which properties are set by the partial constructor and which properties they need to set. It's inconsistent. A specialized constructor asks for all the valid properties, but someone with some MIDI knowledge will be wondering exactly where they set each property. 
 
 
 ###CMIDIEndpoint
@@ -232,18 +232,24 @@ Again, this is extremely unlikely, because the timer has to go off PRECISELY BET
 
 This has been written to replace CAClock.  These are the problems I have with CAClock:
 
- 1) After stopping, it continues to send timing messages to the endpoints it is attached to. This is confusing, but (I am told) this is by design so that downstream units can keep syncing themselves even when the clock is stopped. In other words, it's a feature. However I need a clock that can be stopped and reset to a new position without losing ticks.
- 2) It continues to move "media time" forward after a stop, even though the media time should be halted. This adds another layer of confusion. Also, it's impossible to query the system to know where, exactly, it is stopped on the media timeline.
- 3) "stop" sends a time of zero (this is okay, I suppose, because it means "immediately", but it would be more consistent to tell me what TIME it stopped).
- 4) After stopping, "start" does not begin at the next tick -- it may jump forward or backward several ticks. This is bad for an application that assumes it will receive every tick; in a sequence it may skip downbeats and note-off points.
- 5) It seems to always send a "move" just before it starts. This may be related to the previous; it could be a way of telling the downstream units that we're not continuing with exactly the same tick. Nevertheless, my downstream routines would prefer to know that this is not a "real" move, i.e. one that was generated by a user command or some client operation.
- 7) When the clock is initialized, but not yet started, CATranslateTime returns the same real-time for all media times. This is odd, and I suppose the behavior under these circumstances is "undefined". However, I would like to be make calculations about media time values without necessarily starting the clock (such as tempo calculations), so I would prefer that this behaved in the same way it does when it is stopped: by assuming some fixed starting point and calculating the real values from that.
- 8) Can't set the time while the clock is running; returns an error.
- 9) Conversion routines don't make a clear enough distinction between media time and host time -- approach to these conversions is inconsistent in any case. (see (2) above). 
- 10) Tempo map seems to do nothing. What is the tempo map used for? Am I still setting it wrong?
- 10.1) The MIDI clock ticks do not change tempo with tempo map.
- 10.2) "CATranslateTime" does seem to take into account the tempo map.
- 11) Can't seem to use an object with SMPTE time; can't get SMPTE from beats, can't get beats from SMPTE. SMPTE not currently supported; I'm sure there's something I don't know. (This is not fixed in CMIDIClock.) 
+1) After stopping, it continues to send timing messages to the endpoints it is attached to. This is confusing, but (I am told) this is by design so that downstream units can keep syncing themselves even when the clock is stopped. In other words, it's a feature. However I need a clock that can be stopped and reset to a new position without losing ticks.
+2) It continues to move "media time" forward after a stop, even though the media time should be halted. This adds another layer of confusion. Also, it's impossible to query the system to know where, exactly, it is stopped on the media timeline.
+3) "stop" sends a time of zero (this is okay, I suppose, because it means "immediately", but it would be more consistent to tell me what TIME it stopped).
+4) After stopping, "start" does not begin at the next tick -- it may jump forward or backward several ticks. This is bad for an application that assumes it will receive every tick; in a sequence it may skip downbeats and note-off points.
+5) It seems to always send a "move" just before it starts. This may be related to the previous; it could be a way of telling the downstream units that we're not continuing with exactly the same tick. Nevertheless, my downstream routines would prefer to know that this is not a "real" move, i.e. one that was generated by a user command or some client operation.
+7) When the clock is initialized, but not yet started, CATranslateTime returns the same real-time for all media times. This is odd, and I suppose the behavior under these circumstances is "undefined". However, I would like to be make calculations about media time values without necessarily starting the clock (such as tempo calculations), so I would prefer that this behaved in the same way it does when it is stopped: by assuming some fixed starting point and calculating the real values from that.
+
+8) Can't set the time while the clock is running; returns an error.
+
+9) Conversion routines don't make a clear enough distinction between media time and host time -- approach to these conversions is inconsistent in any case. (see (2) above). 
+
+10) Tempo map seems to do nothing. What is the tempo map used for? Am I still setting it wrong?
+
+10.1) The MIDI clock ticks do not change tempo with tempo map.
+
+10.2) "CATranslateTime" does seem to take into account the tempo map.
+
+11) Can't seem to use an object with SMPTE time; can't get SMPTE from beats, can't get beats from SMPTE. SMPTE not currently supported; I'm sure there's something I don't know. (This is not fixed in CMIDIClock.) 
 
 As far as I can see, the only features of CAClock that I don’t support are 
 1) Synchronization
