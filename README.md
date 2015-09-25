@@ -1,7 +1,7 @@
-# CMIDI
+#CMIDI
 An Objective-C library for MIDI messages, data streams, files and sequences
 
-#Usage
+##Usage
 
 See examples and header files. 
 
