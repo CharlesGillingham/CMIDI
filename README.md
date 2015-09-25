@@ -11,7 +11,17 @@ An Objective-C library for MIDI messages, data streams, files and sequences
 Nothing more todo at the moment.
 
 ###Bugs
--	BPM is not bound properly; it’s not receiving updates from the clock. KVC looks right. I’m sure this is a trivial problem. 
+
+CMIDITransport
+-	BPM is not bound properly; it’s not receiving updates from the clock. KVC looks right. I’m sure this is a trivial problem.
+
+###Possible issues
+These are not bugs, but may be confusing for the client.
+
+CMIDIClock 
+- 	If a "CMIDIReciever" keeps a pointer to the clock, there is a potential retain cycle.  Don't keep a pointer to the clock; you shouldn't need it until it calls you -- use the pointer inside the receiver, don't retain it. 
+- 	Receiver list is not thread-safe and should not be modified when the clock is running.
+
 
 ###Low priority todo
 These are nits or missing features that would effect the current project. Don’t need to do these at all. 
@@ -50,29 +60,27 @@ CMIDIFile:
 
 CMIDIClock
 
--	    Unlike CAClock, this clock currently has no synchronization features. It should be able to sync to (1) an AudioUint (2) system MIDI messages such as start, stop, songPosition (3) MTC messages (4) SMPTE?? (how do you do this?) (5) what else?
--	   SMPTE. We can’t format the time as SMPTE or set the SMPTE offset. The right way to do this would be to have two time maps, or at least a second hierarchy that has the smite time. The nanoseconds and ticks would be shared (i.e. “ticks” = “subframes” but the higher levels would be different.) The branch counts in the SMPTE time hierarchy would not change for the life time of the application; the hierarchy may be able to work by staying in sync with “timeOfTheCurrentTick”.
+-	Unlike CAClock, this clock currently has no synchronization features. It should be able to sync to (1) an AudioUint (2) system MIDI messages such as start, stop, songPosition (3) MTC messages (4) SMPTE?? (how do you do this?) (5) what else?
+-	SMPTE. We can’t format the time as SMPTE or set the SMPTE offset. The right way to do this would be to have two time maps, or at least a second hierarchy that has the smite time. The nanoseconds and ticks would be shared (i.e. “ticks” = “subframes” but the higher levels would be different.) The branch counts in the SMPTE time hierarchy would not change for the life time of the application; the hierarchy may be able to work by staying in sync with “timeOfTheCurrentTick”.
 
 CMIDIEndpoint
 
 - 	Updating missing endpoints. The "endpoint" I start with can disappear, as when I unplug a keyboard. I'm guessing that my input port will be disconnected and nothing will be sent to it. If I replug in the keyboard, it's possible the system creates some new endpoint and my input port needs to be re-connected to it, if I intend to stay connected.
- 	While the endpoint is disconnected, I need to fail gracefully when I receive MIDI while I wait for the system to fix itself.
-	When the endpoint reappears, I should rescan by NAME and reconnect the object. (1) keep a MIDINotifyProc in MIDIUnit (Resources) and track when endpoints appear and disappear. (2) Whenever an endpoint is added, check the list of instantiated sources to see if the endpoint matches a name. If it does, then reconnect the source endpoint to my input port.
-	Add a flag fOffline, and handle it appropriately in the MIDI data flow. When decoding and the object is not found, set the offline flag and set the name; assume the object is offline Keep a MIDINotifyProc  and track when endpoints appear and disappear. NOT DOING THIS NOW, because this is outside the scope of my application.
+
+While the endpoint is disconnected, I need to fail gracefully when I receive MIDI while I wait for the system to fix itself.
+
+When the endpoint reappears, I should rescan by NAME and reconnect the object. (1) keep a MIDINotifyProc in MIDIUnit (Resources) and track when endpoints appear and disappear. (2) Whenever an endpoint is added, check the list of instantiated sources to see if the endpoint matches a name. If it does, then reconnect the source endpoint to my input port.
+	
+Add a flag fOffline, and handle it appropriately in the MIDI data flow. When decoding and the object is not found, set the offline flag and set the name; assume the object is offline Keep a MIDINotifyProc  and track when endpoints appear and disappear. NOT DOING THIS NOW, because this is outside the scope of my application.
 
 
 ###Possible new features
 These are not needed for the current project. I would need a strong motivation to implement these. 
 -	CMIDIMonitor: should use some kind of matrix ... isn't there a matrix which goes property by property, lets you resize the rows, etc.? I.e, an NSArrayController, etc. Is this easier than it looks?? 
--	CMIDISequencer: At 480 ticks per beat, it seems like this is doing a lot of extra work. If tests show that we need this to be more efficient, there are several options: 
-		Skip ahead to next msg? this would require the clock to have an interface something like dontNotifyUntilTick:, which would ask the timer to send a message on a later tick, skipping the intervening ticks. 
-		Step down the tick rate by checking strength before proceeding. This is what Squeezebox does. 
-		Readjust the ticks per beat in the clock and the message list. This is just a matter of setting ticksPerBeat in the timeHierarchy (and clock) and also adjusting the tick in every message. 
-		Possibly add a feature that uses permits micro timing.
+-	CMIDISequencer: At 480 ticks per beat, it seems like this is doing a lot of extra work. If tests show that we need this to be more efficient, there are several options: (1) Skip ahead to next msg? this would require the clock to have an interface something like dontNotifyUntilTick:, which would ask the timer to send a message on a later tick, skipping the intervening ticks. Step down the tick rate by checking strength before proceeding. This is what Squeezebox does. (2) Readjust the ticks per beat in the clock and the message list. This is just a matter of setting ticksPerBeat in the timeHierarchy (and clock) and also adjusting the tick in every message. (3)Possibly add a feature that uses permits micro timing.
 - 	CMIDIDataParser+MIDIPacketList: time. Messages are not time stamped. They could easily be stamped with “host time” because the packet lists has this, but, unfortunately, CMIDITempoMeter doesn’t keep track of host time. 
-	CMIDITempoMeter:hostTime / CMIDIMessage:timeLine. We COULD add a layer to CMIDITempoMeter that allows the display of hostTime, but this would require CTime to handle offsets. (We might want CTime to handle offsets anyway, so that we can have a SMPTE offset.) We would also need to another field to CMIDIMessage “timeLine” and allow messages to be attached to particular time lines. This is veering toward making CTime into an object with an SInt64 and NSUinteger (time & timeline). I would need to have some stronger motivations for this before I commit because it is a more complex architecture. I like having CTime as a simple SInt64. 
+-	CMIDITempoMeter:hostTime / CMIDIMessage:timeLine. We COULD add a layer to CMIDITempoMeter that allows the display of hostTime, but this would require CTime to handle offsets. (We might want CTime to handle offsets anyway, so that we can have a SMPTE offset.) We would also need to another field to CMIDIMessage “timeLine” and allow messages to be attached to particular time lines. This is veering toward making CTime into an object with an SInt64 and NSUinteger (time & timeline). I would need to have some stronger motivations for this before I commit because it is a more complex architecture. I like having CTime as a simple SInt64. 
 -	CMIDIMessage+Verify. [CMIDIMessage check] would be useful as a last step in parsing, just to be sure messages are valid in files and streams. (Don't think it would be useful for real-time message streams because there's nowhere to put the NSError -- on the endpoint?   It would need to be rewritten without CDebugMessage and return error objects.)
-
 
 ###Test bugs
 These are not bugs in CMIDI, but they are bugs in the tests.
@@ -88,73 +96,77 @@ These should be fixed, but they require more research than I am willing to commi
 -	Question: Is it possible that "TuneRequest" "SongPositionPointer" "MTCQuarterFrame" should be considered real time bytes? Apple ignores them when it is reading a sequence. 
 -	CMIDIClock Retain loop in the UI. CMIDIClock is not deallocated if you press play once in CMIDITransport. CMIDIClock and CMIDTimer are deallocated in tests where nothing is bound to the transport.  CMIDITransport and NSDocument are deallocated in CMIDIClockTest, the clock isn’t. Because they are deallocated in tests with only my two objects, I don’t think this problem is in my code; it must have something to do with the bindings.
 
-##BUGS NOT WORTH FIXING:
+###Bugs not worth fixing:
 -	Apple's "RawData" messages does not match the System Exclusive messages I am finding in the files, but (with some discomfort), I think I am right and Apple is wrong at the moment.  Not really clear what Apple is doing here. For most examples, the block of raw data looks exactly like the system exclusive message I am reading, but, inexplicably, the "manufacturer ID" has been removed. It's also possible that I'm misunderstanding what my tests are showing me. This is unimportant to my current project -- call it a "possible issue". Apple will not read a system exclusive message with a three byte manufacturer ID (it just deletes them). Apple misreads the length of some of the system exclusive messages. For now, I strip these out of tests when Apple can't handle it at all, and when "DEBUG" is set, I don't use "manufacturer ID" to evaluate equality.
-
-
-
-####POSSIBLE ISSUES:
-
-CMIDIClock 
-- 	If a "CMIDIReciever" keeps a pointer to the clock, there is a potential retain cycle.  Don't keep a pointer to the clock; you shouldn't need it until it calls you -- use the pointer inside the receiver, don't retain it. 
-- 	Receiver list is not thread-safe and should not be modified when the clock is running.
 
 ##Design notes
 ###CMIDIMessage
 
 Criteria:
 
-This was designed to make it possible to 
+This was designed to make it possible to  
+
 (1) clients create MIDI messages with as little hassle as possible. 
+
 (2) to identify and handle an arbitrary MIDI message with as little hassle as possible. 
+
 (3) be able to efficiently read from a packetlist or file.
+
 (4) be able to efficiently write out to a packetllst of file. 
+
 (5) handle thread safety and memory management without too much hassle.
 
 Conclusions:
 
 Use CMIDIMessage object, rather than C struct or anything else
-	+ We get so much for free: ARC, thread safety (with help from ARC), NSCoding, KVO. Thread safety is the real deal breaker. With an object under ARC, if I have a pointer, then he object still exists, and I can use it regardless of what other threads are doing with the messages. 
-	- This does add some memory overhead, but this is not really a problem, because MIDI messages are tiny to start with and we can always compress a set of them into a MIDIPacket or NSData packet object, etc.
+-	+ We get so much for free: ARC, thread safety (with help from ARC), NSCoding, KVO. Thread safety is the real deal breaker. With an object under ARC, if I have a pointer, then he object still exists, and I can use it regardless of what other threads are doing with the messages. 
+-	- This does add some memory overhead, but this is not really a problem, because MIDI messages are tiny to start with and we can always compress a set of them into a MIDIPacket or NSData packet object, etc.
 
 On storage: Store NSData with a valid message; parse the data to get client-friendly properties. This optimizes the message for reading and writing, but still provides client friendly construction, modification and access. I think reading/writing should be as fast as possible, because MIDI processors need to be able to pass data through, looking for the messages they are interested in. We need to get messages in and out of Objective-C as efficiently as possible. 
 
 Use only one class with categories rather than several classes in a hierarchy.  For these reasons:
-	+ It helps with (2) because no cast is necessary to access the data in an arbitrary message. 
-	+ It helps with (3)  because we don't have to figure out which class to allocate when we are reading data.
-	+ It helps with both (1) and (2) because the user doesn't have to study my class hierarchy to get anything done. He just needs understand the way the various constants work, and switch on those. 
+-	+ It helps with (2) because no cast is necessary to access the data in an arbitrary message. 
+-	+ It helps with (3)  because we don't have to figure out which class to allocate when we are reading data.
+-	+ It helps with both (1) and (2) because the user doesn't have to study my class hierarchy to get anything done. He just needs understand the way the various constants work, and switch on those. 
 	? We lose the ability to do things like [CMIDIMetaTextMessage new], but this is a bad idea in any case, because this will be only a partial constructor. It may set the type fields, but there will still be properties that need to be set -- we're setting some in [init] but not all.  It's better to have a complete constructor for each message (or to let the user set all properties, including the type). Otherwise they have to study  my class hierarchy and try to figure out which properties are encoded as "classes" and which properties are not. 
 	? We lose the ability to hide some properties all together -- such as message type. But this is not really a good thing, because message type is a very famous property and people need it to for (3), because you can't switch on the class. 
 
 CMIDIMessage is should be immutable with client-friendly specialized constructors.  
 We construct under three circumstances:
+
 	(A) Reading from file or packetlist (where data may be invalid).
+
 	(B) Client creates a message to send somewhere (set with user-friendly property values).
+
 	(C) Internal constructor calls with valid data (i.e., internal convenience functions implemented for parsimony).
+
 There are several basic ways to construct: 
 (1) Constructor creates a valid message, message is immutable
-	+ valid property access does not have to allocate data (except variable sized messages, of course)
-	- can't change properties. It's unclear if there is an application where you really need to set the properties -- typically we just want to create a valid message and send it somewhere, or study a valid message you have received. If there is such an application (such a "transposer"), it's not hard to create a new message for these special applications.
-(2) Set data, set data with bytes, validate if data is external.
-	+ we need this to read from files and packetlists. (Here we need to validate).		+ this creates a simple interface for internal constructors. buf[3] = {v,v,v}; [messageWithBytes:buf length:3]; 
-(3) "new" and set all properties, setters are available
-	- the message is invalid before we begin setting the properties -- this creates a "modal" situation. We can't validate the "set" operations unless we know the type of the message, so the properties would have to be set in order -- so we have multiple "invalid modes" as we're trying to set them. It's not clear when we will have a chance to validate, unless this is separate state		- we can't allocate the memory yet because we don't know if this is a variable-length message, so we're in a situation where we don't know how much memory to allocate.		- there are some message (such as timeSignature) which really need a constructor -- the native MIDI is just too ugly. Thus, if we allow "new" and set all properties for some messages, we are inconsistent. It's not obvious to clients. If we implement setters and constructors for all messages requires twice as much testing. 
-	- properties must be set in order if we are going to check validity -- type must be set first, controller type must be set before value, etc. We need to verify that this is being done, which requires default values.
-	- requires a lot of typing and reveals ugly constants. Much more natural to build with static buffers as data.
-	- having setters AND constructors requires twice as much testing, untless y
-(4) constructor creates a partial message, user sets properties for the rest. For example, the constructors takes the type, channel and the length of the variable data, to hide the status byte and allocate memory.
-	- has all the same problems as (3) above
-	- clients can't tell at glance which properties are set by the partial constructor and which properties they need to set. It's inconsistent. A specialized constructor asks for all the valid properties, but someone with some MIDI knowledge will be wondering exactly where they set each property. 
+-	+ valid property access does not have to allocate data (except variable sized messages, of course)
+-	- can't change properties. It's unclear if there is an application where you really need to set the properties -- typically we just want to create a valid message and send it somewhere, or study a valid message you have received. If there is such an application (such a "transposer"), it's not hard to create a new message for these special applications.
 
+(2) Set data, set data with bytes, validate if data is external.
+-	+ we need this to read from files and packetlists. (Here we need to validate).		+ this creates a simple interface for internal constructors. buf[3] = {v,v,v}; [messageWithBytes:buf length:3]; 
+
+(3) "new" and set all properties, setters are available
+-	- the message is invalid before we begin setting the properties -- this creates a "modal" situation. We can't validate the "set" operations unless we know the type of the message, so the properties would have to be set in order -- so we have multiple "invalid modes" as we're trying to set them. It's not clear when we will have a chance to validate, unless this is separate state		- we can't allocate the memory yet because we don't know if this is a variable-length message, so we're in a situation where we don't know how much memory to allocate.	-	- there are some message (such as timeSignature) which really need a constructor -- the native MIDI is just too ugly. Thus, if we allow "new" and set all properties for some messages, we are inconsistent. It's not obvious to clients. If we implement setters and constructors for all messages requires twice as much testing. 
+-	- properties must be set in order if we are going to check validity -- type must be set first, controller type must be set before value, etc. We need to verify that this is being done, which requires default values.
+-	- requires a lot of typing and reveals ugly constants. Much more natural to build with static buffers as data.
+-	- having setters AND constructors requires twice as much testing, untless y
+
+(4) constructor creates a partial message, user sets properties for the rest. For example, the constructors takes the type, channel and the length of the variable data, to hide the status byte and allocate memory.
+-	- has all the same problems as (3) above
+-	- clients can't tell at glance which properties are set by the partial constructor and which properties they need to set. It's inconsistent. A specialized constructor asks for all the valid properties, but someone with some MIDI knowledge will be wondering exactly where they set each property. 
 
 ###CMIDIEndpoint
 
 MIDIEndpoints: The goal of this design is to allow clients to use MIDI endpoints simply, without needing to study the complexity of CoreMIDI and all of its objects and constructors. Thus, this interface hides all details except the most essential and implements only the simplest cases. If a client needs all the details of CoreMIDI, they should use CoreMIDI.
 
-	I divided the endpoints into three classes for clarity (see explanation in the header file). There is shared code, but none of the code is shared between all three types of end points. Two types might have some very similar code -- the <MIDISender>s share some code,  <MIDIReceiver>s share some code, external endpoints have similar "search" routines, all of them have some kind of port. This code is subtly different for each type of endpoint. I could have combined the shared code into the superclass, of course, but that would have these pluses and minuses:
-	- Combining the shared code would requires a really complicated system of inheritance that would have the thread jumping all around the hierarchy. I think the code for each endpoint is easier to understand if there is no inheritance at all and you can find all the code for each type of object inside that object. I think that future developers will start by analyzing one endpoint and trying to see how it works -- this will be easier for future developers to get an initial understanding of what's happening.
-	+ Not combining the code means that making an update or fixing a bug must often be done in two places, and it is easy to overlook one.
-	On the whole, this file chooses clarity over parsimony.
+I divided the endpoints into three classes for clarity (see explanation in the header file). There is shared code, but none of the code is shared between all three types of end points. Two types might have some very similar code -- the <MIDISender>s share some code,  <MIDIReceiver>s share some code, external endpoints have similar "search" routines, all of them have some kind of port. This code is subtly different for each type of endpoint. I could have combined the shared code into the superclass, of course, but that would have these pluses and minuses:
+-	- Combining the shared code would requires a really complicated system of inheritance that would have the thread jumping all around the hierarchy. I think the code for each endpoint is easier to understand if there is no inheritance at all and you can find all the code for each type of object inside that object. I think that future developers will start by analyzing one endpoint and trying to see how it works -- this will be easier for future developers to get an initial understanding of what's happening.
+-	+ Not combining the code means that making an update or fixing a bug must often be done in two places, and it is easy to overlook one.
+	
+On the whole, this file chooses clarity over parsimony.
 
 These classes obey what I call the "non-modal" principal: if the object exists, then it is valid and ready to operate. Any time between init and dealloc, the endpoint is fully capable of handling any method call whatsoever. With ARC, this means that if you have a valid pointer to the object then you are pointing to a fully functional object.
 
