@@ -7,15 +7,15 @@ An Objective-C library for MIDI messages, data streams, files and sequences
 
 ##Todo
 
-###Urgent todo
+####Urgent todo
 Nothing more todo at the moment.
 
-###Bugs
+####Bugs
 
 CMIDITransport
 -	BPM is not bound properly; it’s not receiving updates from the clock. KVC looks right. I’m sure this is a trivial problem.
 
-###Possible issues
+####Possible issues
 These are not bugs, but may be confusing for the client.
 
 CMIDIClock 
@@ -23,23 +23,36 @@ CMIDIClock
 - 	Receiver list is not thread-safe and should not be modified when the clock is running.
 
 
-###Low priority todo
-These are nits or missing features that would effect the current project. Don’t need to do these at all. 
--- 	CMIDITransport: MouseDown. Should allow the caller to drag the current time. Need to capture MouseDown/MouseUp. Code to do this is in one of the back up versions of SqueezeBox
--	CMIDITransport: Set the current time in various formats. Complicated, because we’re not bound to anything; we have to get the string and parse it. 
--	CMIDIMessage+Description:Files for strings. Should we just save the arrays? See what this looks like, see if it’s editable.
-- 	CMIDIMessage NSCopying 
--	CMIDIMessage+Description: Indent strings. We need to divide and indent long strings, perhaps with \. We need to respect the “indent” parameter in that CMIDIIndent routine. 
--	CMIDITempoMeter / CMIDIMessage+MetaMessage@tempoMessage. Thirty-seconds per eights .... this is in the tempo message, but I doubt that it's correct in every case ... using this may cause more problems than it solves.
--	CMIDISequence.outputUnit Check thread safety. 
--	CMIDIFile: split “standardize” code into a separate.
+####Low priority todo
+These are nits or missing features that would effect the current project. Don’t need to do these at all.
+
+CMIDITransport
+-	MouseDown. Should allow the caller to drag the current time. Need to capture MouseDown/MouseUp. Code to do this is in one of the back up versions of SqueezeBox
+-	Set the current time in various formats. Complicated, because we’re not bound to anything; we have to get the string and parse it. 
+
+CMIDIMessage+Description
+-	Files for strings. Should we just save the arrays? See what this looks like, see if it’s editable.
+-	Indent strings. We need to divide and indent long strings, perhaps with \. We need to respect the “indent” parameter in that CMIDIIndent routine.
+
+CMIDIMessage 
+-	NSCopying 
+	
+CMIDITempoMeter / CMIDIMessage+MetaMessage. 
+-	Thirty-seconds per eights .... this is in the tempo message, but I doubt that it's correct in every case ... using this may cause more problems than it solves.
+CMIDISequence.outputUnit 
+-	Check thread safety. 
+	
+CMIDIFile
+-	split “standardize” code into a separate.
+	
+Everywhere
 - 	check that all #pragma marks are all 80 characters wide
 -	check that headers all read the same.
 -	check that NS_DESIGNATED_INITIALIZER is used correctly everywhere.
 - 	check inspection tests have the same header format.
 
 
-##Unsupported features 
+####Unsupported features 
 These are all well outside the scope of my current project. To be fixed with someone else's help.
 
 CMIDIMessage:
@@ -55,7 +68,6 @@ CMIDIMessage:
 
 CMIDIFile:
 -	No support for XML MIDI files.
-
 -	Can't read type 2 MIDI files (solution: create "CMIDISequence" -- type 2 file creates multiple sequences. Type 0 and Type 1 files create one sequence.)
 
 CMIDIClock
@@ -64,8 +76,7 @@ CMIDIClock
 -	SMPTE. We can’t format the time as SMPTE or set the SMPTE offset. The right way to do this would be to have two time maps, or at least a second hierarchy that has the smite time. The nanoseconds and ticks would be shared (i.e. “ticks” = “subframes” but the higher levels would be different.) The branch counts in the SMPTE time hierarchy would not change for the life time of the application; the hierarchy may be able to work by staying in sync with “timeOfTheCurrentTick”.
 
 CMIDIEndpoint
-
-- 	Updating missing endpoints. The "endpoint" I start with can disappear, as when I unplug a keyboard. I'm guessing that my input port will be disconnected and nothing will be sent to it. If I replug in the keyboard, it's possible the system creates some new endpoint and my input port needs to be re-connected to it, if I intend to stay connected.
+- 	Updating missing endpoints. The "endpoint" I start with can disappear, as when I unplug a keyboard. I'm suessing that my input port will be disconnected and nothing will be sent to it. If I replug in the keyboard, it's possible the system creates some new endpoint and my input port needs to be re-connected to it, if I intend to stay connected.
 
 While the endpoint is disconnected, I need to fail gracefully when I receive MIDI while I wait for the system to fix itself.
 
@@ -73,8 +84,7 @@ When the endpoint reappears, I should rescan by NAME and reconnect the object. (
 	
 Add a flag fOffline, and handle it appropriately in the MIDI data flow. When decoding and the object is not found, set the offline flag and set the name; assume the object is offline Keep a MIDINotifyProc  and track when endpoints appear and disappear. NOT DOING THIS NOW, because this is outside the scope of my application.
 
-
-###Possible new features
+####Possible new features
 These are not needed for the current project. I would need a strong motivation to implement these. 
 -	CMIDIMonitor: should use some kind of matrix ... isn't there a matrix which goes property by property, lets you resize the rows, etc.? I.e, an NSArrayController, etc. Is this easier than it looks?? 
 -	CMIDISequencer: At 480 ticks per beat, it seems like this is doing a lot of extra work. If tests show that we need this to be more efficient, there are several options: (1) Skip ahead to next msg? this would require the clock to have an interface something like dontNotifyUntilTick:, which would ask the timer to send a message on a later tick, skipping the intervening ticks. Step down the tick rate by checking strength before proceeding. This is what Squeezebox does. (2) Readjust the ticks per beat in the clock and the message list. This is just a matter of setting ticksPerBeat in the timeHierarchy (and clock) and also adjusting the tick in every message. (3)Possibly add a feature that uses permits micro timing.
@@ -82,39 +92,31 @@ These are not needed for the current project. I would need a strong motivation t
 -	CMIDITempoMeter:hostTime / CMIDIMessage:timeLine. We COULD add a layer to CMIDITempoMeter that allows the display of hostTime, but this would require CTime to handle offsets. (We might want CTime to handle offsets anyway, so that we can have a SMPTE offset.) We would also need to another field to CMIDIMessage “timeLine” and allow messages to be attached to particular time lines. This is veering toward making CTime into an object with an SInt64 and NSUinteger (time & timeline). I would need to have some stronger motivations for this before I commit because it is a more complex architecture. I like having CTime as a simple SInt64. 
 -	CMIDIMessage+Verify. [CMIDIMessage check] would be useful as a last step in parsing, just to be sure messages are valid in files and streams. (Don't think it would be useful for real-time message streams because there's nowhere to put the NSError -- on the endpoint?   It would need to be rewritten without CDebugMessage and return error objects.)
 
-###Test bugs
-These are not bugs in CMIDI, but they are bugs in the tests.
-- 	CMIDITimer tests, fails -- as if CoreMIDI was doing nothing.  Timer works in the clock.
-
-###Untested, with code in place
+####Untested, with code in place
 - 	CMIDIEndpoint: Not sure if my internal end points can be properly used by other applications. I have reason to believe this probably doesn't work.
 
-###Todo with someone's help
+####Todo with someone's help
 These should be fixed, but they require more research than I am willing to commit right now. Perhaps someone else knows how to do this easily.
 -	CMIDITimer should go to the machine directly; this will help remove our dependency on CoreMIDI (which isn't available yet in iOS and may never be).
 -	CMIDIFile, CMIDIDataParser: Error reporting in CMIDIFile & CMIDIDataParser. (1) Warnings are not returned properly. Would prefer to queue all the warnings. (2) Need to return an error code for regression testing. (3) Also, regression tests would be more elegant if we removed the current dependency on CDebugMessage.h 
 -	Question: Is it possible that "TuneRequest" "SongPositionPointer" "MTCQuarterFrame" should be considered real time bytes? Apple ignores them when it is reading a sequence. 
 -	CMIDIClock Retain loop in the UI. CMIDIClock is not deallocated if you press play once in CMIDITransport. CMIDIClock and CMIDTimer are deallocated in tests where nothing is bound to the transport.  CMIDITransport and NSDocument are deallocated in CMIDIClockTest, the clock isn’t. Because they are deallocated in tests with only my two objects, I don’t think this problem is in my code; it must have something to do with the bindings.
 
-###Bugs not worth fixing:
+####Test bugs / bugs not worth fixing:
 -	Apple's "RawData" messages does not match the System Exclusive messages I am finding in the files, but (with some discomfort), I think I am right and Apple is wrong at the moment.  Not really clear what Apple is doing here. For most examples, the block of raw data looks exactly like the system exclusive message I am reading, but, inexplicably, the "manufacturer ID" has been removed. It's also possible that I'm misunderstanding what my tests are showing me. This is unimportant to my current project -- call it a "possible issue". Apple will not read a system exclusive message with a three byte manufacturer ID (it just deletes them). Apple misreads the length of some of the system exclusive messages. For now, I strip these out of tests when Apple can't handle it at all, and when "DEBUG" is set, I don't use "manufacturer ID" to evaluate equality.
+- 	CMIDITimer tests, fails -- as if CoreMIDI was doing nothing.  Timer works and is well tested from CMIDIClock; I'm sure this is some dumb problem with the test.
 
 ##Design notes
-###CMIDIMessage
+####CMIDIMessage
 
-Criteria:
+Requirements:
 
-This was designed to make it possible to  
-
-(1) clients create MIDI messages with as little hassle as possible. 
-
-(2) to identify and handle an arbitrary MIDI message with as little hassle as possible. 
-
-(3) be able to efficiently read from a packetlist or file.
-
-(4) be able to efficiently write out to a packetllst of file. 
-
-(5) handle thread safety and memory management without too much hassle.
+This was designed to make it possible to: 
+- create MIDI messages with as little hassle as possible. 
+- to identify and handle an arbitrary MIDI message with as little hassle as possible. 
+- be able to efficiently read from a packetlist or file.
+- be able to efficiently write out to a packetllst of file. 
+- handle thread safety and memory management without too much hassle.
 
 Conclusions:
 
@@ -132,15 +134,10 @@ Use only one class with categories rather than several classes in a hierarchy.  
 	? We lose the ability to hide some properties all together -- such as message type. But this is not really a good thing, because message type is a very famous property and people need it to for (3), because you can't switch on the class. 
 
 CMIDIMessage is should be immutable with client-friendly specialized constructors.  
-We construct under three circumstances:
-
-	(A) Reading from file or packetlist (where data may be invalid).
-
-	(B) Client creates a message to send somewhere (set with user-friendly property values).
-
-	(C) Internal constructor calls with valid data (i.e., internal convenience functions implemented for parsimony).
+We construct under three circumstances: (A) Reading from file or packetlist (where data may be invalid). (B) Client creates a message to send somewhere (set with user-friendly property values). (C) Internal constructor calls with valid data (i.e., internal convenience functions implemented for parsimony).
 
 There are several basic ways to construct: 
+
 (1) Constructor creates a valid message, message is immutable
 -	+ valid property access does not have to allocate data (except variable sized messages, of course)
 -	- can't change properties. It's unclear if there is an application where you really need to set the properties -- typically we just want to create a valid message and send it somewhere, or study a valid message you have received. If there is such an application (such a "transposer"), it's not hard to create a new message for these special applications.
@@ -158,9 +155,10 @@ There are several basic ways to construct:
 -	- has all the same problems as (3) above
 -	- clients can't tell at glance which properties are set by the partial constructor and which properties they need to set. It's inconsistent. A specialized constructor asks for all the valid properties, but someone with some MIDI knowledge will be wondering exactly where they set each property. 
 
-###CMIDIEndpoint
+####CMIDIEndpoint
 
-MIDIEndpoints: The goal of this design is to allow clients to use MIDI endpoints simply, without needing to study the complexity of CoreMIDI and all of its objects and constructors. Thus, this interface hides all details except the most essential and implements only the simplest cases. If a client needs all the details of CoreMIDI, they should use CoreMIDI.
+Requirements: 
+The goal of this design is to allow clients to use MIDI endpoints simply, without needing to study the complexity of CoreMIDI and all of its objects and constructors. Thus, this interface hides all details except the most essential and implements only the simplest cases. If a client needs all the details of CoreMIDI, they should use CoreMIDI.
 
 I divided the endpoints into three classes for clarity (see explanation in the header file). There is shared code, but none of the code is shared between all three types of end points. Two types might have some very similar code -- the <MIDISender>s share some code,  <MIDIReceiver>s share some code, external endpoints have similar "search" routines, all of them have some kind of port. This code is subtly different for each type of endpoint. I could have combined the shared code into the superclass, of course, but that would have these pluses and minuses:
 -	- Combining the shared code would requires a really complicated system of inheritance that would have the thread jumping all around the hierarchy. I think the code for each endpoint is easier to understand if there is no inheritance at all and you can find all the code for each type of object inside that object. I think that future developers will start by analyzing one endpoint and trying to see how it works -- this will be easier for future developers to get an initial understanding of what's happening.
@@ -178,9 +176,9 @@ A method that uses "outputUnit" is NOT thread safe, because the output unit may 
 
 When CoreMIDI calls a MIDIReadProc, we need a pointer to "self". I can't place the pointer in the refcon, because ARC won't guarantee that this object is still valid. Thus I place an index into the lists held by CMIDIManager. This index is always valid and correct (because we only add to these lists and never remove from them).
 
-###CMIDIClock
+####CMIDIClock
 
-####Requirements
+#####Requirements
 
 - Invariant: "clockTicked" always sends every tick, in order, regardless of tempo changes or if the clock is started or stopped. Only setting the currentTick can break this principle.
 
@@ -190,13 +188,13 @@ When CoreMIDI calls a MIDIReadProc, we need a pointer to "self". I can't place t
 
 - Feature: after you stop, if you don't reset the "currentTick" it starts on (precisely) the next tick. 
 
-####Design notes
+#####Design notes
 
 - Separated the functionality into two objects: CMIDITimer handles all the CoreMIDI calls. CClock handles all the conversions, client calls, and other details for complete functionality. This could be rebuilt with some other form of timer, if we can find one with an accuracy of about 1 millisecond. NSTimer is off by 200 microseconds.
 
 - Store tempo as an integer because this prevents floating point errors. CMIDINanoseconds and CMIDIClockTicks are integers, and thus are not subject to floating-point errors. Ticks are also signed, which prevents another set of potential problems.
 
-####Thread safety notes
+#####Thread safety notes
 
 Each of the five entry points has a sync lock, and the code inside the sync lock does not leave the object. This guarantees that the clock's properties will never be out of sync with itself. There are three ways the thread safety can fail that I can see and all of them are extremely unlikely.
 
