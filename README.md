@@ -3,7 +3,7 @@ An Objective-C library for MIDI messages, data streams, files and sequences
 
 ##Usage
 
-See examples and header files. 
+<TODO> For now, see examples and header files. 
 
 ##Todo
 
@@ -62,7 +62,7 @@ CMIDIEndpoint
 
 
 ###Possible new features
-	These are not needed for the current project. I would need a strong motivation to implement these. 
+These are not needed for the current project. I would need a strong motivation to implement these. 
 -	CMIDIMonitor: should use some kind of matrix ... isn't there a matrix which goes property by property, lets you resize the rows, etc.? I.e, an NSArrayController, etc. Is this easier than it looks?? 
 -	CMIDISequencer: At 480 ticks per beat, it seems like this is doing a lot of extra work. If tests show that we need this to be more efficient, there are several options: 
 		Skip ahead to next msg? this would require the clock to have an interface something like dontNotifyUntilTick:, which would ask the timer to send a message on a later tick, skipping the intervening ticks. 
@@ -75,7 +75,7 @@ CMIDIEndpoint
 
 
 ###Test bugs
-	These are not bugs in CMIDI, but they are bugs in the tests.
+These are not bugs in CMIDI, but they are bugs in the tests.
 - 	CMIDITimer tests, fails -- as if CoreMIDI was doing nothing.  Timer works in the clock.
 
 ###Untested, with code in place
@@ -99,12 +99,10 @@ CMIDIClock
 - 	If a "CMIDIReciever" keeps a pointer to the clock, there is a potential retain cycle.  Don't keep a pointer to the clock; you shouldn't need it until it calls you -- use the pointer inside the receiver, don't retain it. 
 - 	Receiver list is not thread-safe and should not be modified when the clock is running.
 
-
-
 ##Design notes
 ###CMIDIMessage
 
-	Criteria:
+Criteria:
 
 This was designed to make it possible to 
 (1) clients create MIDI messages with as little hassle as possible. 
@@ -134,15 +132,14 @@ We construct under three circumstances:
 	(B) Client creates a message to send somewhere (set with user-friendly property values).
 	(C) Internal constructor calls with valid data (i.e., internal convenience functions implemented for parsimony).
 There are several basic ways to construct: 
-(1)  constructor creates a valid message, message is immutable
+(1) Constructor creates a valid message, message is immutable
 	+ valid property access does not have to allocate data (except variable sized messages, of course)
 	- can't change properties. It's unclear if there is an application where you really need to set the properties -- typically we just want to create a valid message and send it somewhere, or study a valid message you have received. If there is such an application (such a "transposer"), it's not hard to create a new message for these special applications.
-(2) set data, set data with bytes, validate if data is external.
+(2) Set data, set data with bytes, validate if data is external.
 	+ we need this to read from files and packetlists. (Here we need to validate).		+ this creates a simple interface for internal constructors. buf[3] = {v,v,v}; [messageWithBytes:buf length:3]; 
 (3) "new" and set all properties, setters are available
-	- the message is invalid before we begin setting the properties -- this creates a "modal" situation. We can't validate the "set" operations unless we know the type of the message, so the properties would have to be set in order -- so we have multiple "invalid modes" as we're trying to set them. It's not clear when we will have a chance to validate, unless this is separate state		- we can't allocate the memory yet because we don't know if this is a variable-length message, so we're in a situation where we don't know how much memory to allocate.
-	- there are some message (such as timeSignature) which really need a constructor -- the native MIDI is just too ugly. Thus, if we allow "new" and set all properties for some messages, we are inconsistent. It's not obvious to clients. If we implement setters and constructors for all messages requires twice as much testing. 
- 	- properties must be set in order if we are going to check validity -- type must be set first, controller type must be set before value, etc. We need to verify that this is being done, which requires default values.
+	- the message is invalid before we begin setting the properties -- this creates a "modal" situation. We can't validate the "set" operations unless we know the type of the message, so the properties would have to be set in order -- so we have multiple "invalid modes" as we're trying to set them. It's not clear when we will have a chance to validate, unless this is separate state		- we can't allocate the memory yet because we don't know if this is a variable-length message, so we're in a situation where we don't know how much memory to allocate.		- there are some message (such as timeSignature) which really need a constructor -- the native MIDI is just too ugly. Thus, if we allow "new" and set all properties for some messages, we are inconsistent. It's not obvious to clients. If we implement setters and constructors for all messages requires twice as much testing. 
+	- properties must be set in order if we are going to check validity -- type must be set first, controller type must be set before value, etc. We need to verify that this is being done, which requires default values.
 	- requires a lot of typing and reveals ugly constants. Much more natural to build with static buffers as data.
 	- having setters AND constructors requires twice as much testing, untless y
 (4) constructor creates a partial message, user sets properties for the rest. For example, the constructors takes the type, channel and the length of the variable data, to hide the status byte and allocate memory.
@@ -152,19 +149,22 @@ There are several basic ways to construct:
 
 ###CMIDIEndpoint
 
-	MIDIEndpoints: The goal of this design is to allow clients to use MIDI endpoints simply, without needing to study the complexity of CoreMIDI and all of its objects and constructors. Thus, this interface hides all details except the most essential and implements only the simplest cases. If a client needs all the details of CoreMIDI, they should use CoreMIDI.
+MIDIEndpoints: The goal of this design is to allow clients to use MIDI endpoints simply, without needing to study the complexity of CoreMIDI and all of its objects and constructors. Thus, this interface hides all details except the most essential and implements only the simplest cases. If a client needs all the details of CoreMIDI, they should use CoreMIDI.
 
 	I divided the endpoints into three classes for clarity (see explanation in the header file). There is shared code, but none of the code is shared between all three types of end points. Two types might have some very similar code -- the <MIDISender>s share some code,  <MIDIReceiver>s share some code, external endpoints have similar "search" routines, all of them have some kind of port. This code is subtly different for each type of endpoint. I could have combined the shared code into the superclass, of course, but that would have these pluses and minuses:
 	- Combining the shared code would requires a really complicated system of inheritance that would have the thread jumping all around the hierarchy. I think the code for each endpoint is easier to understand if there is no inheritance at all and you can find all the code for each type of object inside that object. I think that future developers will start by analyzing one endpoint and trying to see how it works -- this will be easier for future developers to get an initial understanding of what's happening.
 	+ Not combining the code means that making an update or fixing a bug must often be done in two places, and it is easy to overlook one.
 	On the whole, this file chooses clarity over parsimony.
 
-	These classes obey what I call the "non-modal" principal: if the object exists, then it is valid and ready to operate. Any time between init and dealloc, the endpoint is fully capable of handling any method call whatsoever. With ARC, this means that if you have a valid pointer to the object then you are pointing to a fully functional object.
+These classes obey what I call the "non-modal" principal: if the object exists, then it is valid and ready to operate. Any time between init and dealloc, the endpoint is fully capable of handling any method call whatsoever. With ARC, this means that if you have a valid pointer to the object then you are pointing to a fully functional object.
 
-	Thread safety: I keep persistent, fixed lists of all the endpoints in the CMIDIEndpointManager.  We only add to these lists and never remove objects from it. (While it's theoretically possible that this list could grow large if we never remove anything, I doubt this will ever be an issue in practice.)
-	Because of ARC, I know that no endpoint will be deallocated as long as the pointer in these lists exists. I also know that any endpoint is valid as long as it exists. The properties used here (endpointRef, port) can not be changed after initialization, and no one can have a pointer to this object until it is initialized.
-	A method that uses "outputUnit" is NOT thread safe, because the output unit may be changed while the routine is in progress. Always grab a synchronized pointer to the outputUnit in these routines and synchronize as well when a caller changes the output unit.
-	When CoreMIDI calls a MIDIReadProc, we need a pointer to "self". I can't place the pointer in the refcon, because ARC won't guarantee that this object is still valid. Thus I place an index into the lists held by CMIDIManager. This index is always valid and correct (because we only add to these lists and never remove from them).
+Thread safety: I keep persistent, fixed lists of all the endpoints in the CMIDIEndpointManager.  We only add to these lists and never remove objects from it. (While it's theoretically possible that this list could grow large if we never remove anything, I doubt this will ever be an issue in practice.)
+
+Because of ARC, I know that no endpoint will be deallocated as long as the pointer in these lists exists. I also know that any endpoint is valid as long as it exists. The properties used here (endpointRef, port) can not be changed after initialization, and no one can have a pointer to this object until it is initialized.
+
+A method that uses "outputUnit" is NOT thread safe, because the output unit may be changed while the routine is in progress. Always grab a synchronized pointer to the outputUnit in these routines and synchronize as well when a caller changes the output unit.
+
+When CoreMIDI calls a MIDIReadProc, we need a pointer to "self". I can't place the pointer in the refcon, because ARC won't guarantee that this object is still valid. Thus I place an index into the lists held by CMIDIManager. This index is always valid and correct (because we only add to these lists and never remove from them).
 
 ###CMIDIClock
 
@@ -185,8 +185,6 @@ There are several basic ways to construct:
 - Store tempo as an integer because this prevents floating point errors. CMIDINanoseconds and CMIDIClockTicks are integers, and thus are not subject to floating-point errors. Ticks are also signed, which prevents another set of potential problems.
 
 ####Thread safety notes
-
-TODO: Consider "dealloc" as a sixth entry point, and think this through in that case ... 
 
 Each of the five entry points has a sync lock, and the code inside the sync lock does not leave the object. This guarantees that the clock's properties will never be out of sync with itself. There are three ways the thread safety can fail that I can see and all of them are extremely unlikely.
 
@@ -209,34 +207,38 @@ I think this shows that, except for this hole, it is impossible that there is a 
 
 Again, this is extremely unlikely, because the timer has to go off PRECISELY BETWEEN TWO LINES OF CODE. 
 
-2) It is possible that an operation is waiting a sync lock for a tick to finish. In this case, it is theoretically possible for operation to send it's messages BEFORE the tick finishes sending it's messages. But this must be extremely unlikely, because two things must happen.
-	CoreMIDI initiates a tick.
-	The tick passes the sync lock in "clockTicked".
-	*The user initiates an operation on a lower priority thread. It goes up to the sync lock and stops.
-	CoreMIDI exits the lock, but hasn't sent it's message yet.
-	*The lower priority thread starts again and passes through the lock, and then sends it's messages.
-	CoreMIDI thread continues and sends it's messages. This would be a tick message that WOULD have been correct if it was sent in the other order. Out of order messages would mean that some of my assumptions (for example, that "currentTick" is set correctly for these messages) will be wrong.
+2) It is possible that an operation is waiting a sync lock for a tick to finish. In this case, it is theoretically possible for operation to send it's messages BEFORE the tick finishes sending it's messages. But this must be extremely unlikely, because two things must happen. 
+CoreMIDI initiates a tick.
+The tick passes the sync lock in "clockTicked".
+*The user initiates an operation on a lower priority thread. It goes up to the sync lock and stops.
+CoreMIDI exits the lock, but hasn't sent it's message yet.
+*The lower priority thread starts again and passes through the lock, and then sends it's messages.
+CoreMIDI thread continues and sends it's messages. This would be a tick message that WOULD have been correct if it was sent in the other order. Out of order messages would mean that some of my assumptions (for example, that "currentTick" is set correctly for these messages) will be wrong.
 
-	This would require two very unlikely (impossible?) operations where the high priority CoreMIDI thread yielded to the client thread, which is most likely a UI thread anyway. This COULD happen if the client thread was equally high priority, as when a MIDI message sets the tempo. In this case, the message will be a little weird, but note that they are only out of order by one, and I don't really think that this will have an effect. 
+This would require two very unlikely (impossible?) operations where the high priority CoreMIDI thread yielded to the client thread, which is most likely a UI thread anyway. This COULD happen if the client thread was equally high priority, as when a MIDI message sets the tempo. In this case, the message will be a little weird, but note that they are only out of order by one, and I don't really think that this will have an effect. 
 
 3) Dealloc has an exposure similar to (1), and it also requires that the timer go off precisely between two lines of code.
-	Dealloc starts.
-	Dealloc hits the first sync lock and continues.
-	CoreMIDI initiates a tick before "flushoutput" is called (note that it's called first)  interrupting dealloc.
-	CoreMIDI hits the first sync lock and stops. 
-	Dealloc finishes cleaning up and clears the lock
-	CoreMIDI continues into the sync lock, but now it is looking at bad information. 
-
+Dealloc starts.
+Dealloc hits the first sync lock and continues.
+CoreMIDI initiates a tick before "flushoutput" is called (note that it's called first)  interrupting dealloc.
+CoreMIDI hits the first sync lock and stops. 
+Dealloc finishes cleaning up and clears the lock
+CoreMIDI continues into the sync lock, but now it is looking at bad information. 
 
 ####Notes on CAClock
 
-This has been written to replace CAClock.  These are the problems I have with CAClock:
+CMIDIClock has been written to replace CAClock.  These are the problems I have with CAClock:
 
 1) After stopping, it continues to send timing messages to the endpoints it is attached to. This is confusing, but (I am told) this is by design so that downstream units can keep syncing themselves even when the clock is stopped. In other words, it's a feature. However I need a clock that can be stopped and reset to a new position without losing ticks.
+
 2) It continues to move "media time" forward after a stop, even though the media time should be halted. This adds another layer of confusion. Also, it's impossible to query the system to know where, exactly, it is stopped on the media timeline.
+
 3) "stop" sends a time of zero (this is okay, I suppose, because it means "immediately", but it would be more consistent to tell me what TIME it stopped).
+
 4) After stopping, "start" does not begin at the next tick -- it may jump forward or backward several ticks. This is bad for an application that assumes it will receive every tick; in a sequence it may skip downbeats and note-off points.
+
 5) It seems to always send a "move" just before it starts. This may be related to the previous; it could be a way of telling the downstream units that we're not continuing with exactly the same tick. Nevertheless, my downstream routines would prefer to know that this is not a "real" move, i.e. one that was generated by a user command or some client operation.
+
 7) When the clock is initialized, but not yet started, CATranslateTime returns the same real-time for all media times. This is odd, and I suppose the behavior under these circumstances is "undefined". However, I would like to be make calculations about media time values without necessarily starting the clock (such as tempo calculations), so I would prefer that this behaved in the same way it does when it is stopped: by assuming some fixed starting point and calculating the real values from that.
 
 8) Can't set the time while the clock is running; returns an error.
