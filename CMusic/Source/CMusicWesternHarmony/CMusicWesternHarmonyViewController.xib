@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment version="1070" identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7706"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="CMusicWesternHarmonyViewController">
+            <connections>
+                <outlet property="harmonicStrengthsBox" destination="Tlm-nD-7XT" id="kEY-gU-PiS"/>
+                <outlet property="view" destination="1" id="2"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="1">
+            <rect key="frame" x="0.0" y="0.0" width="559" height="150"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="psM-6L-dqt" userLabel="Key">
+                    <rect key="frame" x="119" y="115" width="108" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="105" id="E9p-Bf-QZf"/>
+                        <constraint firstAttribute="height" constant="15" id="Wxz-sP-XFx"/>
+                    </constraints>
+                    <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" controlSize="mini" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="1EN-G0-gKh" id="o5J-rH-LoK">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="miniSystem"/>
+                        <menu key="menu" title="OtherViews" id="RgV-Ox-gqs">
+                            <items>
+                                <menuItem title="Item 1" state="on" id="1EN-G0-gKh"/>
+                                <menuItem title="Item 2" id="e7r-Zn-GYL"/>
+                                <menuItem title="Item 3" id="uIh-YD-kFo"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                    <connections>
+                        <binding destination="-2" name="selectedIndex" keyPath="self.harmony.key" previousBinding="14K-mD-7B4" id="hKC-Un-8UO">
+                            <dictionary key="options">
+                                <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                <bool key="NSConditionallySetsEnabled" value="NO"/>
+                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                            </dictionary>
+                        </binding>
+                        <binding destination="-2" name="content" keyPath="self.harmony.pitchClassNames" id="14K-mD-7B4"/>
+                    </connections>
+                </popUpButton>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZI1-nw-vUZ">
+                    <rect key="frame" x="20" y="119" width="93" height="11"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="11" id="1xN-PQ-XQy"/>
+                        <constraint firstAttribute="width" constant="89" id="ftD-Ne-qMg"/>
+                    </constraints>
+                    <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Key" id="QxD-BX-P65">
+                        <font key="font" metaFont="miniSystem"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fLD-35-vw2">
+                    <rect key="frame" x="20" y="100" width="93" height="11"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="11" id="iJm-jP-tFw"/>
+                        <constraint firstAttribute="width" constant="89" id="j1t-j5-D5v"/>
+                    </constraints>
+                    <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Type" id="BTS-ZV-P9G">
+                        <font key="font" metaFont="miniSystem"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kNA-ks-ghn">
+                    <rect key="frame" x="20" y="81" width="93" height="11"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="89" id="SnT-3L-ttt"/>
+                        <constraint firstAttribute="height" constant="11" id="YoP-en-6gv"/>
+                    </constraints>
+                    <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Mode" id="CnK-du-HZ8">
+                        <font key="font" metaFont="miniSystem"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="j8k-aF-bQr">
+                    <rect key="frame" x="20" y="24" width="93" height="11"/>
+                    <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Chord Type" id="RHt-pN-6YI">
+                        <font key="font" metaFont="miniSystem"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LUx-Es-lXN">
+                    <rect key="frame" x="20" y="62" width="93" height="11"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="11" id="1fe-ZY-IBb"/>
+                        <constraint firstAttribute="width" constant="89" id="XzF-bb-9b3"/>
+                    </constraints>
+                    <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Chord Scale Degree" id="OFH-GU-MI0">
+                        <font key="font" metaFont="miniSystem"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HrU-n3-qXC">
+                    <rect key="frame" x="20" y="43" width="93" height="11"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="11" id="0YS-MH-DyR"/>
+                        <constraint firstAttribute="width" constant="89" id="Wrf-An-5ux"/>
+                    </constraints>
+                    <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Chord Root" id="j2O-iV-8Bn">
+                        <font key="font" metaFont="miniSystem"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <box autoresizesSubviews="NO" title="Harmonic Strength for Each Pitch Class" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="Tlm-nD-7XT">
+                    <rect key="frame" x="230" y="16" width="312" height="114"/>
+                    <view key="contentView">
+                        <rect key="frame" x="1" y="1" width="310" height="101"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <font key="titleFont" metaFont="miniSystem"/>
+                </box>
+                <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BbO-tQ-d29" userLabel="Scale type">
+                    <rect key="frame" x="119" y="96" width="108" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="15" id="3HM-4W-Kzy"/>
+                        <constraint firstAttribute="width" constant="105" id="9EI-bX-7MR"/>
+                    </constraints>
+                    <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" controlSize="mini" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="stL-Ie-5ba" id="wrs-AR-IiV">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="miniSystem"/>
+                        <menu key="menu" title="OtherViews" id="rjm-pF-9dw">
+                            <items>
+                                <menuItem title="Item 1" state="on" id="stL-Ie-5ba"/>
+                                <menuItem title="Item 2" id="8qU-fU-cd8"/>
+                                <menuItem title="Item 3" id="vGp-Hr-AHY"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                    <connections>
+                        <binding destination="-2" name="selectedIndex" keyPath="self.harmony.scaleType" previousBinding="YxM-k6-Vab" id="nh1-AN-k2W"/>
+                        <binding destination="-2" name="content" keyPath="self.harmony.scaleTypeNames" id="YxM-k6-Vab"/>
+                    </connections>
+                </popUpButton>
+                <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OdF-Bq-cIU" userLabel="Scale mode">
+                    <rect key="frame" x="119" y="77" width="108" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="105" id="COQ-Og-3fo"/>
+                        <constraint firstAttribute="height" constant="15" id="kau-p0-FDv"/>
+                    </constraints>
+                    <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" controlSize="mini" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="2E1-uu-yBi" id="NlY-GX-lBl">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="miniSystem"/>
+                        <menu key="menu" title="OtherViews" id="RkZ-cq-hAU">
+                            <items>
+                                <menuItem title="Item 1" state="on" id="2E1-uu-yBi"/>
+                                <menuItem title="Item 2" id="fUH-Ip-5E7"/>
+                                <menuItem title="Item 3" id="OSD-1G-TGc"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                    <connections>
+                        <binding destination="-2" name="selectedIndex" keyPath="self.harmony.scaleMode" previousBinding="WpH-h1-loc" id="XHR-Wq-pIb">
+                            <dictionary key="options">
+                                <bool key="NSConditionallySetsEnabled" value="NO"/>
+                            </dictionary>
+                        </binding>
+                        <binding destination="-2" name="content" keyPath="self.harmony.scaleModeNames" id="WpH-h1-loc"/>
+                    </connections>
+                </popUpButton>
+                <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aBI-Sd-Cvx" userLabel="Chord root scale degree">
+                    <rect key="frame" x="119" y="58" width="108" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="15" id="6O6-oA-gfR"/>
+                        <constraint firstAttribute="width" constant="105" id="KgW-LZ-glm"/>
+                    </constraints>
+                    <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" controlSize="mini" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="3tv-a6-uJX" id="wmJ-oM-oDa">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="miniSystem"/>
+                        <menu key="menu" title="OtherViews" id="vl4-Th-tKV">
+                            <items>
+                                <menuItem title="Item 1" state="on" id="3tv-a6-uJX"/>
+                                <menuItem title="Item 2" id="IQ4-DX-NfB"/>
+                                <menuItem title="Item 3" id="5v0-f5-4Wp"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                    <connections>
+                        <binding destination="-2" name="selectedIndex" keyPath="self.harmony.chordRootScaleDegree" previousBinding="Ql1-0C-iIi" id="I1O-mX-vQx"/>
+                        <binding destination="-2" name="content" keyPath="self.harmony.scaleDegreeNames" id="Ql1-0C-iIi"/>
+                    </connections>
+                </popUpButton>
+                <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RX7-vL-25Z" userLabel="Chord root pitch class">
+                    <rect key="frame" x="119" y="39" width="108" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="105" id="9LQ-Ld-QIS"/>
+                        <constraint firstAttribute="height" constant="15" id="fml-IX-J0c"/>
+                    </constraints>
+                    <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" controlSize="mini" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="9hb-A8-hkx" id="Gxk-fY-ThO">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="miniSystem"/>
+                        <menu key="menu" title="OtherViews" id="VIM-Nn-xI9">
+                            <items>
+                                <menuItem title="Item 1" state="on" id="9hb-A8-hkx"/>
+                                <menuItem title="Item 2" id="2ir-ae-afi"/>
+                                <menuItem title="Item 3" id="ea8-Pt-3Z4"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                    <connections>
+                        <binding destination="-2" name="selectedIndex" keyPath="self.harmony.chordRootScaleDegree" previousBinding="run-Y9-P3p" id="7xe-xQ-2c8"/>
+                        <binding destination="-2" name="content" keyPath="self.harmony.scaleDegreePitchClassNames" id="run-Y9-P3p">
+                            <dictionary key="options">
+                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </popUpButton>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="v45-iL-4S4">
+                    <rect key="frame" x="119" y="21" width="106" height="16"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="16" id="Gho-om-trP"/>
+                        <constraint firstAttribute="width" constant="106" id="r7S-El-ScC"/>
+                    </constraints>
+                    <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="n5h-9O-CL3">
+                        <font key="font" metaFont="miniSystem"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.harmony.chordTypeName" id="2xM-Xs-l8J"/>
+                    </connections>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="Tlm-nD-7XT" firstAttribute="top" secondItem="1" secondAttribute="top" constant="20" id="0R0-sJ-aTK"/>
+                <constraint firstItem="kNA-ks-ghn" firstAttribute="top" secondItem="fLD-35-vw2" secondAttribute="bottom" constant="8" id="0i5-3o-dLa"/>
+                <constraint firstItem="LUx-Es-lXN" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="22" id="1iL-cb-aSi"/>
+                <constraint firstItem="HrU-n3-qXC" firstAttribute="top" secondItem="LUx-Es-lXN" secondAttribute="bottom" constant="8" id="2vp-Zr-aex"/>
+                <constraint firstItem="v45-iL-4S4" firstAttribute="top" secondItem="RX7-vL-25Z" secondAttribute="bottom" constant="2" id="7dv-np-fgk"/>
+                <constraint firstItem="RX7-vL-25Z" firstAttribute="top" secondItem="aBI-Sd-Cvx" secondAttribute="bottom" constant="4" id="93e-Fh-Veb"/>
+                <constraint firstItem="v45-iL-4S4" firstAttribute="leading" secondItem="j8k-aF-bQr" secondAttribute="trailing" constant="8" id="A4f-fo-oPI"/>
+                <constraint firstItem="ZI1-nw-vUZ" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="22" id="B8l-b4-OY5"/>
+                <constraint firstItem="Tlm-nD-7XT" firstAttribute="leading" secondItem="psM-6L-dqt" secondAttribute="trailing" constant="8" id="BGn-rI-WMX"/>
+                <constraint firstItem="BbO-tQ-d29" firstAttribute="leading" secondItem="fLD-35-vw2" secondAttribute="trailing" constant="9" id="Cco-q8-WhW"/>
+                <constraint firstItem="fLD-35-vw2" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="22" id="F2S-rH-Rls"/>
+                <constraint firstItem="ZI1-nw-vUZ" firstAttribute="top" secondItem="1" secondAttribute="top" constant="20" id="GRn-uf-mdl"/>
+                <constraint firstItem="aBI-Sd-Cvx" firstAttribute="top" secondItem="OdF-Bq-cIU" secondAttribute="bottom" constant="4" id="IZk-6h-CaS"/>
+                <constraint firstItem="Tlm-nD-7XT" firstAttribute="leading" secondItem="BbO-tQ-d29" secondAttribute="trailing" constant="8" id="Jt1-cK-CAq"/>
+                <constraint firstItem="Tlm-nD-7XT" firstAttribute="leading" secondItem="RX7-vL-25Z" secondAttribute="trailing" constant="8" id="Llg-op-qeC"/>
+                <constraint firstItem="j8k-aF-bQr" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="22" id="OX6-DI-IlU"/>
+                <constraint firstItem="OdF-Bq-cIU" firstAttribute="top" secondItem="BbO-tQ-d29" secondAttribute="bottom" constant="4" id="Qw3-Xo-KCC"/>
+                <constraint firstItem="LUx-Es-lXN" firstAttribute="top" secondItem="kNA-ks-ghn" secondAttribute="bottom" constant="8" id="Qx8-LO-5iP"/>
+                <constraint firstAttribute="bottom" secondItem="j8k-aF-bQr" secondAttribute="bottom" constant="24" id="S1z-ED-MvB"/>
+                <constraint firstItem="Tlm-nD-7XT" firstAttribute="leading" secondItem="aBI-Sd-Cvx" secondAttribute="trailing" constant="8" id="S34-Ls-Mpb"/>
+                <constraint firstAttribute="bottom" secondItem="Tlm-nD-7XT" secondAttribute="bottom" constant="20" id="WHs-IF-Cgw"/>
+                <constraint firstItem="psM-6L-dqt" firstAttribute="leading" secondItem="ZI1-nw-vUZ" secondAttribute="trailing" constant="9" id="X1M-MV-32J"/>
+                <constraint firstItem="Tlm-nD-7XT" firstAttribute="leading" secondItem="v45-iL-4S4" secondAttribute="trailing" constant="8" id="XCO-sA-xop"/>
+                <constraint firstItem="OdF-Bq-cIU" firstAttribute="leading" secondItem="kNA-ks-ghn" secondAttribute="trailing" constant="9" id="YSe-5o-tzf"/>
+                <constraint firstItem="kNA-ks-ghn" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="22" id="Ymn-uf-xlt"/>
+                <constraint firstAttribute="trailing" secondItem="Tlm-nD-7XT" secondAttribute="trailing" constant="20" id="Zxi-M9-P2C"/>
+                <constraint firstAttribute="bottom" secondItem="v45-iL-4S4" secondAttribute="bottom" constant="21" id="bNe-6S-mV2"/>
+                <constraint firstItem="fLD-35-vw2" firstAttribute="top" secondItem="ZI1-nw-vUZ" secondAttribute="bottom" constant="8" id="h7a-DH-uXY"/>
+                <constraint firstItem="j8k-aF-bQr" firstAttribute="top" secondItem="HrU-n3-qXC" secondAttribute="bottom" constant="8" id="l5o-bT-dPp"/>
+                <constraint firstItem="BbO-tQ-d29" firstAttribute="top" secondItem="psM-6L-dqt" secondAttribute="bottom" constant="4" id="qkr-vp-Kx0"/>
+                <constraint firstItem="aBI-Sd-Cvx" firstAttribute="leading" secondItem="LUx-Es-lXN" secondAttribute="trailing" constant="9" id="rTS-43-UfO"/>
+                <constraint firstItem="HrU-n3-qXC" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="22" id="ra2-6Z-Cqm"/>
+                <constraint firstItem="RX7-vL-25Z" firstAttribute="leading" secondItem="HrU-n3-qXC" secondAttribute="trailing" constant="9" id="tLM-Ku-3ll"/>
+                <constraint firstItem="Tlm-nD-7XT" firstAttribute="leading" secondItem="OdF-Bq-cIU" secondAttribute="trailing" constant="8" id="yPW-UB-UY0"/>
+            </constraints>
+            <point key="canvasLocation" x="400.5" y="64"/>
+        </customView>
+        <userDefaultsController representsSharedInstance="YES" id="IAO-Dw-I0R"/>
+        <popUpButton verticalHuggingPriority="750" id="dyS-HV-oxU" userLabel="Chord type">
+            <rect key="frame" x="0.0" y="0.0" width="108" height="15"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" controlSize="mini" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="lOr-Jd-M9h" id="9o6-e6-eQZ">
+                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                <font key="font" metaFont="miniSystem"/>
+                <menu key="menu" title="OtherViews" id="G7S-om-reW">
+                    <items>
+                        <menuItem title="Item 1" state="on" id="lOr-Jd-M9h"/>
+                        <menuItem title="Item 2" id="GPv-cr-k5k"/>
+                        <menuItem title="Item 3" id="MqR-nu-khp"/>
+                    </items>
+                </menu>
+            </popUpButtonCell>
+            <connections>
+                <binding destination="-2" name="content" keyPath="self.harmony.chordTypeNames" id="QJf-2U-mIq"/>
+            </connections>
+            <point key="canvasLocation" x="142.5" y="346.5"/>
+        </popUpButton>
+    </objects>
+</document>

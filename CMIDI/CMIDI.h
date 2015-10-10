@@ -45,7 +45,7 @@ FOUNDATION_EXPORT const unsigned char CMIDIVersionString[];
 #import <CMIDI/CMIDIEndpoint.h>
 
 // From CMusic
-#import <CMIDI/CMNote.h>
+#import <CMIDI/CMusicNote.h>
 #import <CMIDI/CTime.h>
 #import <CMIDI/CTimeHierarchy.h>
 #import <CMIDI/CTimeMap.h>
@@ -59,7 +59,5 @@ FOUNDATION_EXPORT const unsigned char CMIDIVersionString[];
 // Tools for building and debugging demo applications
 #import <CMIDI/CMIDIMonitor.h>
 #import <CMIDI/CMIDITransport.h>
-
-
 
 
