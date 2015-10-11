@@ -3,7 +3,60 @@ An Objective-C library for MIDI messages, data streams, files and sequences
 
 ##Usage
 
-<TODO> For now, see examples and header files. 
+####CMIDIMessage
+CMIDIMessage stores the message as raw MIDI data in the NSData property "data". Convenience constructors and properties are available in "CMIDIMessage+ChannelMessage.h", "CMIDIMessage+SystemMessage.h" and "CMIDIMessage+MetaMessage.h". Some of these properties are trivial, but others can be very convoluted. Two examples of constructors would be:<pre>
+	msg1 = [CMIDIMessage messageWithNoteOn: MIDINote_MiddleC velocity: 78 channel: 2];
+	msg2 = [CMIDIMessage messageWithBeatsPerBar: 4 eightsPerBeat: 2];  // 4/4 Tempo message.</pre>
+
+The convenience properties that are relevant are:<pre>
+	msg1.type == MIDIMessage_NoteOn
+	msg1.channel == 2
+	msg1.note = MIDINote_MiddleC
+	msg1.velocity = 78
+	msg2.type = MIDIMessage_System
+	msg2.systemMessageType == MIDISystemMsg_Meta
+	msg2.metaMessageType == MIDIMeta_TimeSignature
+	msg2.beatsPerBar == 4
+	msg2.eightsPerBeat == 2</pre>
+	
+When a message is received it's normal to switch on the type. The convenience properties will fail unless the type supports the property.<pre>
+	switch (msg.type) {
+		case MIDIMessage_NoteOn: {
+			note = msg.note;	...
+		}
+		...
+		case MIDIMessage_System:
+			switch (msg.systemMessageType) {
+				case MIDISystemMsg_Meta: {
+					switch (msg.metaMessageType) {
+						case MIDIMeta_TimeSignature: {
+							bpb = msg.beatsPerBar; ...
+						}
+						...
+					}
+				}
+				...
+			}
+		}
+		...
+	}</pre>
+	
+Clients who are familiar with MIDI data may create the data directly or modify individual bytes using the convenience properties status, byte1, byte2. This code creates the same two messages as above:<pre>
+	Byte buf1[3] = {MIDIMessage_NoteOn | (2 - 1), MIDINote_MiddleC, 78};
+ 	msg1 = [[CMIDIMessage alloc] initWithData:[NSData dataWithBytes:buf1 length:3]];
+	Byte buf2[7] = {MIDISystemMsg_Meta, MIDIMeta_TimeSignature, 4, 4, 2, 24, 8};
+	msg2 = [[CMIDIMessage alloc] initWithData:[NSData dataWithBytes:buf2 length:7]];</pre>
+
+####CMIDIFile
+*todo*
+####CMIDIClock
+*todo*
+####CMIDIReceiver / CMIDISender (MIDI signal processing chains)
+*todo*
+####CMIDISequencer <CMIDISender>
+When given a list of time-stamped messages and attached to a clock, a CMIDISequencer will send the messages at the appropriate times to it's outputUnit.
+####CMIDIEndpoint
+*todo*
 
 ##Todo
 
