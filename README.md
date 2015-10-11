@@ -8,12 +8,12 @@ CMIDIMessage stores the message as raw MIDI data in the NSData property "data". 
 	msg1 = [CMIDIMessage messageWithNoteOn: MIDINote_MiddleC velocity: 78 channel: 2];
 	msg2 = [CMIDIMessage messageWithBeatsPerBar: 4 eightsPerBeat: 2];  // 4/4 Tempo message.</pre>
 
-The convenience properties that are relevant are:<pre>
+The convenience properties that are relevant are these:<pre>
 	msg1.type == MIDIMessage_NoteOn
 	msg1.channel == 2
-	msg1.note = MIDINote_MiddleC
-	msg1.velocity = 78
-	msg2.type = MIDIMessage_System
+	msg1.note == MIDINote_MiddleC
+	msg1.velocity == 78
+	msg2.type == MIDIMessage_System
 	msg2.systemMessageType == MIDISystemMsg_Meta
 	msg2.metaMessageType == MIDIMeta_TimeSignature
 	msg2.beatsPerBar == 4
