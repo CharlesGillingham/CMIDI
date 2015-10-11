@@ -57,27 +57,26 @@ Clients who are familiar with MIDI data may create the data directly or modify i
 When given a list of time-stamped messages and attached to a clock, a CMIDISequencer will send the messages at the appropriate times to it's outputUnit.
 ####CMIDIEndpoint
 *todo*
+####CMIDIMonitor, CMIDICurrentState
+These are MIDI processors that 
 
 ##Todo
 
-####Urgent todo
-Nothing more todo at the moment.
+####High priorities
+- Add "mute" to CMIDISequencer (replace CMIDICurrentState in SqueezeBox)
 
 ####Bugs
-
-CMIDITransport
--	BPM is not bound properly; it’s not receiving updates from the clock. KVC looks right. I’m sure this is a trivial problem.
+*none currently known*
 
 ####Possible issues
-These are not bugs, but may be confusing for the client.
+*These are not bugs, but may be confusing for the client.*
 
 CMIDIClock 
 - 	If a "CMIDIReciever" keeps a pointer to the clock, there is a potential retain cycle.  Don't keep a pointer to the clock; you shouldn't need it until it calls you -- use the pointer inside the receiver, don't retain it. 
 - 	Receiver list is not thread-safe and should not be modified when the clock is running.
 
-
 ####Low priority todo
-These are nits or missing features that would effect the current project. Don’t need to do these at all.
+*These are nits or missing features that would effect the current project. Don’t need to do these at all.*
 
 CMIDITransport
 -	MouseDown. Should allow the caller to drag the current time. Need to capture MouseDown/MouseUp. Code to do this is in one of the back up versions of SqueezeBox
@@ -106,7 +105,7 @@ Everywhere
 
 
 ####Unsupported features 
-These are all well outside the scope of my current project. To be fixed with someone else's help.
+*These are all well outside the scope of my current project. To be added with someone else's help.*
 
 CMIDIMessage:
 -	Meta sequence number is supported, but there are no accessors or description because the documentation I have for it is unclear.
@@ -138,7 +137,7 @@ When the endpoint reappears, I should rescan by NAME and reconnect the object. (
 Add a flag fOffline, and handle it appropriately in the MIDI data flow. When decoding and the object is not found, set the offline flag and set the name; assume the object is offline Keep a MIDINotifyProc  and track when endpoints appear and disappear. NOT DOING THIS NOW, because this is outside the scope of my application.
 
 ####Possible new features
-These are not needed for the current project. I would need a strong motivation to implement these. 
+*These are not needed for the current project. I would need a strong motivation to implement these.* 
 -	CMIDIMonitor: should use some kind of matrix ... isn't there a matrix which goes property by property, lets you resize the rows, etc.? I.e, an NSArrayController, etc. Is this easier than it looks?? 
 -	CMIDISequencer: At 480 ticks per beat, it seems like this is doing a lot of extra work. If tests show that we need this to be more efficient, there are several options: (1) Skip ahead to next msg? this would require the clock to have an interface something like dontNotifyUntilTick:, which would ask the timer to send a message on a later tick, skipping the intervening ticks. Step down the tick rate by checking strength before proceeding. This is what Squeezebox does. (2) Readjust the ticks per beat in the clock and the message list. This is just a matter of setting ticksPerBeat in the timeHierarchy (and clock) and also adjusting the tick in every message. (3)Possibly add a feature that uses permits micro timing.
 - 	CMIDIDataParser+MIDIPacketList: time. Messages are not time stamped. They could easily be stamped with “host time” because the packet lists has this, but, unfortunately, CMIDITempoMeter doesn’t keep track of host time. 
@@ -149,7 +148,7 @@ These are not needed for the current project. I would need a strong motivation t
 - 	CMIDIEndpoint: Not sure if my internal end points can be properly used by other applications. I have reason to believe this probably doesn't work.
 
 ####Todo with someone's help
-These should be fixed, but they require more research than I am willing to commit right now. Perhaps someone else knows how to do this easily.
+*These should be fixed, but they require more research than I am willing to commit right now. Perhaps someone else knows how to do this easily.*
 -	CMIDITimer should go to the machine directly; this will help remove our dependency on CoreMIDI (which isn't available yet in iOS and may never be).
 -	CMIDIFile, CMIDIDataParser: Error reporting in CMIDIFile & CMIDIDataParser. (1) Warnings are not returned properly. Would prefer to queue all the warnings. (2) Need to return an error code for regression testing. (3) Also, regression tests would be more elegant if we removed the current dependency on CDebugMessage.h 
 -	Question: Is it possible that "TuneRequest" "SongPositionPointer" "MTCQuarterFrame" should be considered real time bytes? Apple ignores them when it is reading a sequence. 
