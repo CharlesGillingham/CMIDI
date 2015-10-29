@@ -62,9 +62,6 @@ These are MIDI processors that
 
 ##Todo
 
-####High priorities
-- Add "mute" to CMIDISequencer (replace CMIDICurrentState in SqueezeBox)
-
 ####Bugs
 *none currently known*
 
@@ -72,7 +69,7 @@ These are MIDI processors that
 *These are not bugs, but may be confusing for the client.*
 
 CMIDIClock 
-- 	If a "CMIDIReciever" keeps a pointer to the clock, there is a potential retain cycle.  Don't keep a pointer to the clock; you shouldn't need it until it calls you -- use the pointer inside the receiver, don't retain it. 
+- 	If a "CMIDIReciever" keeps a pointer to the clock, there is a potential retain cycle.  Don't keep a pointer to the clock; you shouldn't need it until it calls you -- use the pointer passed to the receiver, don't retain it. 
 - 	Receiver list is not thread-safe and should not be modified when the clock is running.
 
 ####Low priority todo
