@@ -27,7 +27,6 @@
 // A time field is provided because this is useful in creating sequences.
 // This application stores time as integer "MIDI clock ticks". To retrieve other time units (such as bars, beats or seconds), a client needs to know the tempo, the resolution and the meter. These are stored in a "CTimeHierarchy". See CMIDI Time.h.
 @property CMIDIClockTicks time;
-//@property CMIDITimeLine   timeLine;
 
 // A track field is set for MIDI messages which originate in type 1 MIDI files.
 @property NSUInteger      track;

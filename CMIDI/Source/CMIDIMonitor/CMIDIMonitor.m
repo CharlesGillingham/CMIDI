@@ -148,20 +148,21 @@ NSString *const CMIDIMonitorNibFileName = @"CMIDIMonitor.nib";
 {
     // Use ARC to make sure no one changes or deallocates the receiver before we finish sending the message.
     NSObject <CMIDIReceiver> * receiver;
-    CMIDIMonitor __weak * mon; // Why does this need to be weak???
+    CMIDIMonitor * mon; // Why does this need to be weak???
     @synchronized(self) {
         receiver = _outputUnit;
         mon = self;
     }
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [mon showMessage:mm];
-    });
-    
+ 
     // Pass through
     if (receiver) {
         [receiver respondToMIDI: mm];
     }
+
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [mon showMessage:mm];
+    });
+    
 }
 
 @end

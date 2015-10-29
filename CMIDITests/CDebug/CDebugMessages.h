@@ -133,11 +133,14 @@ BOOL CDebugEqualStrings(const char * s1,
 #define CASSERTEQUAL_GENERAL(n1, n2)\
 _Generic(n1,\
     int:               CDebugEqualNumbers,\
+    short:             CDebugEqualNumbers,\
     float:             CDebugEqualNumbers,\
     double:            CDebugEqualNumbers,\
     long:              CDebugEqualNumbers,\
     long long:         CDebugEqualNumbers,\
     long double:       CDebugEqualNumbers,\
+    unsigned int:      CDebugEqualNumbers,\
+    unsigned short:    CDebugEqualNumbers,\
     unsigned long:     CDebugEqualNumbers,\
     unsigned long long:CDebugEqualNumbers,\
     unsigned char:     CDebugEqualNumbers,\

@@ -20,6 +20,13 @@
     return ((self.status & 0x0F) + 1);
 }
 
+- (void) setChannel:(UInt8)c
+{
+    assert(c > 0 && c <= 16 && self.type != MIDIMessage_System);
+    ((Byte*)self.data.bytes)[0] = ((self.status & 0xF0) | (c - 1));
+}
+
+
 // -----------------------------------------------------------------------------
 #pragma mark            Channel messages / Note Messages
 // -----------------------------------------------------------------------------

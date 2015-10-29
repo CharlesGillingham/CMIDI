@@ -44,6 +44,13 @@ FOUNDATION_EXPORT const unsigned char CMIDIVersionString[];
 // Communicating with external devices and applications
 #import <CMIDI/CMIDIEndpoint.h>
 
+// Tools for building and debugging demo applications
+#import <CMIDI/CMIDIMonitor.h>
+#import <CMIDI/CMIDITransport.h>
+
+// A full featured instrument manager
+#import <CMIDI/CMIDIInstrument.h>
+
 // From CMusic
 #import <CMIDI/CMusicNote.h>
 #import <CMIDI/CTime.h>
@@ -56,8 +63,5 @@ FOUNDATION_EXPORT const unsigned char CMIDIVersionString[];
 #import <CMIDI/CMIDIMessage+DescriptionWithTime.h>
 #import <CMIDI/CMIDIFile+DescriptionWithTime.h>
 
-// Tools for building and debugging demo applications
-#import <CMIDI/CMIDIMonitor.h>
-#import <CMIDI/CMIDITransport.h>
 
 

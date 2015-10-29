@@ -12,7 +12,7 @@
 // -----------------------------------------------------------------------------
 #pragma mark            Message access
 // -----------------------------------------------------------------------------
-@property (readonly) UInt8 channel;                     // type != CMIDIMessage_System
+@property            UInt8 channel;                     // type != CMIDIMessage_System
 @property (readonly) UInt8 noteNumber;                  // any of the three note messages
 @property (readonly) UInt8 velocity;                    // type == CMIDIMessage_NoteOn
 @property (readonly) UInt8 releaseVelocity;             // type == CMIDIMessage_NoteOff

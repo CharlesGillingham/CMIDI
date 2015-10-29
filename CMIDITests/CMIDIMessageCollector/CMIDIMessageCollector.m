@@ -43,8 +43,8 @@
 
 - (void) clockTicked: (CMIDIClock *) c
 {
-    printf(".");
     CTime hostTime = AudioConvertHostTimeToNanos(AudioGetCurrentHostTime());
+    printf(".");
     [hostTimesReceived addObject:[NSNumber numberWithLongLong:hostTime]];
     [hostTimesExpected addObject:[NSNumber numberWithLongLong:c.timeOfCurrentTick]];
     [clockTicksReceived addObject:[NSNumber numberWithLongLong:c.currentTick]];

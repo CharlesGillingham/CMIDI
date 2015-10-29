@@ -50,6 +50,8 @@
 		362FF0A81BC9C73D001EA833 /* CSliderTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 362FF0A11BC9C73D001EA833 /* CSliderTableView.m */; };
 		362FF0A91BC9C73D001EA833 /* CSliderTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 362FF0A21BC9C73D001EA833 /* CSliderTableViewController.xib */; };
 		362FF0AA1BC9C73D001EA833 /* CSliderTableViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 362FF0A31BC9C73D001EA833 /* CSliderTableViewController2.xib */; };
+		36521FC31BD947B7008A5609 /* CMIDIMessage+Simplified.h in Headers */ = {isa = PBXBuildFile; fileRef = 36521FC11BD947B7008A5609 /* CMIDIMessage+Simplified.h */; };
+		36521FC41BD947B7008A5609 /* CMIDIMessage+Simplified.m in Sources */ = {isa = PBXBuildFile; fileRef = 36521FC21BD947B7008A5609 /* CMIDIMessage+Simplified.m */; };
 		36670FEF1BAF473E00B61D27 /* CMIDI.h in Headers */ = {isa = PBXBuildFile; fileRef = 36670FEE1BAF473E00B61D27 /* CMIDI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		36670FF51BAF473E00B61D27 /* CMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36670FE91BAF473E00B61D27 /* CMIDI.framework */; };
 		36670FFC1BAF473E00B61D27 /* CMIDITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 36670FFB1BAF473E00B61D27 /* CMIDITests.m */; };
@@ -139,6 +141,45 @@
 		366710FD1BAF5A2E00B61D27 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366710FC1BAF5A2E00B61D27 /* AudioToolbox.framework */; };
 		3667167F1BB06E0800B61D27 /* CMIDIFileParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 3667167D1BB06E0800B61D27 /* CMIDIFileParser.h */; };
 		366716801BB06E0800B61D27 /* CMIDIFileParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3667167E1BB06E0800B61D27 /* CMIDIFileParser.m */; };
+		3684E9F21BCD95930073C592 /* CMIDIInstrument+External.m in Sources */ = {isa = PBXBuildFile; fileRef = 3684E9EE1BCD95930073C592 /* CMIDIInstrument+External.m */; };
+		3684E9F31BCD95930073C592 /* CMIDIInstrument.m in Sources */ = {isa = PBXBuildFile; fileRef = 3684E9EF1BCD95930073C592 /* CMIDIInstrument.m */; };
+		3684E9F51BCD95930073C592 /* CMIDExternalInstrument+NSCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 3684E9F11BCD95930073C592 /* CMIDExternalInstrument+NSCoding.m */; };
+		3684E9FC1BCD95F80073C592 /* CMIDIInstrument.h in Headers */ = {isa = PBXBuildFile; fileRef = 3684E9FB1BCD95F80073C592 /* CMIDIInstrument.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3684EA001BCD97EF0073C592 /* CMIDIInstrument+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 3684E9FF1BCD97EF0073C592 /* CMIDIInstrument+Debug.m */; };
+		3684EA061BCEF4CD0073C592 /* CKVCTester.m in Sources */ = {isa = PBXBuildFile; fileRef = 3684EA051BCEF4CD0073C592 /* CKVCTester.m */; };
+		3684EA081BCEF4D70073C592 /* CKVCTester.h in Headers */ = {isa = PBXBuildFile; fileRef = 3684EA071BCEF4D70073C592 /* CKVCTester.h */; };
+		36FA99311BE08A14007A466B /* CAudioEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = 36FA990A1BE08A14007A466B /* CAudioEffect.h */; };
+		36FA99321BE08A14007A466B /* CAudioGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 36FA990B1BE08A14007A466B /* CAudioGenerator.h */; };
+		36FA99331BE08A14007A466B /* CAudioInstrument.h in Headers */ = {isa = PBXBuildFile; fileRef = 36FA990C1BE08A14007A466B /* CAudioInstrument.h */; };
+		36FA99341BE08A14007A466B /* CAudioOutput.h in Headers */ = {isa = PBXBuildFile; fileRef = 36FA990D1BE08A14007A466B /* CAudioOutput.h */; };
+		36FA99351BE08A14007A466B /* CAudioUnit+Examples.h in Headers */ = {isa = PBXBuildFile; fileRef = 36FA990E1BE08A14007A466B /* CAudioUnit+Examples.h */; };
+		36FA99361BE08A14007A466B /* CAudioUnit+UI.h in Headers */ = {isa = PBXBuildFile; fileRef = 36FA990F1BE08A14007A466B /* CAudioUnit+UI.h */; };
+		36FA99371BE08A14007A466B /* CAudioUnit.h in Headers */ = {isa = PBXBuildFile; fileRef = 36FA99101BE08A14007A466B /* CAudioUnit.h */; };
+		36FA99381BE08A14007A466B /* CAUErrors.h in Headers */ = {isa = PBXBuildFile; fileRef = 36FA99111BE08A14007A466B /* CAUErrors.h */; };
+		36FA99391BE08A14007A466B /* CAUGraph.h in Headers */ = {isa = PBXBuildFile; fileRef = 36FA99121BE08A14007A466B /* CAUGraph.h */; };
+		36FA993A1BE08A14007A466B /* CAudioUnit+Examples.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FA99151BE08A14007A466B /* CAudioUnit+Examples.m */; };
+		36FA993B1BE08A14007A466B /* CAudioUnit+NSCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FA99161BE08A14007A466B /* CAudioUnit+NSCoding.m */; };
+		36FA993C1BE08A14007A466B /* CAudioUnit+Search.h in Headers */ = {isa = PBXBuildFile; fileRef = 36FA99171BE08A14007A466B /* CAudioUnit+Search.h */; };
+		36FA993D1BE08A14007A466B /* CAudioUnit+Search.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FA99181BE08A14007A466B /* CAudioUnit+Search.m */; };
+		36FA993E1BE08A14007A466B /* CAudioUnit+UI.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FA99191BE08A14007A466B /* CAudioUnit+UI.m */; };
+		36FA993F1BE08A14007A466B /* CAudioUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FA991A1BE08A14007A466B /* CAudioUnit.m */; };
+		36FA99401BE08A14007A466B /* CAudioUnit_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 36FA991B1BE08A14007A466B /* CAudioUnit_Internal.h */; };
+		36FA99411BE08A14007A466B /* AudioComponentDescription Names.h in Headers */ = {isa = PBXBuildFile; fileRef = 36FA991D1BE08A14007A466B /* AudioComponentDescription Names.h */; };
+		36FA99421BE08A14007A466B /* AudioComponentDescription Names.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FA991E1BE08A14007A466B /* AudioComponentDescription Names.m */; };
+		36FA99431BE08A14007A466B /* CAudioEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FA99201BE08A14007A466B /* CAudioEffect.m */; };
+		36FA99441BE08A14007A466B /* CAudioGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FA99221BE08A14007A466B /* CAudioGenerator.m */; };
+		36FA99451BE08A14007A466B /* CAudioInstrument.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FA99241BE08A14007A466B /* CAudioInstrument.m */; };
+		36FA99461BE08A14007A466B /* CAudioOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FA99261BE08A14007A466B /* CAudioOutput.m */; };
+		36FA99471BE08A14007A466B /* CAUError_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 36FA99281BE08A14007A466B /* CAUError_Internal.h */; };
+		36FA99481BE08A14007A466B /* CAUErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FA99291BE08A14007A466B /* CAUErrors.m */; };
+		36FA99491BE08A14007A466B /* CAUNoErr.h in Headers */ = {isa = PBXBuildFile; fileRef = 36FA992A1BE08A14007A466B /* CAUNoErr.h */; };
+		36FA994A1BE08A14007A466B /* CAudioNonModalAUGraph.c in Sources */ = {isa = PBXBuildFile; fileRef = 36FA992C1BE08A14007A466B /* CAudioNonModalAUGraph.c */; };
+		36FA994B1BE08A14007A466B /* CAudioNonModalAUGraph.h in Headers */ = {isa = PBXBuildFile; fileRef = 36FA992D1BE08A14007A466B /* CAudioNonModalAUGraph.h */; };
+		36FA994C1BE08A14007A466B /* CAUGraph+NSCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FA992E1BE08A14007A466B /* CAUGraph+NSCoding.m */; };
+		36FA994D1BE08A14007A466B /* CAUGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FA992F1BE08A14007A466B /* CAUGraph.m */; };
+		36FA994E1BE08A14007A466B /* CAUGraph_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 36FA99301BE08A14007A466B /* CAUGraph_Internal.h */; };
+		36FA99501BE10AF9007A466B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366710FC1BAF5A2E00B61D27 /* AudioToolbox.framework */; };
+		36FA99541BE10B67007A466B /* CMIDIInstrument+Internal.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FA99521BE10B67007A466B /* CMIDIInstrument+Internal.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -195,6 +236,8 @@
 		362FF0A11BC9C73D001EA833 /* CSliderTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSliderTableView.m; sourceTree = "<group>"; };
 		362FF0A21BC9C73D001EA833 /* CSliderTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CSliderTableViewController.xib; sourceTree = "<group>"; };
 		362FF0A31BC9C73D001EA833 /* CSliderTableViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CSliderTableViewController2.xib; sourceTree = "<group>"; };
+		36521FC11BD947B7008A5609 /* CMIDIMessage+Simplified.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMIDIMessage+Simplified.h"; sourceTree = "<group>"; };
+		36521FC21BD947B7008A5609 /* CMIDIMessage+Simplified.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CMIDIMessage+Simplified.m"; sourceTree = "<group>"; };
 		36670FE91BAF473E00B61D27 /* CMIDI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CMIDI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36670FED1BAF473E00B61D27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36670FEE1BAF473E00B61D27 /* CMIDI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMIDI.h; sourceTree = "<group>"; };
@@ -302,6 +345,45 @@
 		366711731BAF8B8300B61D27 /* CMIDISequence+Debug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CMIDISequence+Debug.h"; sourceTree = "<group>"; };
 		3667167D1BB06E0800B61D27 /* CMIDIFileParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMIDIFileParser.h; sourceTree = "<group>"; };
 		3667167E1BB06E0800B61D27 /* CMIDIFileParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMIDIFileParser.m; sourceTree = "<group>"; };
+		3684E9EE1BCD95930073C592 /* CMIDIInstrument+External.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CMIDIInstrument+External.m"; path = "CMIDIInstrument/CMIDIInstrument+External.m"; sourceTree = "<group>"; };
+		3684E9EF1BCD95930073C592 /* CMIDIInstrument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CMIDIInstrument.m; path = CMIDIInstrument/CMIDIInstrument.m; sourceTree = "<group>"; };
+		3684E9F11BCD95930073C592 /* CMIDExternalInstrument+NSCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CMIDExternalInstrument+NSCoding.m"; path = "CMIDIInstrument/CMIDExternalInstrument+NSCoding.m"; sourceTree = "<group>"; };
+		3684E9FB1BCD95F80073C592 /* CMIDIInstrument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMIDIInstrument.h; sourceTree = "<group>"; };
+		3684E9FE1BCD97EF0073C592 /* CMIDIInstrument+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CMIDIInstrument+Debug.h"; path = "CMIDIInstrument+Debug/CMIDIInstrument+Debug.h"; sourceTree = "<group>"; };
+		3684E9FF1BCD97EF0073C592 /* CMIDIInstrument+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CMIDIInstrument+Debug.m"; path = "CMIDIInstrument+Debug/CMIDIInstrument+Debug.m"; sourceTree = "<group>"; };
+		3684EA051BCEF4CD0073C592 /* CKVCTester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKVCTester.m; sourceTree = "<group>"; };
+		3684EA071BCEF4D70073C592 /* CKVCTester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKVCTester.h; sourceTree = "<group>"; };
+		36FA990A1BE08A14007A466B /* CAudioEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAudioEffect.h; sourceTree = "<group>"; };
+		36FA990B1BE08A14007A466B /* CAudioGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAudioGenerator.h; sourceTree = "<group>"; };
+		36FA990C1BE08A14007A466B /* CAudioInstrument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAudioInstrument.h; sourceTree = "<group>"; };
+		36FA990D1BE08A14007A466B /* CAudioOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAudioOutput.h; sourceTree = "<group>"; };
+		36FA990E1BE08A14007A466B /* CAudioUnit+Examples.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAudioUnit+Examples.h"; sourceTree = "<group>"; };
+		36FA990F1BE08A14007A466B /* CAudioUnit+UI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAudioUnit+UI.h"; sourceTree = "<group>"; };
+		36FA99101BE08A14007A466B /* CAudioUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAudioUnit.h; sourceTree = "<group>"; };
+		36FA99111BE08A14007A466B /* CAUErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAUErrors.h; sourceTree = "<group>"; };
+		36FA99121BE08A14007A466B /* CAUGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAUGraph.h; sourceTree = "<group>"; };
+		36FA99151BE08A14007A466B /* CAudioUnit+Examples.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAudioUnit+Examples.m"; sourceTree = "<group>"; };
+		36FA99161BE08A14007A466B /* CAudioUnit+NSCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAudioUnit+NSCoding.m"; sourceTree = "<group>"; };
+		36FA99171BE08A14007A466B /* CAudioUnit+Search.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAudioUnit+Search.h"; sourceTree = "<group>"; };
+		36FA99181BE08A14007A466B /* CAudioUnit+Search.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAudioUnit+Search.m"; sourceTree = "<group>"; };
+		36FA99191BE08A14007A466B /* CAudioUnit+UI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAudioUnit+UI.m"; sourceTree = "<group>"; };
+		36FA991A1BE08A14007A466B /* CAudioUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAudioUnit.m; sourceTree = "<group>"; };
+		36FA991B1BE08A14007A466B /* CAudioUnit_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAudioUnit_Internal.h; sourceTree = "<group>"; };
+		36FA991D1BE08A14007A466B /* AudioComponentDescription Names.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AudioComponentDescription Names.h"; sourceTree = "<group>"; };
+		36FA991E1BE08A14007A466B /* AudioComponentDescription Names.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AudioComponentDescription Names.m"; sourceTree = "<group>"; };
+		36FA99201BE08A14007A466B /* CAudioEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAudioEffect.m; sourceTree = "<group>"; };
+		36FA99221BE08A14007A466B /* CAudioGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAudioGenerator.m; sourceTree = "<group>"; };
+		36FA99241BE08A14007A466B /* CAudioInstrument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAudioInstrument.m; sourceTree = "<group>"; };
+		36FA99261BE08A14007A466B /* CAudioOutput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAudioOutput.m; sourceTree = "<group>"; };
+		36FA99281BE08A14007A466B /* CAUError_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAUError_Internal.h; sourceTree = "<group>"; };
+		36FA99291BE08A14007A466B /* CAUErrors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAUErrors.m; sourceTree = "<group>"; };
+		36FA992A1BE08A14007A466B /* CAUNoErr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAUNoErr.h; sourceTree = "<group>"; };
+		36FA992C1BE08A14007A466B /* CAudioNonModalAUGraph.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = CAudioNonModalAUGraph.c; sourceTree = "<group>"; };
+		36FA992D1BE08A14007A466B /* CAudioNonModalAUGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAudioNonModalAUGraph.h; sourceTree = "<group>"; };
+		36FA992E1BE08A14007A466B /* CAUGraph+NSCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAUGraph+NSCoding.m"; sourceTree = "<group>"; };
+		36FA992F1BE08A14007A466B /* CAUGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAUGraph.m; sourceTree = "<group>"; };
+		36FA99301BE08A14007A466B /* CAUGraph_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAUGraph_Internal.h; sourceTree = "<group>"; };
+		36FA99521BE10B67007A466B /* CMIDIInstrument+Internal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CMIDIInstrument+Internal.m"; path = "CMIDIInstrument/CMIDIInstrument+Internal.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -309,6 +391,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36FA99501BE10AF9007A466B /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,8 +540,10 @@
 			isa = PBXGroup;
 			children = (
 				36670FEB1BAF473E00B61D27 /* CMIDI */,
+				36FA99081BE08A14007A466B /* CAudioUnits */,
 				362FF0461BC9C65B001EA833 /* CMusic */,
 				362FF09A1BC9C73D001EA833 /* CGUI */,
+				36FA994F1BE10ACB007A466B /* Apple Frameworks */,
 				36670FF81BAF473E00B61D27 /* CMIDITests */,
 				36670FEA1BAF473E00B61D27 /* Products */,
 			);
@@ -495,6 +580,7 @@
 		36670FF81BAF473E00B61D27 /* CMIDITests */ = {
 			isa = PBXGroup;
 			children = (
+				3684E9FD1BCD97C40073C592 /* CMIDIInstrument+Debug */,
 				366710FC1BAF5A2E00B61D27 /* AudioToolbox.framework */,
 				366710F21BAF4C1500B61D27 /* CMIDITimer+Debug */,
 				366710F51BAF4C1500B61D27 /* CMIDIVSNumber+Debug */,
@@ -528,6 +614,8 @@
 				366710071BAF475300B61D27 /* CDebugMessages.h */,
 				366710081BAF475300B61D27 /* CDebugMessages.m */,
 				366710091BAF475300B61D27 /* CDebugSelfCheckingObject.h */,
+				3684EA071BCEF4D70073C592 /* CKVCTester.h */,
+				3684EA051BCEF4CD0073C592 /* CKVCTester.m */,
 			);
 			path = CDebug;
 			sourceTree = "<group>";
@@ -542,6 +630,7 @@
 				366710111BAF4A0400B61D27 /* CMIDIFile+Description.h */,
 				366710121BAF4A0400B61D27 /* CMIDIFile+DescriptionWithTime.h */,
 				366710131BAF4A0400B61D27 /* CMIDIFile.h */,
+				3684E9FB1BCD95F80073C592 /* CMIDIInstrument.h */,
 				366710141BAF4A0400B61D27 /* CMIDIMessage+ChannelMessage.h */,
 				366710151BAF4A0400B61D27 /* CMIDIMessage+Description.h */,
 				366710161BAF4A0400B61D27 /* CMIDIMessage+DescriptionWithTime.h */,
@@ -569,6 +658,7 @@
 				366710431BAF4A0E00B61D27 /* CMIDIDataParser+MIDIPacketList */,
 				366710461BAF4A0E00B61D27 /* CMIDIEndpoint */,
 				3667104B1BAF4A0E00B61D27 /* CMIDIFile */,
+				3684E9F61BCD95990073C592 /* CMIDIInstrument */,
 				3667104F1BAF4A0E00B61D27 /* CMIDIMessage */,
 				366710571BAF4A0E00B61D27 /* CMIDIMessageByteCount */,
 				3667105A1BAF4A0E00B61D27 /* CMIDIMonitor */,
@@ -661,6 +751,8 @@
 				366710541BAF4A0E00B61D27 /* CMIDIMessage+NSCoding.m */,
 				366710551BAF4A0E00B61D27 /* CMIDIMessage+SystemMessage.m */,
 				366710561BAF4A0E00B61D27 /* CMIDIMessage.m */,
+				36521FC11BD947B7008A5609 /* CMIDIMessage+Simplified.h */,
+				36521FC21BD947B7008A5609 /* CMIDIMessage+Simplified.m */,
 			);
 			path = CMIDIMessage;
 			sourceTree = "<group>";
@@ -856,6 +948,151 @@
 			path = "CMIDIVSNumber+Debug";
 			sourceTree = "<group>";
 		};
+		3684E9F61BCD95990073C592 /* CMIDIInstrument */ = {
+			isa = PBXGroup;
+			children = (
+				3684E9EE1BCD95930073C592 /* CMIDIInstrument+External.m */,
+				3684E9EF1BCD95930073C592 /* CMIDIInstrument.m */,
+				3684E9F11BCD95930073C592 /* CMIDExternalInstrument+NSCoding.m */,
+				36FA99521BE10B67007A466B /* CMIDIInstrument+Internal.m */,
+			);
+			name = CMIDIInstrument;
+			sourceTree = "<group>";
+		};
+		3684E9FD1BCD97C40073C592 /* CMIDIInstrument+Debug */ = {
+			isa = PBXGroup;
+			children = (
+				3684E9FE1BCD97EF0073C592 /* CMIDIInstrument+Debug.h */,
+				3684E9FF1BCD97EF0073C592 /* CMIDIInstrument+Debug.m */,
+			);
+			name = "CMIDIInstrument+Debug";
+			sourceTree = "<group>";
+		};
+		36FA99081BE08A14007A466B /* CAudioUnits */ = {
+			isa = PBXGroup;
+			children = (
+				36FA99091BE08A14007A466B /* Headers */,
+				36FA99131BE08A14007A466B /* Source */,
+			);
+			path = CAudioUnits;
+			sourceTree = "<group>";
+		};
+		36FA99091BE08A14007A466B /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				36FA990A1BE08A14007A466B /* CAudioEffect.h */,
+				36FA990B1BE08A14007A466B /* CAudioGenerator.h */,
+				36FA990C1BE08A14007A466B /* CAudioInstrument.h */,
+				36FA990D1BE08A14007A466B /* CAudioOutput.h */,
+				36FA990E1BE08A14007A466B /* CAudioUnit+Examples.h */,
+				36FA990F1BE08A14007A466B /* CAudioUnit+UI.h */,
+				36FA99101BE08A14007A466B /* CAudioUnit.h */,
+				36FA99111BE08A14007A466B /* CAUErrors.h */,
+				36FA99121BE08A14007A466B /* CAUGraph.h */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		36FA99131BE08A14007A466B /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				36FA99141BE08A14007A466B /*  CAudioUnit */,
+				36FA991C1BE08A14007A466B /* AudioComponentDescription Names */,
+				36FA991F1BE08A14007A466B /* CAudioEffect */,
+				36FA99211BE08A14007A466B /* CAudioGenerator */,
+				36FA99231BE08A14007A466B /* CAudioInstrument */,
+				36FA99251BE08A14007A466B /* CAudioOutput */,
+				36FA99271BE08A14007A466B /* CAUErrors */,
+				36FA992B1BE08A14007A466B /* CAUGraph */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		36FA99141BE08A14007A466B /*  CAudioUnit */ = {
+			isa = PBXGroup;
+			children = (
+				36FA99151BE08A14007A466B /* CAudioUnit+Examples.m */,
+				36FA99161BE08A14007A466B /* CAudioUnit+NSCoding.m */,
+				36FA99171BE08A14007A466B /* CAudioUnit+Search.h */,
+				36FA99181BE08A14007A466B /* CAudioUnit+Search.m */,
+				36FA99191BE08A14007A466B /* CAudioUnit+UI.m */,
+				36FA991A1BE08A14007A466B /* CAudioUnit.m */,
+				36FA991B1BE08A14007A466B /* CAudioUnit_Internal.h */,
+			);
+			path = " CAudioUnit";
+			sourceTree = "<group>";
+		};
+		36FA991C1BE08A14007A466B /* AudioComponentDescription Names */ = {
+			isa = PBXGroup;
+			children = (
+				36FA991D1BE08A14007A466B /* AudioComponentDescription Names.h */,
+				36FA991E1BE08A14007A466B /* AudioComponentDescription Names.m */,
+			);
+			path = "AudioComponentDescription Names";
+			sourceTree = "<group>";
+		};
+		36FA991F1BE08A14007A466B /* CAudioEffect */ = {
+			isa = PBXGroup;
+			children = (
+				36FA99201BE08A14007A466B /* CAudioEffect.m */,
+			);
+			path = CAudioEffect;
+			sourceTree = "<group>";
+		};
+		36FA99211BE08A14007A466B /* CAudioGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				36FA99221BE08A14007A466B /* CAudioGenerator.m */,
+			);
+			path = CAudioGenerator;
+			sourceTree = "<group>";
+		};
+		36FA99231BE08A14007A466B /* CAudioInstrument */ = {
+			isa = PBXGroup;
+			children = (
+				36FA99241BE08A14007A466B /* CAudioInstrument.m */,
+			);
+			path = CAudioInstrument;
+			sourceTree = "<group>";
+		};
+		36FA99251BE08A14007A466B /* CAudioOutput */ = {
+			isa = PBXGroup;
+			children = (
+				36FA99261BE08A14007A466B /* CAudioOutput.m */,
+			);
+			path = CAudioOutput;
+			sourceTree = "<group>";
+		};
+		36FA99271BE08A14007A466B /* CAUErrors */ = {
+			isa = PBXGroup;
+			children = (
+				36FA99281BE08A14007A466B /* CAUError_Internal.h */,
+				36FA99291BE08A14007A466B /* CAUErrors.m */,
+				36FA992A1BE08A14007A466B /* CAUNoErr.h */,
+			);
+			path = CAUErrors;
+			sourceTree = "<group>";
+		};
+		36FA992B1BE08A14007A466B /* CAUGraph */ = {
+			isa = PBXGroup;
+			children = (
+				36FA992C1BE08A14007A466B /* CAudioNonModalAUGraph.c */,
+				36FA992D1BE08A14007A466B /* CAudioNonModalAUGraph.h */,
+				36FA992E1BE08A14007A466B /* CAUGraph+NSCoding.m */,
+				36FA992F1BE08A14007A466B /* CAUGraph.m */,
+				36FA99301BE08A14007A466B /* CAUGraph_Internal.h */,
+			);
+			path = CAUGraph;
+			sourceTree = "<group>";
+		};
+		36FA994F1BE10ACB007A466B /* Apple Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Apple Frameworks";
+			path = CMIDI;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -863,34 +1100,52 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36FA99331BE08A14007A466B /* CAudioInstrument.h in Headers */,
 				362FF0A71BC9C73D001EA833 /* CSliderTableView.h in Headers */,
 				3667167F1BB06E0800B61D27 /* CMIDIFileParser.h in Headers */,
+				36FA99371BE08A14007A466B /* CAudioUnit.h in Headers */,
+				36FA994B1BE08A14007A466B /* CAudioNonModalAUGraph.h in Headers */,
 				366710261BAF4A0400B61D27 /* CMIDIFile.h in Headers */,
+				36FA994E1BE08A14007A466B /* CAUGraph_Internal.h in Headers */,
+				36FA99321BE08A14007A466B /* CAudioGenerator.h in Headers */,
 				362FF0771BC9C65B001EA833 /* CMusicHarmony+Description.h in Headers */,
 				366710891BAF4A0E00B61D27 /* CMIDIMessageByteCount.h in Headers */,
 				3667106F1BAF4A0E00B61D27 /* CMIDI CoreMIDI Utilities.h in Headers */,
 				362FF0791BC9C65B001EA833 /* CMusicHarmony.h in Headers */,
+				3684EA081BCEF4D70073C592 /* CKVCTester.h in Headers */,
 				366710231BAF4A0400B61D27 /* CMIDIEndpoint.h in Headers */,
+				36FA99361BE08A14007A466B /* CAudioUnit+UI.h in Headers */,
 				362FF0841BC9C65B001EA833 /* CTimeSequence.h in Headers */,
 				362FF0A51BC9C73D001EA833 /* CSliderTable.h in Headers */,
 				3667102A1BAF4A0400B61D27 /* CMIDIMessage+MetaMessage.h in Headers */,
+				36FA99401BE08A14007A466B /* CAudioUnit_Internal.h in Headers */,
 				36670FEF1BAF473E00B61D27 /* CMIDI.h in Headers */,
 				366710241BAF4A0400B61D27 /* CMIDIFile+Description.h in Headers */,
 				366710911BAF4A0E00B61D27 /* CMIDITimer.h in Headers */,
+				36FA993C1BE08A14007A466B /* CAudioUnit+Search.h in Headers */,
 				366710281BAF4A0400B61D27 /* CMIDIMessage+Description.h in Headers */,
+				36FA99351BE08A14007A466B /* CAudioUnit+Examples.h in Headers */,
 				362FF0831BC9C65B001EA833 /* CTimeMap.h in Headers */,
 				3667102E1BAF4A0400B61D27 /* CMIDIReceiver CMIDISender.h in Headers */,
 				366710301BAF4A0400B61D27 /* CMIDISequence.h in Headers */,
 				362FF07C1BC9C65B001EA833 /* CMusicTempoMeter.h in Headers */,
 				366710311BAF4A0400B61D27 /* CMIDISplitter.h in Headers */,
+				36FA99411BE08A14007A466B /* AudioComponentDescription Names.h in Headers */,
+				36FA99471BE08A14007A466B /* CAUError_Internal.h in Headers */,
+				36FA99311BE08A14007A466B /* CAudioEffect.h in Headers */,
+				36FA99491BE08A14007A466B /* CAUNoErr.h in Headers */,
+				3684E9FC1BCD95F80073C592 /* CMIDIInstrument.h in Headers */,
+				36521FC31BD947B7008A5609 /* CMIDIMessage+Simplified.h in Headers */,
 				362FF0801BC9C65B001EA833 /* CTime.h in Headers */,
 				366710791BAF4A0E00B61D27 /* CMIDIDataParser+MIDIPacketList.h in Headers */,
 				362FF07B1BC9C65B001EA833 /* CMusicTempoMeter+BackwardCompatibility.h in Headers */,
 				362FF0811BC9C65B001EA833 /* CTimeHierarchy.h in Headers */,
 				3667102D1BAF4A0400B61D27 /* CMIDIMonitor.h in Headers */,
 				366710FB1BAF4C4A00B61D27 /* CMIDIClock+TimeString.h in Headers */,
+				36FA99381BE08A14007A466B /* CAUErrors.h in Headers */,
 				366710251BAF4A0400B61D27 /* CMIDIFile+DescriptionWithTime.h in Headers */,
 				366710211BAF4A0400B61D27 /* CMIDI Time.h in Headers */,
+				36FA99341BE08A14007A466B /* CAudioOutput.h in Headers */,
 				362FF07F1BC9C65B001EA833 /* CMusicWesternHarmony.h in Headers */,
 				362FF0751BC9C65B001EA833 /* CMusicHarmony+Chords.h in Headers */,
 				3667102C1BAF4A0400B61D27 /* CMIDIMessage.h in Headers */,
@@ -904,6 +1159,7 @@
 				362FF07E1BC9C65B001EA833 /* CMusicWesternHarmony+UI.h in Headers */,
 				366710321BAF4A0400B61D27 /* CMIDITempoMeter.h in Headers */,
 				366710271BAF4A0400B61D27 /* CMIDIMessage+ChannelMessage.h in Headers */,
+				36FA99391BE08A14007A466B /* CAUGraph.h in Headers */,
 				366710771BAF4A0E00B61D27 /* CMIDIDataParser.h in Headers */,
 				362FF07D1BC9C65B001EA833 /* CMusicWesternHarmony+Description.h in Headers */,
 				3667102B1BAF4A0400B61D27 /* CMIDIMessage+SystemMessage.h in Headers */,
@@ -1027,11 +1283,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				366710901BAF4A0E00B61D27 /* CMIDITempoMeter.m in Sources */,
+				36FA99451BE08A14007A466B /* CAudioInstrument.m in Sources */,
 				362FF0971BC9C65B001EA833 /* CTimeMap+TimeString.m in Sources */,
+				3684E9F51BCD95930073C592 /* CMIDExternalInstrument+NSCoding.m in Sources */,
 				366710881BAF4A0E00B61D27 /* CMIDIMessage.m in Sources */,
 				366710711BAF4A0E00B61D27 /* CMIDI Time.m in Sources */,
+				36FA993A1BE08A14007A466B /* CAudioUnit+Examples.m in Sources */,
 				362FF0871BC9C65B001EA833 /* CMusicHarmony+Chords.m in Sources */,
 				362FF0861BC9C65B001EA833 /* CMusicHarmony .m in Sources */,
+				36FA99441BE08A14007A466B /* CAudioGenerator.m in Sources */,
 				366710831BAF4A0E00B61D27 /* CMIDIMessage+Description.m in Sources */,
 				366710871BAF4A0E00B61D27 /* CMIDIMessage+SystemMessage.m in Sources */,
 				3667107D1BAF4A0E00B61D27 /* CMIDIExternalSource.m in Sources */,
@@ -1041,33 +1301,47 @@
 				362FF0911BC9C65B001EA833 /* CMusicWesternHarmony+UI.m in Sources */,
 				3667108E1BAF4A0E00B61D27 /* CMIDISequence.m in Sources */,
 				362FF0A81BC9C73D001EA833 /* CSliderTableView.m in Sources */,
+				36521FC41BD947B7008A5609 /* CMIDIMessage+Simplified.m in Sources */,
 				362FF08A1BC9C65B001EA833 /* CMusicHarmony+KVC.m in Sources */,
+				36FA994A1BE08A14007A466B /* CAudioNonModalAUGraph.c in Sources */,
 				362FF08E1BC9C65B001EA833 /* CMusicTempoMeter.m in Sources */,
 				3667108F1BAF4A0E00B61D27 /* CMIDISplitter.m in Sources */,
 				3667108B1BAF4A0E00B61D27 /* CMIDIMonitor.m in Sources */,
 				366710861BAF4A0E00B61D27 /* CMIDIMessage+NSCoding.m in Sources */,
 				366710761BAF4A0E00B61D27 /* CMIDIClock.m in Sources */,
+				36FA994C1BE08A14007A466B /* CAUGraph+NSCoding.m in Sources */,
 				3667107B1BAF4A0E00B61D27 /* CMIDIEndpoint+NSCoding.m in Sources */,
 				362FF0951BC9C65B001EA833 /* CTime.m in Sources */,
+				3684E9F21BCD95930073C592 /* CMIDIInstrument+External.m in Sources */,
 				3667107E1BAF4A0E00B61D27 /* CMIDIInternalEndpoint.m in Sources */,
 				362FF08B1BC9C65B001EA833 /* CMusicHarmony+Scales.m in Sources */,
 				3667107A1BAF4A0E00B61D27 /* CMIDIDataParser+MIDIPacketList.m in Sources */,
 				362FF0901BC9C65B001EA833 /* CMusicWesternHarmony+Description.m in Sources */,
 				366710851BAF4A0E00B61D27 /* CMIDIMessage+MetaMessage.m in Sources */,
+				36FA993D1BE08A14007A466B /* CAudioUnit+Search.m in Sources */,
 				362FF0991BC9C65B001EA833 /* CTimeSequence.m in Sources */,
 				362FF08C1BC9C65B001EA833 /* CMusicNote.m in Sources */,
+				36FA993F1BE08A14007A466B /* CAudioUnit.m in Sources */,
 				366710811BAF4A0E00B61D27 /* CMIDIFile.m in Sources */,
 				3667108A1BAF4A0E00B61D27 /* CMIDIMessageByteCount.m in Sources */,
+				36FA994D1BE08A14007A466B /* CAUGraph.m in Sources */,
 				366710801BAF4A0E00B61D27 /* CMIDIFile+DescriptionWithTime.m in Sources */,
+				36FA99461BE08A14007A466B /* CAudioOutput.m in Sources */,
 				362FF0981BC9C65B001EA833 /* CTimeMap.m in Sources */,
+				3684E9F31BCD95930073C592 /* CMIDIInstrument.m in Sources */,
 				3667107C1BAF4A0E00B61D27 /* CMIDIExternalDestination.m in Sources */,
 				366710921BAF4A0E00B61D27 /* CMIDITimer.m in Sources */,
+				36FA99421BE08A14007A466B /* AudioComponentDescription Names.m in Sources */,
 				3667108D1BAF4A0E00B61D27 /* CMIDISequence+FileIO.m in Sources */,
 				362FF08D1BC9C65B001EA833 /* CMusicTempoMeter+BackwardCompatibility.m in Sources */,
+				36FA99431BE08A14007A466B /* CAudioEffect.m in Sources */,
 				366710841BAF4A0E00B61D27 /* CMIDIMessage+DescriptionWithTime.m in Sources */,
+				36FA99541BE10B67007A466B /* CMIDIInstrument+Internal.m in Sources */,
 				362FF0891BC9C65B001EA833 /* CMusicHarmony+Description.m in Sources */,
 				366710781BAF4A0E00B61D27 /* CMIDIDataParser.m in Sources */,
+				36FA99481BE08A14007A466B /* CAUErrors.m in Sources */,
 				362FF0A61BC9C73D001EA833 /* CSliderTable.m in Sources */,
+				36FA993B1BE08A14007A466B /* CAudioUnit+NSCoding.m in Sources */,
 				362FF0931BC9C65B001EA833 /* CMusicWesternHarmonyViewController.m in Sources */,
 				366710821BAF4A0E00B61D27 /* CMIDIMessage+ChannelMessage.m in Sources */,
 				3667107F1BAF4A0E00B61D27 /* CMIDIFile+Description.m in Sources */,
@@ -1075,6 +1349,7 @@
 				362FF08F1BC9C65B001EA833 /* CMusicWesternHarmony .m in Sources */,
 				366710731BAF4A0E00B61D27 /* CMIDIClock+NSCoding.m in Sources */,
 				362FF0881BC9C65B001EA833 /* CMusicHarmony+Convenience.m in Sources */,
+				36FA993E1BE08A14007A466B /* CAudioUnit+UI.m in Sources */,
 				366710931BAF4A0E00B61D27 /* CMIDITransport.m in Sources */,
 				366710721BAF4A0E00B61D27 /* CMIDIClock+KVC.m in Sources */,
 				366710981BAF4A0E00B61D27 /* CMIDIVSNumber.m in Sources */,
@@ -1090,11 +1365,13 @@
 				366710DF1BAF4B5B00B61D27 /* CMIDIClockTickTester.m in Sources */,
 				3667100B1BAF475300B61D27 /* CDebugMessages.m in Sources */,
 				366710E11BAF4B5B00B61D27 /* CMIDIEndpoint+Debug.m in Sources */,
+				3684EA061BCEF4CD0073C592 /* CKVCTester.m in Sources */,
 				366710E31BAF4B5B00B61D27 /* CMIDIFile+Debug.m in Sources */,
 				366710F01BAF4B5B00B61D27 /* CMIDISequence+Debug.m in Sources */,
 				366710E41BAF4B5B00B61D27 /* CMIDIFileByApple.m in Sources */,
 				366710F91BAF4C1500B61D27 /* CMIDIVSNumber+Debug.m in Sources */,
 				366710EF1BAF4B5B00B61D27 /* CMIDIMessageCollector.m in Sources */,
+				3684EA001BCD97EF0073C592 /* CMIDIInstrument+Debug.m in Sources */,
 				366710E01BAF4B5B00B61D27 /* CMIDIDataParser+Debug.m in Sources */,
 				366710EE1BAF4B5B00B61D27 /* CMIDIMessage+Debug.m in Sources */,
 				366710F81BAF4C1500B61D27 /* CMIDITimer+Debug.m in Sources */,

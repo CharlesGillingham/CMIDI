@@ -18,6 +18,7 @@
 #import "CMIDIFile+Debug.h"
 #import "CMIDIEndpoint+Debug.h"
 #import "CMIDISequence+Debug.h"
+#import "CMIDIInstrument+Debug.h"
 
 @interface CMIDIInspectionTests : XCTestCase
 @end
@@ -49,6 +50,7 @@
 - (void) testCMIDISequenceLists   { XCTAssert([CMIDISequence testWithMessageList:[CMIDIMessage oneOfEachMessage]]); }
 - (void) testCMIDISequenceFiles   { XCTAssert([CMIDISequence testWithMIDIFile:[CMIDIFile exampleMIDIFiles][0]]); }
 - (void) testCMIDITempoMeter      { XCTAssert([CMIDITempoMeter testTicksPerBeat]); }
+- (void) testCMIDIInstrument      { XCTAssert([CMIDIInstrument test]); }
 @end
 
 
